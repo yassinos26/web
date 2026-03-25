@@ -1,8 +1,8 @@
 import { motion } from "motion/react";
 import { Heart, Thermometer, Baby, BookOpen, ShieldCheck, AlertTriangle, ArrowRight, Stethoscope } from "lucide-react";
 
-const heroImage = "https://images.unsplash.com/photo-1560306580-9e204fe45f3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxuZXdib3JuJTIwYmFieSUyMGhvc3BpdGFsJTIwbmVvbmF0YWwlMjBjYXJlfGVufDF8fHx8MTc3Mzc2MzA0N3ww&ixlib=rb-4.1.0&q=80&w=1080";
-const warmthImage = "https://images.unsplash.com/photo-1761891918492-371b950ee818?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYWJ5JTIwd3JhcHBlZCUyMGJsYW5rZXQlMjBuZXdib3JuJTIwd2FybXRofGVufDF8fHx8MTc3Mzc2MzY1Nnww&ixlib=rb-4.1.0&q=80&w=1080";
+const heroImage = "public/assets/images/affiche1.jpg";
+const warmthImage = "public/assets/images/affiche2.jpg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },

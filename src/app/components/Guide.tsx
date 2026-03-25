@@ -104,13 +104,14 @@ const articles: GuideArticle[] = [
 const pdfResources = [
   {
     id: 1,
-    title: "WHO Thermal Protection of Newborns: A Practical Guide",
+    title: "Paniers des soins essentiels en santé maternelle et néonatale",
     description: "Comprehensive WHO guideline on neonatal thermal care, covering the warm chain, KMC, and incubator management.",
-    pages: 58,
-    size: "3.2 MB",
+    pages: 114,
+    size: "1.526 MB",
     category: "WHO Guidelines",
     color: "#F9A8D4",
-    year: 2020,
+    year: 2018,
+    url: "public/assets/guides/guide ministere de la sante tunisie.pdf",
   },
   {
     id: 2,
@@ -121,6 +122,7 @@ const pdfResources = [
     category: "Clinical Protocol",
     color: "#A5B4FC",
     year: 2022,
+    url: "/assets/guides/neonatal-hypothermia-protocol.pdf",
   },
   {
     id: 3,
@@ -131,6 +133,7 @@ const pdfResources = [
     category: "Implementation",
     color: "#86EFAC",
     year: 2021,
+    url: "/assets/guides/kangaroo-mother-care-manual.pdf",
   },
   {
     id: 4,
@@ -141,6 +144,7 @@ const pdfResources = [
     category: "Family Education",
     color: "#FDBA74",
     year: 2023,
+    url: "/assets/guides/family-guide-newborn-warmth.pdf",
   },
   {
     id: 5,
@@ -151,6 +155,7 @@ const pdfResources = [
     category: "Emergency Care",
     color: "#FCA5A5",
     year: 2022,
+    url: "/assets/guides/neonatal-resuscitation-guide.pdf",
   },
 ];
 
@@ -164,6 +169,7 @@ const pptResources = [
     category: "Grand Rounds",
     color: "#F9A8D4",
     year: 2023,
+    url: "/assets/presentations/neonatal-hypothermia-grand-rounds.pptx",
   },
   {
     id: 2,
@@ -174,6 +180,7 @@ const pptResources = [
     category: "Workshop",
     color: "#C4B5FD",
     year: 2022,
+    url: "/assets/presentations/kangaroo-care-workshop.pptx",
   },
   {
     id: 3,
@@ -184,6 +191,7 @@ const pptResources = [
     category: "Family Education",
     color: "#FDBA74",
     year: 2023,
+    url: "/assets/presentations/parent-education-newborn-safety.pptx",
   },
   {
     id: 4,
@@ -194,11 +202,21 @@ const pptResources = [
     category: "Staff Training",
     color: "#86EFAC",
     year: 2022,
+    url: "/assets/presentations/warm-chain-staff-training.pptx",
   },
 ];
 
 function ArticleAccordion({ article }: { article: GuideArticle }) {
   const [open, setOpen] = useState(false);
+
+  const handleDownload = (url: string, filename: string) => {
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <motion.div
@@ -423,12 +441,16 @@ export function Guide() {
                             <span>{resource.size}</span>
                             <span>{resource.year}</span>
                           </div>
-                          <button
+                          <a
+                            href={resource.url}
+                            download
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs text-white font-medium transition-all hover:opacity-90 hover:shadow-md"
                             style={{ background: "linear-gradient(135deg, #EC4899, #A855F7)" }}
                           >
                             <Download className="w-3 h-3" /> Download
-                          </button>
+                          </a>
                         </div>
                       </div>
                     </div>
@@ -496,12 +518,16 @@ export function Guide() {
                             >
                               <ExternalLink className="w-3 h-3" /> Preview
                             </button>
-                            <button
+                            <a
+                              href={resource.url}
+                              download
+                              target="_blank"
+                              rel="noopener noreferrer"
                               className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs text-white font-medium transition-all hover:opacity-90 hover:shadow-md"
                               style={{ background: "linear-gradient(135deg, #EC4899, #A855F7)" }}
                             >
                               <Download className="w-3 h-3" /> Download
-                            </button>
+                            </a>
                           </div>
                         </div>
                       </div>

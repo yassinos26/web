@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Linkedin, Mail, Award,  GraduationCap, Instagram, Facebook } from "lucide-react";
+import { Linkedin, Mail, Award,  GraduationCap, Instagram, Facebook} from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -12,12 +12,18 @@ const fadeUp = {
 
 const members = [
   {
-    name: "Dr. Sirine Louhichi",
+    name: "Sirine Louhichi",
     role: "Pediatric & Neonatology nurse",
     specialty: "Puericulture",
     bio: "Over 2 years of experience in neonatal medicine, specializing in premature infant thermoregulation and evidence-based thermal care protocols.",
-    image: "dist/assets/sirine-bio.jpg",
+    image: "public/assets/images/sirine-bio.jpg",
     tags: ["NICU", "Thermoregulation", "pretherm infants"],
+    socials: {
+      linkedin: "https://www.linkedin.com/in/sirine-louhichi-372270384/",
+      instagram: "https://www.instagram.com/sirine_louhichii/",
+      facebook: "https://www.facebook.com/sirine.202512",
+      mail: "mailto:louhichisirine50@gmail.com",
+    },
   },
   {
     name: "Dr. Oussema Mghribi",
@@ -27,23 +33,41 @@ const members = [
     image: "",
     color: "#A5B4FC",
     tags: ["Central catheter", "FMSO", "ESSTSSo", "Ecography"],
+    socials: {
+      // linkedin: "https://www.linkedin.com/in/dr-sirine-louhichi",
+      // instagram: "https://www.instagram.com/dr.sirine",
+      facebook: "https://www.facebook.com/oussama.mgh",
+      mail: "mailto:mghoussama@gmail.com",
+    },
   },
   {
-    name: "Dr. Sirine Soui",
+    name: "Dr. Syrine Soui",
     role: "Paramedical Professor & Previous Pediatric Nurse ",
     specialty: "Pediatric Nurse",
     bio: "Over 18 years of experience in neonatal medicine, specializing in Central catheter & premature infant care.",
-    image: "",
+    image: "public/assets/images/sirine-soui-bio.jpg",
     color: "#86EFAC",
     tags: ["NICU", "Intership-Supervisor", "Parental Education" , "Phototherapy"],
+    socials: {
+      // linkedin: "https://www.linkedin.com/in/dr-sirine-louhichi",
+      // instagram: "https://www.instagram.com/dr.sirine",
+      facebook: "https://www.facebook.com/syrine.souai.5",
+      mail: "mailto:syrinesouai@gmail.com",
+    },
   },
   {
-    name: "Dr. Amal Fteiti",
+    name: "Amal Fteiti",
     role: "Pediatric & Neonatology nurse",
     specialty: "Puericulture",
     bio: "Over 2 years of experience in neonatal medicine, specializing in premature infant thermoregulation and evidence-based thermal care protocols.",
-    image: "",
+    image: "public/assets/images/amal-bio.jpg",
     tags: ["NICU", "Thermoregulation", "pretherm infants"],
+    socials: {
+      // linkedin: "https://www.linkedin.com/in/dr-sirine-louhichi",
+      instagram: "https://www.instagram.com/amal.fteiti.39/",
+      facebook: "https://www.facebook.com/amal.fteiti.39",
+      mail: "mailto:Amalfteiti1@gmail.com",
+    },
   },
 ];
 
@@ -158,20 +182,26 @@ export function Members() {
 
                 {/* Social links */}
                 <div className="flex gap-2">
-                  {[
-                    { icon: Linkedin, color: "#0A66C2" },
-                    { icon: Instagram, color: "#d808ce" },
-                    { icon: Mail, color: "#fc2020" },
-                    { icon: Facebook, color: "#0905fc" },
-                    
-                  ].map(({ icon: Icon, color }, idx) => (
-                    <button
-                      key={idx}
-                      className="w-8 h-8 rounded-full flex items-center justify-center border border-gray-100 hover:border-pink-200 hover:bg-pink-50 transition-colors"
-                    >
-                      <Icon className="w-3.5 h-3.5" style={{ color }} />
-                    </button>
-                  ))}
+                  {member.socials && (
+                    [
+                      { icon: Linkedin, color: "#0A66C2", url: member.socials.linkedin },
+                      { icon: Instagram, color: "#d808ce", url: member.socials.instagram },
+                      { icon: Mail, color: "#fc2020", url: member.socials.mail },
+                      { icon: Facebook, color: "#0905fc", url: member.socials.facebook },
+                    ]
+                      .filter((item) => item.url)
+                      .map(({ icon: Icon, color, url }, idx) => (
+                        <a
+                          key={idx}
+                          href={url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="w-8 h-8 rounded-full flex items-center justify-center border border-gray-100 hover:border-pink-200 hover:bg-pink-50 transition-colors"
+                        >
+                          <Icon className="w-3.5 h-3.5" style={{ color }} />
+                        </a>
+                      ))
+                  )}
                 </div>
               </div>
             </motion.div>
