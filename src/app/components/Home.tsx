@@ -1,16 +1,19 @@
+import { useTranslation } from "react-i18next";
 import { motion } from "motion/react";
+import { NavLink } from "react-router";
+import { Variants } from "framer-motion";
 import { Heart, Thermometer, Baby, BookOpen, ShieldCheck, AlertTriangle, ArrowRight, Stethoscope } from "lucide-react";
 
-const heroImage = "public/assets/images/affiche1.jpg";
-const warmthImage = "public/assets/images/affiche2.jpg";
+const heroImage = "/assets/images/affiche1.jpg";
+const warmthImage = "/assets/images/affiche2.jpg";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
-  visible: (i = 0) => ({
+  visible: {
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.12, duration: 0.55, ease: "easeOut" },
-  }),
+    transition: { duration: 0.55, ease: "easeOut" },
+  },
 };
 
 const stats = [
@@ -66,6 +69,8 @@ const puericultureTopics = [
 ];
 
 export function Home() {
+  const { t } = useTranslation();
+
   return (
     <div className="overflow-hidden">
       {/* Hero Section */}
@@ -112,18 +117,18 @@ export function Home() {
               className="mb-4"
               style={{ fontSize: "clamp(2.2rem, 5vw, 3.8rem)", fontWeight: 800, lineHeight: 1.15 }}
             >
-              <span style={{ color: "#1e1b4b" }}>Protecting</span>{" "}
-              <span
-                style={{
-                  background: "linear-gradient(135deg, #EC4899, #A855F7)",
-                  WebkitBackgroundClip: "text",
-                  WebkitTextFillColor: "transparent",
-                }}
-              >
-                Every Newborn
-              </span>
-              <br />
-              <span style={{ color: "#1e1b4b" }}>from Hypothermia</span>
+              <span style={{ color: "#1e1b4b" }}>{t("heroTitle1")}</span>{" "}
+            <span
+              style={{
+                background: "linear-gradient(135deg, #EC4899, #A855F7)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              {t("heroTitle2")}
+            </span>
+            <br />
+            <span style={{ color: "#1e1b4b" }}>{t("heroSubline")}</span>
             </motion.h1>
 
             <motion.p
@@ -134,9 +139,7 @@ export function Home() {
               className="text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0"
               style={{ fontSize: "1.1rem", lineHeight: 1.75 }}
             >
-              Neonatal hypothermia is a leading — and largely preventable — cause of newborn
-              deaths worldwide. Our mission is to educate families, nurses, and healthcare
-              professionals about puericulture and neonatal thermoregulation.
+              {t("heroText")}
             </motion.p>
 
             <motion.div
@@ -146,19 +149,19 @@ export function Home() {
               variants={fadeUp}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
-              <a
-                href="/guide"
+              <NavLink
+                to="/guide"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full text-white font-medium transition-all hover:opacity-90 hover:shadow-xl hover:-translate-y-0.5"
                 style={{ background: "linear-gradient(135deg, #EC4899, #A855F7)" }}
               >
-                Explore Resources <ArrowRight className="w-4 h-4" />
-              </a>
-              <a
-                href="/videos"
+                {t("exploreResources")} <ArrowRight className="w-4 h-4" />
+              </NavLink>
+              <NavLink
+                to="/videos"
                 className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full font-medium border-2 border-pink-200 text-pink-600 hover:border-pink-400 hover:bg-pink-50 transition-all"
               >
-                Watch Videos
-              </a>
+                {t("watchVideos")}
+              </NavLink>
             </motion.div>
           </div>
 
@@ -381,45 +384,35 @@ export function Home() {
       </section>
 
       {/* CTA Banner */}
-      <section className="py-20 px-4">
-        <div className="max-w-4xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="relative rounded-3xl overflow-hidden p-12 text-center text-white"
-            style={{ background: "linear-gradient(135deg, #EC4899, #A855F7, #6366F1)" }}
-          >
-            <div className="absolute inset-0 opacity-10" style={{
-              backgroundImage: "radial-gradient(circle at 20% 80%, white 0%, transparent 50%), radial-gradient(circle at 80% 20%, white 0%, transparent 50%)"
-            }} />
-            <Baby className="w-14 h-14 mx-auto mb-4 opacity-90" />
-            <h2 className="mb-3" style={{ fontSize: "clamp(1.4rem, 3vw, 2rem)", fontWeight: 800 }}>
-              Join Our Mission to Protect Every Newborn
-            </h2>
-            <p className="opacity-90 mb-8 max-w-lg mx-auto text-sm leading-relaxed">
-              Access our educational guides, video resources, and connect with our team of neonatal
-              healthcare specialists committed to reducing preventable infant deaths.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="/guide"
-                className="px-6 py-3 bg-white rounded-full font-semibold transition-all hover:shadow-xl hover:-translate-y-0.5"
-                style={{ color: "#A855F7" }}
-              >
-                Access Free Guides
-              </a>
-              <a
-                href="/contact"
-                className="px-6 py-3 rounded-full font-semibold border-2 border-white/60 text-white hover:bg-white/10 transition-all"
-              >
-                Contact Our Team
-              </a>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="relative rounded-3xl overflow-hidden p-12 text-center text-white"
+        style={{ background: "linear-gradient(135deg, #EC4899, #A855F7, #6366F1)" }}
+      >
+        <Baby className="w-14 h-14 mx-auto mb-4 opacity-90" />
+        <h2 className="mb-3" style={{ fontSize: "clamp(1.4rem, 3vw, 2rem)", fontWeight: 800 }}>
+          Join Our Mission to Protect Every Newborn
+        </h2>
+        <p className="opacity-90 mb-8 max-w-lg mx-auto text-sm leading-relaxed">
+          Access our educational guides, video resources, and connect with our team of neonatal
+          healthcare specialists committed to reducing preventable infant deaths.
+        </p>
+        <a
+          href="/guide"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white text-sm font-semibold transition-all hover:opacity-90 hover:shadow-xl"
+          style={{ background: "linear-gradient(135deg, #EC4899, #A855F7)" }}
+        > Access Free Guides
+        </a>
+        <a
+          href="/contact"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white text-sm font-semibold transition-all hover:opacity-90 hover:shadow-xl"
+          style={{ background: "linear-gradient(135deg, #EC4899, #A855F7)" }}
+        > Contact Our Team
+        </a>
+      </motion.div>
     </div>
   );
 }

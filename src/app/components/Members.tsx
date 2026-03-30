@@ -1,13 +1,15 @@
+import { useTranslation } from "react-i18next";
 import { motion } from "motion/react";
+import { Variants } from "framer-motion";
 import { Linkedin, Mail, Award,  GraduationCap, Instagram, Facebook} from "lucide-react";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
-  visible: (i = 0) => ({
+  visible: {
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.1, duration: 0.55, ease: "easeOut" },
-  }),
+    transition: { duration: 0.55, ease: "easeOut" },
+  },
 };
 
 const members = [
@@ -60,7 +62,7 @@ const members = [
     role: "Pediatric & Neonatology nurse",
     specialty: "Puericulture",
     bio: "Over 2 years of experience in neonatal medicine, specializing in premature infant thermoregulation and evidence-based thermal care protocols.",
-    image: "/assets/images/amal1-bio.jpg",
+    image: "/assets/images/amal-bio.jpg",
     tags: ["NICU", "Thermoregulation", "pretherm infants"],
     socials: {
       // linkedin: "https://www.linkedin.com/in/dr-sirine-louhichi",
@@ -72,6 +74,8 @@ const members = [
 ];
 
 export function Members() {
+  const { t } = useTranslation();
+
   return (
     <div className="min-h-screen py-16 px-4">
       <div className="max-w-7xl mx-auto">
@@ -86,12 +90,12 @@ export function Members() {
             className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-4"
             style={{ background: "rgba(249,168,212,0.2)", color: "#BE185D" }}
           >
-            Our Team
+            {t("ourTeam")}
           </span>
           <h1
             style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)", fontWeight: 800, color: "#1e1b4b" }}
           >
-            Meet the{" "}
+            {t("meetSpecialists")} 
             <span
               style={{
                 background: "linear-gradient(135deg, #EC4899, #A855F7)",
@@ -218,18 +222,17 @@ export function Members() {
           style={{ background: "linear-gradient(135deg, rgba(249,168,212,0.15), rgba(192,132,252,0.15))" }}
         >
           <h2 className="mb-3" style={{ fontWeight: 800, color: "#1e1b4b", fontSize: "1.5rem" }}>
-            Want to Join Our Team?
+            {t("wantJoin")}
           </h2>
           <p className="text-gray-500 text-sm max-w-lg mx-auto mb-6">
-            We welcome healthcare professionals, researchers, and educators who are passionate about
-            neonatal health and puericulture education.
+            {t("joinDescription")}
           </p>
           <a
             href="/contact"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white text-sm font-semibold transition-all hover:opacity-90 hover:shadow-xl"
             style={{ background: "linear-gradient(135deg, #EC4899, #A855F7)" }}
           >
-            <Mail className="w-4 h-4" /> Get in Touch
+            <Mail className="w-4 h-4" /> {t("getInTouch")}
           </a>
         </motion.div>
       </div>

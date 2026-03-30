@@ -1,14 +1,16 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { motion } from "motion/react";
+import { Variants } from "framer-motion";
 import { Phone, Mail, MapPin, Send,Clock, Globe, CheckCircle , Facebook, Instagram, Youtube, Linkedin, } from "lucide-react";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
-  visible: (i = 0) => ({
+  visible: {
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.1, duration: 0.55, ease: "easeOut" },
-  }),
+    transition: { duration: 0.55, ease: "easeOut" },
+  },
 };
 
 const contactItems = [
@@ -55,17 +57,38 @@ const contactItems = [
 ];
 
 export function Contact() {
+  const { t } = useTranslation();
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError("");
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      if (!response.ok) {
+        throw new Error("Erreur d'envoi du message");
+      }
+
       setSubmitted(true);
-    }, 1500);
+      setForm({ name: "", email: "", subject: "", message: "" });
+    } catch (err) {
+      console.error(err);
+      setError(
+        "Impossible d'envoyer par l'API. Vérifiez le serveur, puis réessayez."
+      );
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -82,10 +105,10 @@ export function Contact() {
             className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-4"
             style={{ background: "rgba(249,168,212,0.2)", color: "#BE185D" }}
           >
-            Get in Touch
+            {t("getInTouch")}
           </span>
           <h1 style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)", fontWeight: 800, color: "#1e1b4b" }}>
-            Contact{" "}
+            {t("contact")} {" "}
             <span
               style={{
                 background: "linear-gradient(135deg, #EC4899, #A855F7)",
@@ -97,8 +120,7 @@ export function Contact() {
             </span>
           </h1>
           <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">
-            Have questions about neonatal hypothermia, our educational resources, or want to
-            collaborate? We'd love to hear from you.
+            {t("contactDescription")}
           </p>
         </motion.div>
 
@@ -159,13 +181,16 @@ export function Contact() {
                   <CheckCircle className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-gray-700 mb-2" style={{ fontWeight: 700 }}>
-                  Message Sent!
+                  {t("messageSent")}
                 </h3>
                 <p className="text-gray-500 text-sm">
-                  Thank you for reaching out. Our team will get back to you within 24 hours.
+                  {t("thankYou")}
                 </p>
                 <button
-                  onClick={() => { setSubmitted(false); setForm({ name: "", email: "", subject: "", message: "" }); }}
+                  onClick={() => {
+                    setSubmitted(false);
+                    setForm({ name: "", email: "", subject: "", message: "" });
+                  }}
                   className="mt-6 px-5 py-2.5 rounded-full text-sm text-white font-medium"
                   style={{ background: "linear-gradient(135deg, #EC4899, #A855F7)" }}
                 >
@@ -173,11 +198,13 @@ export function Contact() {
                 </button>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+              <>
+                {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
+                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-semibold text-gray-600 mb-1.5">
-                      Full Name *
+                      {t("fullName")}
                     </label>
                     <input
                       type="text"
@@ -190,7 +217,7 @@ export function Contact() {
                   </div>
                   <div>
                     <label className="block text-xs font-semibold text-gray-600 mb-1.5">
-                      Email Address *
+                      {t("emailAddress")}
                     </label>
                     <input
                       type="email"
@@ -205,7 +232,7 @@ export function Contact() {
 
                 <div>
                   <label className="block text-xs font-semibold text-gray-600 mb-1.5">
-                    Subject *
+                    {t("subject")}
                   </label>
                   <select
                     required
@@ -226,7 +253,7 @@ export function Contact() {
 
                 <div>
                   <label className="block text-xs font-semibold text-gray-600 mb-1.5">
-                    Message *
+                    {t("message")}
                   </label>
                   <textarea
                     required
@@ -249,15 +276,16 @@ export function Contact() {
                       <span
                         className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin"
                       />
-                      Sending...
+                      {t("sending")}
                     </span>
                   ) : (
                     <>
-                      <Send className="w-4 h-4" /> Send Message
+                      <Send className="w-4 h-4" /> {t("send")}
                     </>
                   )}
                 </button>
-              </form>
+                </form>
+              </>
             )}
           </motion.div>
 
@@ -279,7 +307,7 @@ export function Contact() {
                     <MapPin className="w-3.5 h-3.5 text-white" />
                   </div>
                   <div>
-                    <p className="text-xs font-bold text-gray-700">Our Location</p>
+                    <p className="text-xs font-bold text-gray-700">{t("ourLocation")}</p>
                     <p className="text-xs text-gray-400">4031 Av. IBN EL Jazzar, Sousse, Tunisia</p>
                   </div>
                 </div>
@@ -300,7 +328,7 @@ export function Contact() {
             {/* Social & Extra info */}
             <div className="bg-white rounded-3xl p-6 shadow-sm border border-white">
               <h3 className="text-gray-700 mb-4 text-sm" style={{ fontWeight: 700 }}>
-                Connect With Us
+                {t("connectWithUs")}
               </h3>
               <div className="grid grid-cols-2 gap-3">
                 {[
@@ -325,11 +353,9 @@ export function Contact() {
               className="rounded-3xl p-5 border border-pink-100"
               style={{ background: "linear-gradient(135deg, rgba(249,168,212,0.1), rgba(192,132,252,0.1))" }}
             >
-              <p className="text-xs font-bold text-pink-600 mb-1">⚠️ Medical Emergency?</p>
+              <p className="text-xs font-bold text-pink-600 mb-1">⚠️ {t("medicalEmergency")}</p>
               <p className="text-xs text-gray-500 leading-relaxed">
-                If you suspect your newborn has hypothermia, <strong>call emergency services immediately</strong> or go
-                to the nearest hospital. This website is for educational purposes only and does not
-                replace professional medical advice.
+                {t("emergencyAdvice")}
               </p>
             </div>
           </motion.div>

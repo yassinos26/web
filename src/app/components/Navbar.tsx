@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router";
-import { Menu, X, Heart, Baby } from "lucide-react";
+import { Menu, X, Heart, Baby, Languages } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import { useTranslation } from "react-i18next";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -16,6 +17,7 @@ export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -26,6 +28,20 @@ export function Navbar() {
   useEffect(() => {
     setMenuOpen(false);
   }, [location]);
+
+  const toggleLanguage = () => {
+    const newLang = i18n.language === "fr" ? "en" : "fr";
+    i18n.changeLanguage(newLang);
+  };
+
+  const translatedNavLinks = [
+    { to: "/", label: t("home") },
+    { to: "/members", label: t("members") },
+    { to: "/videos", label: t("videos") },
+    { to: "/guide", label: t("guide") },
+    { to: "/support", label: t("support") },
+    { to: "/contact", label: t("contact") },
+  ];
 
   return (
     <nav
@@ -66,7 +82,7 @@ export function Navbar() {
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => (
+            {translatedNavLinks.map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}
@@ -89,23 +105,22 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* CTA + Hamburger */}
-          {/* <div className="flex items-center gap-3">
-            <a
-              href="/contact"
-              className="hidden md:flex items-center gap-1.5 px-4 py-2 rounded-full text-sm text-white transition-all hover:opacity-90 hover:shadow-lg"
-              style={{ background: "linear-gradient(135deg, #EC4899, #A855F7)" }}
+          {/* CTA + Language + Hamburger */}
+          <div className="flex items-center gap-3">
+            <button
+              onClick={toggleLanguage}
+              className="p-2 rounded-full text-gray-500 hover:text-pink-500 hover:bg-pink-50 transition-colors"
+              title={`Switch to ${i18n.language === "fr" ? "English" : "Français"}`}
             >
-              <Heart className="w-3.5 h-3.5" />
-              Learn More
-            </a>
+              <Languages className="w-5 h-5" />
+            </button>
             <button
               className="md:hidden p-2 rounded-full text-gray-500 hover:text-pink-500 hover:bg-pink-50 transition-colors"
               onClick={() => setMenuOpen(!menuOpen)}
             >
               {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
-          </div> */}
+          </div>
         </div>
       </div>
 
@@ -121,7 +136,7 @@ export function Navbar() {
             style={{ background: "rgba(255,255,255,0.97)" }}
           >
             <div className="px-4 py-3 flex flex-col gap-1">
-              {navLinks.map((link) => (
+              {translatedNavLinks.map((link) => (
                 <NavLink
                   key={link.to}
                   to={link.to}

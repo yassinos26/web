@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "motion/react";
 import {
   FileText,
@@ -350,13 +351,14 @@ function ArticleAccordion({ article }: { article: GuideArticle }) {
 }
 
 export function Guide() {
+  const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<Tab>("text");
   const [searchQuery, setSearchQuery] = useState("");
 
   const tabs: { id: Tab; label: string; icon: typeof FileText }[] = [
-    { id: "text", label: "Text Articles", icon: FileText },
-    { id: "pdf", label: "PDF Resources", icon: FileDown },
-    { id: "ppt", label: "Presentations", icon: Presentation },
+    { id: "text", label: t("textArticles"), icon: FileText },
+    { id: "pdf", label: t("pdfResources"), icon: FileDown },
+    { id: "ppt", label: t("presentations"), icon: Presentation },
   ];
 
   return (
@@ -373,10 +375,10 @@ export function Guide() {
             className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-4"
             style={{ background: "rgba(249,168,212,0.2)", color: "#BE185D" }}
           >
-            Learning Resources
+            {t("learningResources")}
           </span>
           <h1 style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)", fontWeight: 800, color: "#1e1b4b" }}>
-            Educational{" "}
+            {t("educationalGuide")} 
             <span
               style={{
                 background: "linear-gradient(135deg, #EC4899, #A855F7)",
@@ -388,8 +390,7 @@ export function Guide() {
             </span>
           </h1>
           <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">
-            Access our comprehensive library of educational resources on neonatal hypothermia and
-            puericulture — available in text, PDF, and presentation formats.
+            {t("resourcesDescription")}
           </p>
         </motion.div>
 
@@ -400,7 +401,7 @@ export function Guide() {
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
             <input
               type="text"
-              placeholder="Search resources..."
+              placeholder={t("searchPlaceholder")}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-10 pr-4 py-3 rounded-2xl border border-gray-200 bg-white text-sm focus:outline-none focus:border-pink-300 focus:ring-2 focus:ring-pink-100"
@@ -614,18 +615,17 @@ export function Guide() {
         >
           <Filter className="w-8 h-8 mx-auto mb-3" style={{ color: "#A855F7" }} />
           <h3 className="text-gray-700 mb-2" style={{ fontWeight: 700 }}>
-            Need a Custom Resource?
+            {t("needCustom")}
           </h3>
           <p className="text-gray-500 text-sm max-w-md mx-auto mb-4">
-            Our team can develop tailored educational materials for your institution, community
-            program, or healthcare training needs.
+            {t("customResourceDescription")}
           </p>
           <a
             href="/contact"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-white text-sm font-semibold transition-all hover:opacity-90"
             style={{ background: "linear-gradient(135deg, #EC4899, #A855F7)" }}
           >
-            Contact Us
+            {t("contact")}
           </a>
         </motion.div>
       </div>

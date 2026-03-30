@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { Variants } from "framer-motion";
 import { motion, AnimatePresence } from "motion/react";
 import {
   Play,
@@ -12,13 +14,13 @@ import {
   ChevronRight,
 } from "lucide-react";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
-  visible: (i = 0) => ({
+  visible: {
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.1, duration: 0.55, ease: "easeOut" },
-  }),
+    transition: { duration: 0.55, ease: "easeOut" },
+  },
 };
 
 interface Comment {
@@ -52,7 +54,7 @@ const initialVideos: Video[] = [
     thumbnail: "https://images.unsplash.com/photo-1560306580-9e204fe45f3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
     duration: "12:34",
     views: "8.4K",
-    youtubeId: "WhftvVrEoOc",
+    youtubeId: "008VanO0PHA",
     likes: 312,
     dislikes: 8,
     category: "Clinical",
@@ -69,7 +71,7 @@ const initialVideos: Video[] = [
     thumbnail: "https://images.unsplash.com/photo-1761891918492-371b950ee818?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
     duration: "18:02",
     views: "36k",
-    youtubeId: "6dQ3poY6qts",
+    youtubeId: "9bI-3evlXnU",
     likes: 866,
     dislikes: 1,
     category: "Puericulture",
@@ -87,7 +89,7 @@ const initialVideos: Video[] = [
     thumbnail: "https://images.unsplash.com/photo-1576089275954-40cd98bfcfdb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
     duration: "22:18",
     views: "6.1K",
-    youtubeId: "klwmCoLiLZI",
+    youtubeId: "KIyamhhOwUA",
     likes: 204,
     dislikes: 5,
     category: "NICU",
@@ -103,7 +105,7 @@ const initialVideos: Video[] = [
     thumbnail: "https://images.unsplash.com/photo-1765896387377-e293914d1e69?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
     duration: "9:47",
     views: "21.3K",
-    youtubeId: "dQw4w9WgXcQ",
+    youtubeId: "lEmaSNbSaZg",
     likes: 831,
     dislikes: 19,
     category: "Family Education",
@@ -121,7 +123,143 @@ const initialVideos: Video[] = [
     thumbnail: "https://images.unsplash.com/photo-1676552055618-22ec8cde399a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
     duration: "28:45",
     views: "4.8K",
-    youtubeId: "dQw4w9WgXcQ",
+    youtubeId: "kn5LwJsF66I",
+    likes: 178,
+    dislikes: 3,
+    category: "Protocol",
+    comments: [
+      { id: 1, author: "Resident Dr. Lima", avatar: "L", text: "This is gold. Watched it twice before my NICU rotation.", time: "1 day ago" },
+      { id: 2, author: "Obstetrics Nurse", avatar: "O", text: "Our team reviewed this together. Very practical and well-organized.", time: "5 days ago" },
+    ],
+  },
+  {
+    id: 6,
+    title: "Home Care guide keeping your newborn warm",
+    description:
+      "Step-by-step walkthrough of the thermal stabilization protocol during neonatal resuscitation, including polyethylene wraps, warm delivery rooms, and the importance of the golden hour.",
+    thumbnail: "https://images.unsplash.com/photo-1676552055618-22ec8cde399a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
+    duration: "28:45",
+    views: "4.8K",
+    youtubeId: "6dQ3poY6qts",
+    likes: 178,
+    dislikes: 3,
+    category: "Protocol",
+    comments: [
+      { id: 1, author: "Resident Dr. Lima", avatar: "L", text: "This is gold. Watched it twice before my NICU rotation.", time: "1 day ago" },
+      { id: 2, author: "Obstetrics Nurse", avatar: "O", text: "Our team reviewed this together. Very practical and well-organized.", time: "5 days ago" },
+    ],
+  },
+  {
+    id: 7,
+    title: "Home Care guide keeping your newborn warm",
+    description:
+      "Step-by-step walkthrough of the thermal stabilization protocol during neonatal resuscitation, including polyethylene wraps, warm delivery rooms, and the importance of the golden hour.",
+    thumbnail: "https://images.unsplash.com/photo-1676552055618-22ec8cde399a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
+    duration: "28:45",
+    views: "4.8K",
+    youtubeId: "Tbsa-OPMni4",
+    likes: 178,
+    dislikes: 3,
+    category: "Protocol",
+    comments: [
+      { id: 1, author: "Resident Dr. Lima", avatar: "L", text: "This is gold. Watched it twice before my NICU rotation.", time: "1 day ago" },
+      { id: 2, author: "Obstetrics Nurse", avatar: "O", text: "Our team reviewed this together. Very practical and well-organized.", time: "5 days ago" },
+    ],
+  },
+  {
+    id: 8,
+    title: "Home Care guide keeping your newborn warm",
+    description:
+      "Step-by-step walkthrough of the thermal stabilization protocol during neonatal resuscitation, including polyethylene wraps, warm delivery rooms, and the importance of the golden hour.",
+    thumbnail: "https://images.unsplash.com/photo-1676552055618-22ec8cde399a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
+    duration: "28:45",
+    views: "4.8K",
+    youtubeId: "9Ofw6zAoD6Q",
+    likes: 178,
+    dislikes: 3,
+    category: "Protocol",
+    comments: [
+      { id: 1, author: "Resident Dr. Lima", avatar: "L", text: "This is gold. Watched it twice before my NICU rotation.", time: "1 day ago" },
+      { id: 2, author: "Obstetrics Nurse", avatar: "O", text: "Our team reviewed this together. Very practical and well-organized.", time: "5 days ago" },
+    ],
+  },
+  {
+    id: 9,
+    title: "Home Care guide keeping your newborn warm",
+    description:
+      "Step-by-step walkthrough of the thermal stabilization protocol during neonatal resuscitation, including polyethylene wraps, warm delivery rooms, and the importance of the golden hour.",
+    thumbnail: "https://images.unsplash.com/photo-1676552055618-22ec8cde399a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
+    duration: "28:45",
+    views: "4.8K",
+    youtubeId: "YzuNeYW9gZs",
+    likes: 178,
+    dislikes: 3,
+    category: "Protocol",
+    comments: [
+      { id: 1, author: "Resident Dr. Lima", avatar: "L", text: "This is gold. Watched it twice before my NICU rotation.", time: "1 day ago" },
+      { id: 2, author: "Obstetrics Nurse", avatar: "O", text: "Our team reviewed this together. Very practical and well-organized.", time: "5 days ago" },
+    ],
+  },
+  {
+    id: 10,
+    title: "Home Care guide keeping your newborn warm",
+    description:
+      "Step-by-step walkthrough of the thermal stabilization protocol during neonatal resuscitation, including polyethylene wraps, warm delivery rooms, and the importance of the golden hour.",
+    thumbnail: "https://images.unsplash.com/photo-1676552055618-22ec8cde399a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
+    duration: "28:45",
+    views: "4.8K",
+    youtubeId: "YL1tBQ4uIzk",
+    likes: 178,
+    dislikes: 3,
+    category: "Protocol",
+    comments: [
+      { id: 1, author: "Resident Dr. Lima", avatar: "L", text: "This is gold. Watched it twice before my NICU rotation.", time: "1 day ago" },
+      { id: 2, author: "Obstetrics Nurse", avatar: "O", text: "Our team reviewed this together. Very practical and well-organized.", time: "5 days ago" },
+    ],
+  },
+  {
+    id: 11,
+    title: "Home Care guide keeping your newborn warm",
+    description:
+      "Step-by-step walkthrough of the thermal stabilization protocol during neonatal resuscitation, including polyethylene wraps, warm delivery rooms, and the importance of the golden hour.",
+    thumbnail: "https://images.unsplash.com/photo-1676552055618-22ec8cde399a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
+    duration: "28:45",
+    views: "4.8K",
+    youtubeId: "Z8ZiLz95CZQ",
+    likes: 178,
+    dislikes: 3,
+    category: "Protocol",
+    comments: [
+      { id: 1, author: "Resident Dr. Lima", avatar: "L", text: "This is gold. Watched it twice before my NICU rotation.", time: "1 day ago" },
+      { id: 2, author: "Obstetrics Nurse", avatar: "O", text: "Our team reviewed this together. Very practical and well-organized.", time: "5 days ago" },
+    ],
+  },
+  {
+    id: 12,
+    title: "Home Care guide keeping your newborn warm",
+    description:
+      "Step-by-step walkthrough of the thermal stabilization protocol during neonatal resuscitation, including polyethylene wraps, warm delivery rooms, and the importance of the golden hour.",
+    thumbnail: "https://images.unsplash.com/photo-1676552055618-22ec8cde399a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
+    duration: "28:45",
+    views: "4.8K",
+    youtubeId: "5gdoWquXK8o",
+    likes: 178,
+    dislikes: 3,
+    category: "Protocol",
+    comments: [
+      { id: 1, author: "Resident Dr. Lima", avatar: "L", text: "This is gold. Watched it twice before my NICU rotation.", time: "1 day ago" },
+      { id: 2, author: "Obstetrics Nurse", avatar: "O", text: "Our team reviewed this together. Very practical and well-organized.", time: "5 days ago" },
+    ],
+  },
+  {
+    id: 13,
+    title: "Home Care guide keeping your newborn warm",
+    description:
+      "Step-by-step walkthrough of the thermal stabilization protocol during neonatal resuscitation, including polyethylene wraps, warm delivery rooms, and the importance of the golden hour.",
+    thumbnail: "https://images.unsplash.com/photo-1676552055618-22ec8cde399a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
+    duration: "28:45",
+    views: "4.8K",
+    youtubeId: "wP86Rk7rP6k",
     likes: 178,
     dislikes: 3,
     category: "Protocol",
@@ -141,10 +279,19 @@ const categoryColors: Record<string, string> = {
 };
 
 export function Videos() {
+  const { t } = useTranslation();
   const [videos, setVideos] = useState<Video[]>(initialVideos);
+  const [section, setSection] = useState<"all" | "reels" | "playlist">("all");
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
   const [userVotes, setUserVotes] = useState<Record<number, "like" | "dislike" | null>>({});
   const [newComment, setNewComment] = useState("");
+
+  const sectionVideos =
+    section === "all"
+      ? videos
+      : section === "reels"
+      ? videos.filter((v) => [2, 4].includes(v.id))
+      : videos.filter((v) => [1, 3, 5].includes(v.id));
 
   const handleVote = (videoId: number, type: "like" | "dislike") => {
     const current = userVotes[videoId];
@@ -220,10 +367,10 @@ export function Videos() {
             className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-4"
             style={{ background: "rgba(192,132,252,0.15)", color: "#7C3AED" }}
           >
-            Video Library
+            {t("videoLibrary")}
           </span>
           <h1 style={{ fontSize: "clamp(1.8rem, 4vw, 3rem)", fontWeight: 800, color: "#1e1b4b" }}>
-            Educational{" "}
+            {t("educational")}
             <span
               style={{
                 background: "linear-gradient(135deg, #EC4899, #A855F7)",
@@ -235,15 +382,40 @@ export function Videos() {
             </span>
           </h1>
           <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">
-            Watch our curated videos on neonatal hypothermia prevention, puericulture techniques,
-            and clinical protocols. Click any video to watch.
+            {t("videoDescription")}
           </p>
         </motion.div>
 
+        {/* Section Tabs */}
+        <div className="mb-6 flex flex-wrap justify-center gap-2">
+          {[
+            { key: "all", label: t("allVideos") },
+            { key: "reels", label: t("reels") },
+            { key: "playlist", label: t("playlist") },
+          ].map((item) => (
+            <button
+              key={item.key}
+              onClick={() => setSection(item.key as "all" | "reels" | "playlist")}
+              className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all ${
+                section === item.key
+                  ? "bg-gradient-to-r from-pink-500 to-purple-500 text-white"
+                  : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+              }`}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+
         {/* Video Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {videos.map((video, i) => (
-            <motion.div
+          {sectionVideos.length === 0 ? (
+            <div className="col-span-full text-center text-gray-500 py-20">
+              {t("noVideos")}
+            </div>
+          ) : (
+            sectionVideos.map((video, i) => (
+              <motion.div
               key={video.id}
               initial="hidden"
               animate="visible"
@@ -315,7 +487,8 @@ export function Videos() {
                 </div>
               </div>
             </motion.div>
-          ))}
+          ))
+          )}
         </div>
       </div>
 
@@ -498,7 +671,7 @@ export function Videos() {
           className="flex items-center gap-2 text-sm text-gray-500 mb-4"
         >
           <ChevronRight className="w-4 h-4" style={{ color: "#A855F7" }} />
-          Click any video card to open the full player with comments
+          {t("clickCard")}
         </motion.div>
       </div>
     </div>
