@@ -228,8 +228,8 @@ export function Members() {
             {t("joinDescription")}
           </p>
           <a
-            href="/contact"
-            // href="https://baby-hypothermia.onrender.com/contact"
+            // href="/contact"
+            href="https://baby-hypothermia.onrender.com/contact"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white text-sm font-semibold transition-all hover:opacity-90 hover:shadow-xl"
             style={{ background: "linear-gradient(135deg, #EC4899, #A855F7)" }}
           >
