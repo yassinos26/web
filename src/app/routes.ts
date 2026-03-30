@@ -5,6 +5,7 @@ import { Members } from "./components/Members";
 import { Videos } from "./components/Videos";
 import { Guide } from "./components/Guide";
 import { Contact } from "./components/Contact";
+import { SupportBaby } from "./components/SupportBaby";
 
 export const router = createBrowserRouter([
   {
@@ -16,6 +17,7 @@ export const router = createBrowserRouter([
       { path: "videos", Component: Videos },
       { path: "guide", Component: Guide },
       { path: "contact", Component: Contact },
+      { path: "support", Component: SupportBaby },
     ],
   },
 ]);

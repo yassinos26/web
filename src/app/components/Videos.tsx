@@ -63,7 +63,7 @@ const initialVideos: Video[] = [
   },
   {
     id: 2,
-    title: "Kangaroo Mother Care: A Life-Saving Technique",
+    title: "Neonatal resuscitation thermal stabilization protoco",
     description:
       "Learn how skin-to-skin kangaroo care immediately after birth prevents hypothermia, supports bonding, and dramatically improves neonatal outcomes — especially for low-birthweight babies.",
     thumbnail: "https://images.unsplash.com/photo-1761891918492-371b950ee818?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
@@ -97,7 +97,7 @@ const initialVideos: Video[] = [
   },
   {
     id: 4,
-    title: "Home Care Guide: Keeping Your Newborn Warm",
+    title: "Kangaroo mother care and breastfeeding: a life saving techniques",
     description:
       "Practical tips for new parents on maintaining a safe thermal environment at home — room temperature, clothing layers, swaddling techniques, and warning signs to watch for.",
     thumbnail: "https://images.unsplash.com/photo-1765896387377-e293914d1e69?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
@@ -115,7 +115,7 @@ const initialVideos: Video[] = [
   },
   {
     id: 5,
-    title: "Neonatal Resuscitation & Thermal Stabilization Protocol",
+    title: "Home Care guide keeping your newborn warm",
     description:
       "Step-by-step walkthrough of the thermal stabilization protocol during neonatal resuscitation, including polyethylene wraps, warm delivery rooms, and the importance of the golden hour.",
     thumbnail: "https://images.unsplash.com/photo-1676552055618-22ec8cde399a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",

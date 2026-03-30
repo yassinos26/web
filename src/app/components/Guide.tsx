@@ -31,15 +31,37 @@ interface GuideArticle {
   color: string;
   content: string[];
   readTime: string;
+  image?: string;
 }
 
 const articles: GuideArticle[] = [
+  {
+    id: 0,
+    title: "Protocole OMS  ",
+    category: "Fundamentals",
+    color: "#F9A8D4",
+    readTime: "10 min read",
+    image: "/assets/text/affiche-protcole.jpg",
+    content: [
+      "1- Warm Delivery Room", 
+      "2- Immediate Drying ",
+      "3- Skin-to-Skin Contact ",
+      "4- Breastfeeding ",
+      "5- Postpone bathing ",
+      "6- Appropriate Clothing and Bedding ",
+      "7- Mother and Baby Together ",
+      "8- Warm Transportation ",
+      "9- Warm Resuscitation",
+      "10- Education & Awareness",
+    ],
+  },
   {
     id: 1,
     title: "Introduction to Neonatal Thermoregulation",
     category: "Fundamentals",
     color: "#F9A8D4",
     readTime: "5 min read",
+    image: "/assets/text/affiche-introduction.jpg",
     content: [
       "Thermoregulation is the physiological process by which an organism maintains its core body temperature within a range compatible with life. In adults, this system is robust; in newborns — particularly preterm infants — it is critically underdeveloped.",
       "Neonates have a large surface-area-to-body-mass ratio, limited subcutaneous fat, and immature central nervous system control over heat production and conservation. They are uniquely dependent on their environment and caregivers to maintain thermal homeostasis.",
@@ -53,6 +75,7 @@ const articles: GuideArticle[] = [
     category: "Prevention",
     color: "#C4B5FD",
     readTime: "7 min read",
+    image: "/assets/text/affiche-warmchaine.jpg",
     content: [
       "The Warm Chain, introduced by the WHO and UNICEF, is a sequence of ten linked steps designed to minimize heat loss in the newborn from delivery through the early postnatal period.",
       "Step 1: Warm delivery room — the room temperature should be at least 25°C (77°F) and free from drafts. Step 2: Immediate drying — dry the baby thoroughly with a warm towel immediately after birth, discarding wet linen. Step 3: Skin-to-skin contact — place the naked baby on the mother's bare chest and cover both with a blanket.",
@@ -66,6 +89,7 @@ const articles: GuideArticle[] = [
     category: "Puericulture",
     color: "#86EFAC",
     readTime: "8 min read",
+    image: "/assets/text/affiche-Kangaroo-mother.jpg",
     content: [
       "Kangaroo Mother Care (KMC) is a method of care for preterm and low-birthweight newborns that involves skin-to-skin contact, exclusive breastfeeding or breast-milk feeding, and early discharge with appropriate follow-up. Originally developed in Bogotá, Colombia in 1978, it has since been validated by extensive global research.",
       "Physiologically, KMC stabilizes the infant's temperature through the mother's thermoregulatory capacity, which actively adjusts to warm or cool the baby as needed. This 'biological incubator' effect is remarkably precise and has been shown in multiple studies to be equivalent to conventional incubator care for stable preterm infants.",
@@ -79,6 +103,7 @@ const articles: GuideArticle[] = [
     category: "Clinical",
     color: "#93C5FD",
     readTime: "6 min read",
+    image: "/assets/text/affiche-recognizing-managing.jpg",
     content: [
       "Early recognition of neonatal hypothermia requires vigilant clinical assessment. Signs include cool or cold skin to touch (especially on the trunk), poor or absent feeding, weak cry, lethargy and reduced activity, pallor or mottling, bradycardia, and in severe cases, apnea and hypoglycemia.",
       "Temperature measurement should be axillary using a low-reading thermometer. Normal axillary temperature in newborns is 36.5–37.5°C. Any reading below 36.5°C requires prompt intervention.",
@@ -92,6 +117,7 @@ const articles: GuideArticle[] = [
     category: "Family",
     color: "#FDBA74",
     readTime: "6 min read",
+    image: "/assets/text/affiche-education-parental.jpg",
     content: [
       "The transition from hospital to home is a high-risk period for neonatal hypothermia, especially in cool climates or during winter months. Parents must be equipped with the knowledge and skills to maintain their baby's temperature safely.",
       "Key messages for parents: Keep the room temperature between 20–22°C (68–72°F). Dress your baby in one more layer than you are wearing. Always use a hat — newborns lose a significant proportion of heat through their head. Check the baby's temperature by feeling the back of the neck or chest, not the hands or feet (which are normally cooler).",
@@ -111,51 +137,40 @@ const pdfResources = [
     category: "WHO Guidelines",
     color: "#F9A8D4",
     year: 2018,
-    url: "public/assets/guides/guide ministere de la sante tunisie.pdf",
+    url: "public/assets/guides/guide1.pdf",
   },
   {
     id: 2,
-    title: "Neonatal Hypothermia Prevention: Clinical Protocol",
+    title: "Determinants of neonatal mortality in a tunisian population",
     description: "Step-by-step clinical protocols for delivery room thermal care, NICU temperature management, and discharge planning.",
-    pages: 24,
-    size: "1.8 MB",
+    pages: 41,
+    size: "0.228 MB",
     category: "Clinical Protocol",
     color: "#A5B4FC",
-    year: 2022,
-    url: "/assets/guides/neonatal-hypothermia-protocol.pdf",
+    year: 2010,
+    url: "public/assets/guides/guide2.pdf",
   },
   {
     id: 3,
-    title: "Kangaroo Mother Care Implementation Manual",
+    title: "La Protection themrique du nouveau-né: Guide pratique",
     description: "Practical manual for healthcare facilities implementing or scaling KMC programs, with case studies and training tools.",
-    pages: 92,
-    size: "5.1 MB",
+    pages: 74,
+    size: "4.672 MB",
     category: "Implementation",
     color: "#86EFAC",
-    year: 2021,
-    url: "/assets/guides/kangaroo-mother-care-manual.pdf",
+    year: 2000,
+    url: "public/assets/guides/guide3.pdf",
   },
   {
     id: 4,
-    title: "Family Guide to Newborn Warmth and Puericulture",
+    title: "Newborn resuscitation and postnatal care guidelines",
     description: "Parent-friendly guide in plain language covering home care, warning signs, and when to seek medical help for newborns.",
-    pages: 18,
-    size: "1.1 MB",
+    pages: 64,
+    size: "2.584 MB",
     category: "Family Education",
     color: "#FDBA74",
-    year: 2023,
-    url: "/assets/guides/family-guide-newborn-warmth.pdf",
-  },
-  {
-    id: 5,
-    title: "Neonatal Resuscitation & Thermal Stabilization",
-    description: "Emergency reference guide for healthcare workers on neonatal resuscitation procedures with thermal stabilization protocols.",
-    pages: 36,
-    size: "2.4 MB",
-    category: "Emergency Care",
-    color: "#FCA5A5",
-    year: 2022,
-    url: "/assets/guides/neonatal-resuscitation-guide.pdf",
+    year: 2014,
+    url: "public/assets/guides/guide4.pdf",
   },
 ];
 
@@ -169,7 +184,7 @@ const pptResources = [
     category: "Grand Rounds",
     color: "#F9A8D4",
     year: 2023,
-    url: "/assets/presentations/neonatal-hypothermia-grand-rounds.pptx",
+    url: "/assets/presentations/ppt1.pptx",
   },
   {
     id: 2,
@@ -180,7 +195,7 @@ const pptResources = [
     category: "Workshop",
     color: "#C4B5FD",
     year: 2022,
-    url: "/assets/presentations/kangaroo-care-workshop.pptx",
+    url: "/assets/presentations/ppt2.pptx",
   },
   {
     id: 3,
@@ -191,7 +206,7 @@ const pptResources = [
     category: "Family Education",
     color: "#FDBA74",
     year: 2023,
-    url: "/assets/presentations/parent-education-newborn-safety.pptx",
+    url: "/assets/presentations/ppt3.pptx",
   },
   {
     id: 4,
@@ -202,12 +217,13 @@ const pptResources = [
     category: "Staff Training",
     color: "#86EFAC",
     year: 2022,
-    url: "/assets/presentations/warm-chain-staff-training.pptx",
+    url: "/assets/presentations/ppt4.pptx",
   },
 ];
 
 function ArticleAccordion({ article }: { article: GuideArticle }) {
   const [open, setOpen] = useState(false);
+  const [isZoomed, setIsZoomed] = useState(false);
 
   const handleDownload = (url: string, filename: string) => {
     const link = document.createElement('a');
@@ -216,6 +232,10 @@ function ArticleAccordion({ article }: { article: GuideArticle }) {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+  };
+
+  const toggleZoom = () => {
+    setIsZoomed(!isZoomed);
   };
 
   return (
@@ -268,6 +288,52 @@ function ArticleAccordion({ article }: { article: GuideArticle }) {
             className="overflow-hidden"
           >
             <div className="px-5 pb-5 pt-1 border-t border-gray-100">
+              {article.image && (
+                <div className="mb-4 relative">
+                  <motion.img
+                    src={article.image}
+                    alt={article.title}
+                    className="w-full max-h-64 object-contain rounded-lg shadow-sm border border-gray-100 cursor-zoom-in"
+                    loading="lazy"
+                    onClick={toggleZoom}
+                    animate={{
+                      scale: isZoomed ? 1.5 : 1,
+                      zIndex: isZoomed ? 50 : 1
+                    }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 30
+                    }}
+                    whileHover={{ scale: isZoomed ? 1.5 : 1.05 }}
+                  />
+
+                  {/* Overlay quand zoomé */}
+                  {isZoomed && (
+                    <motion.div
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      className="fixed inset-0 bg-black bg-opacity-50 z-40 flex items-center justify-center p-4"
+                      onClick={toggleZoom}
+                    >
+                      <motion.img
+                        src={article.image}
+                        alt={article.title}
+                        className="max-w-full max-h-full object-contain rounded-lg shadow-2xl"
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        exit={{ scale: 0.8, opacity: 0 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 300,
+                          damping: 30
+                        }}
+                      />
+                    </motion.div>
+                  )}
+                </div>
+              )}
               <div className="flex flex-col gap-4">
                 {article.content.map((paragraph, i) => (
                   <p key={i} className="text-sm text-gray-600 leading-relaxed">

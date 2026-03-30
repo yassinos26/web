@@ -8,6 +8,7 @@ const navLinks = [
   { to: "/members", label: "Members" },
   { to: "/videos", label: "Videos" },
   { to: "/guide", label: "Guide" },
+  { to: "/support", label: "Support Baby" },
   { to: "/contact", label: "Contact" },
 ];
 
@@ -89,7 +90,7 @@ export function Navbar() {
           </div>
 
           {/* CTA + Hamburger */}
-          <div className="flex items-center gap-3">
+          {/* <div className="flex items-center gap-3">
             <a
               href="/contact"
               className="hidden md:flex items-center gap-1.5 px-4 py-2 rounded-full text-sm text-white transition-all hover:opacity-90 hover:shadow-lg"
@@ -104,7 +105,7 @@ export function Navbar() {
             >
               {menuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
 

@@ -16,7 +16,7 @@ const members = [
     role: "Pediatric & Neonatology nurse",
     specialty: "Puericulture",
     bio: "Over 2 years of experience in neonatal medicine, specializing in premature infant thermoregulation and evidence-based thermal care protocols.",
-    image: "public/assets/images/sirine-bio.jpg",
+    image: "/assets/images/sirine-bio.jpg",
     tags: ["NICU", "Thermoregulation", "pretherm infants"],
     socials: {
       linkedin: "https://www.linkedin.com/in/sirine-louhichi-372270384/",
@@ -41,11 +41,11 @@ const members = [
     },
   },
   {
-    name: "Dr. Syrine Soui",
+    name: "Mme. Syrine Soui",
     role: "Paramedical Professor & Previous Pediatric Nurse ",
     specialty: "Pediatric Nurse",
     bio: "Over 18 years of experience in neonatal medicine, specializing in Central catheter & premature infant care.",
-    image: "public/assets/images/sirine-soui-bio.jpg",
+    image: "/assets/images/sirine-soui-bio.jpg",
     color: "#86EFAC",
     tags: ["NICU", "Intership-Supervisor", "Parental Education" , "Phototherapy"],
     socials: {
@@ -60,7 +60,7 @@ const members = [
     role: "Pediatric & Neonatology nurse",
     specialty: "Puericulture",
     bio: "Over 2 years of experience in neonatal medicine, specializing in premature infant thermoregulation and evidence-based thermal care protocols.",
-    image: "public/assets/images/amal-bio.jpg",
+    image: "/assets/images/amal1-bio.jpg",
     tags: ["NICU", "Thermoregulation", "pretherm infants"],
     socials: {
       // linkedin: "https://www.linkedin.com/in/dr-sirine-louhichi",
