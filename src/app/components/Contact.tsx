@@ -13,55 +13,55 @@ const fadeUp: Variants = {
   },
 };
 
-const contactItems = [
-  {
-    icon: Phone,
-    label: "Phone",
-    value: "+216 28184654",
-    sub: "wednesday, 6am–20pm",
-    color: "#F9A8D4",
-    href: "tel:+21628184654",
-  },
-  {
-    icon: Mail,
-    label: "Email",
-    value: "louhichisirine50@gmail.com",
-    sub: "We reply within 24 hours",
-    color: "#C4B5FD",
-    href: "mailto:louhichisirine50@gmail.com",
-  },
-  {
-    icon: MapPin,
-    label: "Address",
-    value: "4031 Av. IBN EL Jazzar, Sousse",
-    sub: "Tunisia, 4031",
-    color: "#86EFAC",
-    href: "#",
-  },
-  {
-    icon: Clock,
-    label: "Hours",
-    value: "Monday – Satruday",
-    sub: "7:00 AM – 14:00 PM )",
-    color: "#FDBA74",
-    href: "#",
-  },
-  {
-    icon: Globe,
-    label: "Website",
-    value: "www.babyhypothermia.org",
-    sub: "Educational resources online",
-    color: "#93C5FD",
-    href: "https://www.babyhypothermia.org",
-  },
-];
-
 export function Contact() {
   const { t } = useTranslation();
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+
+  const contactItems = [
+    {
+      icon: Phone,
+      label: t("phone"),
+      value: "+216 28184654",
+      sub: t("phoneSub"),
+      color: "#F9A8D4",
+      href: "tel:+21628184654",
+    },
+    {
+      icon: Mail,
+      label: t("email"),
+      value: "louhichisirine50@gmail.com",
+      sub: t("emailSub"),
+      color: "#C4B5FD",
+      href: "mailto:louhichisirine50@gmail.com",
+    },
+    {
+      icon: MapPin,
+      label: t("address"),
+      value: "4031 Av. IBN EL Jazzar, Sousse",
+      sub: t("addressSub"),
+      color: "#86EFAC",
+      href: "#",
+    },
+    {
+      icon: Clock,
+      label: t("hours"),
+      value: t("hoursSub"),
+      sub: "7:00 AM – 14:00 PM )",
+      color: "#FDBA74",
+      href: "#",
+    },
+    {
+      icon: Globe,
+      label: t("website"),
+      value: "www.babyhypothermia.org",
+      sub: t("websiteSub"),
+      color: "#93C5FD",
+      href: "https://www.babyhypothermia.org",
+    },
+  ];
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -116,7 +116,7 @@ export function Contact() {
                 WebkitTextFillColor: "transparent",
               }}
             >
-              Our Team
+              {t("ourTeam")}
             </span>
           </h1>
           <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">
@@ -165,7 +165,7 @@ export function Contact() {
             className="bg-white rounded-3xl p-8 shadow-sm border border-white"
           >
             <h2 className="mb-6 text-gray-800" style={{ fontWeight: 800, fontSize: "1.25rem" }}>
-              Send us a Message
+              {t("sendMessage")}
             </h2>
 
             {submitted ? (
@@ -194,7 +194,7 @@ export function Contact() {
                   className="mt-6 px-5 py-2.5 rounded-full text-sm text-white font-medium"
                   style={{ background: "linear-gradient(135deg, #EC4899, #A855F7)" }}
                 >
-                  Send Another Message
+                  {t("sendAnother")}
                 </button>
               </motion.div>
             ) : (
@@ -209,7 +209,7 @@ export function Contact() {
                     <input
                       type="text"
                       required
-                      placeholder="Your name"
+                      placeholder={t("yourName")}
                       value={form.name}
                       onChange={(e) => setForm({ ...form, name: e.target.value })}
                       className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm bg-gray-50 focus:outline-none focus:border-pink-300 focus:ring-2 focus:ring-pink-100 focus:bg-white transition-all"
@@ -222,7 +222,7 @@ export function Contact() {
                     <input
                       type="email"
                       required
-                      placeholder="your@email.com"
+                      placeholder={t("yourEmail")}
                       value={form.email}
                       onChange={(e) => setForm({ ...form, email: e.target.value })}
                       className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm bg-gray-50 focus:outline-none focus:border-pink-300 focus:ring-2 focus:ring-pink-100 focus:bg-white transition-all"
@@ -240,14 +240,14 @@ export function Contact() {
                     onChange={(e) => setForm({ ...form, subject: e.target.value })}
                     className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm bg-gray-50 focus:outline-none focus:border-pink-300 focus:ring-2 focus:ring-pink-100 focus:bg-white transition-all"
                   >
-                    <option value="">Select a topic...</option>
-                    <option>General Inquiry</option>
-                    <option>Educational Resources</option>
-                    <option>Collaboration / Partnership</option>
-                    <option>Clinical Question</option>
-                    <option>Media / Press</option>
-                    <option>Join the Team</option>
-                    <option>Other</option>
+                    <option value="">{t("selectTopic")}</option>
+                    <option>{t("generalInquiry")}</option>
+                    <option>{t("educationalResources")}</option>
+                    <option>{t("collaborationPartnership")}</option>
+                    <option>{t("clinicalQuestion")}</option>
+                    <option>{t("mediaPress")}</option>
+                    <option>{t("joinTeam")}</option>
+                    <option>{t("other")}</option>
                   </select>
                 </div>
 
@@ -258,7 +258,7 @@ export function Contact() {
                   <textarea
                     required
                     rows={5}
-                    placeholder="Tell us how we can help..."
+                    placeholder={t("tellUsHowWeCanHelp")}
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
                     className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm bg-gray-50 focus:outline-none focus:border-pink-300 focus:ring-2 focus:ring-pink-100 focus:bg-white transition-all resize-none"

@@ -154,12 +154,12 @@ export function Footer() {
             <Heart className="w-3 h-3 mx-1" style={{ color: "#EC4899" }} /> for newborn health
           </div>
           <div className="flex gap-4">
-            <a href="#" className="text-xs text-gray-400 hover:text-pink-500 transition-colors">
+            <NavLink to="/privacy" className="text-xs text-gray-400 hover:text-pink-500 transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="text-xs text-gray-400 hover:text-pink-500 transition-colors">
+            </NavLink>
+            <NavLink to="/terms" className="text-xs text-gray-400 hover:text-pink-500 transition-colors">
               Terms of Use
-            </a>
+            </NavLink>
           </div>
         </div>
       </div>

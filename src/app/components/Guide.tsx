@@ -35,193 +35,6 @@ interface GuideArticle {
   image?: string;
 }
 
-const articles: GuideArticle[] = [
-  {
-    id: 0,
-    title: "Protocole OMS  ",
-    category: "Fundamentals",
-    color: "#F9A8D4",
-    readTime: "10 min read",
-    image: "/assets/text/affiche-protcole.jpg",
-    content: [
-      "1- Warm Delivery Room", 
-      "2- Immediate Drying ",
-      "3- Skin-to-Skin Contact ",
-      "4- Breastfeeding ",
-      "5- Postpone bathing ",
-      "6- Appropriate Clothing and Bedding ",
-      "7- Mother and Baby Together ",
-      "8- Warm Transportation ",
-      "9- Warm Resuscitation",
-      "10- Education & Awareness",
-    ],
-  },
-  {
-    id: 1,
-    title: "Introduction to Neonatal Thermoregulation",
-    category: "Fundamentals",
-    color: "#F9A8D4",
-    readTime: "5 min read",
-    image: "/assets/text/affiche-introduction.jpg",
-    content: [
-      "Thermoregulation is the physiological process by which an organism maintains its core body temperature within a range compatible with life. In adults, this system is robust; in newborns — particularly preterm infants — it is critically underdeveloped.",
-      "Neonates have a large surface-area-to-body-mass ratio, limited subcutaneous fat, and immature central nervous system control over heat production and conservation. They are uniquely dependent on their environment and caregivers to maintain thermal homeostasis.",
-      "Heat loss in newborns occurs through four primary mechanisms: (1) Evaporation — moisture from skin and lungs evaporating; (2) Conduction — heat transfer to cooler surfaces in contact with the baby; (3) Convection — heat carried away by cool air currents; (4) Radiation — heat emitted to cooler objects nearby without direct contact.",
-      "The WHO defines neonatal hypothermia as a body temperature below 36.5°C. Mild hypothermia (36–36.4°C) can progress rapidly to moderate (32–35.9°C) and severe (<32°C) stages if not corrected. The 'warm chain' — a set of ten interlinked procedures — was developed to prevent heat loss from delivery to the postpartum period.",
-    ],
-  },
-  {
-    id: 2,
-    title: "The Warm Chain: 10 Steps to Prevent Neonatal Cold Stress",
-    category: "Prevention",
-    color: "#C4B5FD",
-    readTime: "7 min read",
-    image: "/assets/text/affiche-warmchaine.jpg",
-    content: [
-      "The Warm Chain, introduced by the WHO and UNICEF, is a sequence of ten linked steps designed to minimize heat loss in the newborn from delivery through the early postnatal period.",
-      "Step 1: Warm delivery room — the room temperature should be at least 25°C (77°F) and free from drafts. Step 2: Immediate drying — dry the baby thoroughly with a warm towel immediately after birth, discarding wet linen. Step 3: Skin-to-skin contact — place the naked baby on the mother's bare chest and cover both with a blanket.",
-      "Step 4: Breastfeeding — early initiation within the first hour provides warmth and nutrition. Step 5: Postpone bathing — delay the first bath by at least 24 hours, or 48–72 hours for preterm or low-birthweight infants. Step 6: Appropriate clothing and bedding — use a hat, warm clothes, and blankets that suit the environment.",
-      "Step 7: Mother and baby together — rooming-in promotes warmth through proximity. Step 8: Warm transportation — if transfer is needed, use a warm incubator or wrap securely. Step 9: Warm resuscitation — resuscitation area must be pre-warmed, with a radiant warmer and polyethylene bags for very preterm infants. Step 10: Training and awareness — all staff and families must understand the principles of the warm chain.",
-    ],
-  },
-  {
-    id: 3,
-    title: "Kangaroo Mother Care: Evidence and Practice",
-    category: "Puericulture",
-    color: "#86EFAC",
-    readTime: "8 min read",
-    image: "/assets/text/affiche-Kangaroo-mother.jpg",
-    content: [
-      "Kangaroo Mother Care (KMC) is a method of care for preterm and low-birthweight newborns that involves skin-to-skin contact, exclusive breastfeeding or breast-milk feeding, and early discharge with appropriate follow-up. Originally developed in Bogotá, Colombia in 1978, it has since been validated by extensive global research.",
-      "Physiologically, KMC stabilizes the infant's temperature through the mother's thermoregulatory capacity, which actively adjusts to warm or cool the baby as needed. This 'biological incubator' effect is remarkably precise and has been shown in multiple studies to be equivalent to conventional incubator care for stable preterm infants.",
-      "The evidence base for KMC is strong: a Cochrane review of 21 trials found KMC reduces mortality by 40% in stable low-birthweight infants, reduces the risk of hypothermia by 78%, reduces severe infections by 53%, and increases rates of exclusive breastfeeding at discharge by 50%. KMC also promotes neurodevelopment and parent-infant bonding.",
-      "For implementation, KMC sessions should be initiated as soon as the infant is clinically stable. Continuous KMC (>20 hours/day) is preferred over intermittent. Fathers and other family members can also participate when the mother is resting.",
-    ],
-  },
-  {
-    id: 4,
-    title: "Recognizing and Managing Neonatal Hypothermia",
-    category: "Clinical",
-    color: "#93C5FD",
-    readTime: "6 min read",
-    image: "/assets/text/affiche-recognizing-managing.jpg",
-    content: [
-      "Early recognition of neonatal hypothermia requires vigilant clinical assessment. Signs include cool or cold skin to touch (especially on the trunk), poor or absent feeding, weak cry, lethargy and reduced activity, pallor or mottling, bradycardia, and in severe cases, apnea and hypoglycemia.",
-      "Temperature measurement should be axillary using a low-reading thermometer. Normal axillary temperature in newborns is 36.5–37.5°C. Any reading below 36.5°C requires prompt intervention.",
-      "Management of mild to moderate hypothermia: Remove wet clothing. Initiate immediate skin-to-skin contact. Cover with warm blankets and a hat. Begin or encourage breastfeeding. Measure blood glucose (hypoglycemia often co-exists). Reassess temperature every 30 minutes until normothermic.",
-      "Management of severe hypothermia: Place in a pre-warmed incubator set to 35–36°C. Avoid rapid rewarming (target 0.5°C/hour increase). Monitor for hypoglycemia, metabolic acidosis, and apnea. IV glucose may be required. Obtain specialist neonatal consultation urgently. Document temperature trends and interventions.",
-    ],
-  },
-  {
-    id: 5,
-    title: "Parental Education: Newborn Care at Home",
-    category: "Family",
-    color: "#FDBA74",
-    readTime: "6 min read",
-    image: "/assets/text/affiche-education-parental.jpg",
-    content: [
-      "The transition from hospital to home is a high-risk period for neonatal hypothermia, especially in cool climates or during winter months. Parents must be equipped with the knowledge and skills to maintain their baby's temperature safely.",
-      "Key messages for parents: Keep the room temperature between 20–22°C (68–72°F). Dress your baby in one more layer than you are wearing. Always use a hat — newborns lose a significant proportion of heat through their head. Check the baby's temperature by feeling the back of the neck or chest, not the hands or feet (which are normally cooler).",
-      "Warning signs requiring immediate medical attention: Temperature below 36°C or above 38°C. Baby is unusually limp, unresponsive, or very difficult to wake. Refusing to feed for two consecutive feeds. Skin appears bluish or mottled and does not improve with warming.",
-      "Creating a safe sleep environment: Avoid overheating (also a risk factor for SIDS). Never put babies to sleep on a hot water bottle or electric blanket. Use a firm, flat mattress with fitted sheet. Keep face and head uncovered during sleep. Room-sharing (not bed-sharing) is recommended for the first 6 months.",
-    ],
-  },
-];
-
-const pdfResources = [
-  {
-    id: 1,
-    title: "Paniers des soins essentiels en santé maternelle et néonatale",
-    description: "Comprehensive WHO guideline on neonatal thermal care, covering the warm chain, KMC, and incubator management.",
-    pages: 114,
-    size: "1.526 MB",
-    category: "WHO Guidelines",
-    color: "#F9A8D4",
-    year: 2018,
-    url: "public/assets/guides/guide1.pdf",
-  },
-  {
-    id: 2,
-    title: "Determinants of neonatal mortality in a tunisian population",
-    description: "Step-by-step clinical protocols for delivery room thermal care, NICU temperature management, and discharge planning.",
-    pages: 41,
-    size: "0.228 MB",
-    category: "Clinical Protocol",
-    color: "#A5B4FC",
-    year: 2010,
-    url: "public/assets/guides/guide2.pdf",
-  },
-  {
-    id: 3,
-    title: "La Protection themrique du nouveau-né: Guide pratique",
-    description: "Practical manual for healthcare facilities implementing or scaling KMC programs, with case studies and training tools.",
-    pages: 74,
-    size: "4.672 MB",
-    category: "Implementation",
-    color: "#86EFAC",
-    year: 2000,
-    url: "public/assets/guides/guide3.pdf",
-  },
-  {
-    id: 4,
-    title: "Newborn resuscitation and postnatal care guidelines",
-    description: "Parent-friendly guide in plain language covering home care, warning signs, and when to seek medical help for newborns.",
-    pages: 64,
-    size: "2.584 MB",
-    category: "Family Education",
-    color: "#FDBA74",
-    year: 2014,
-    url: "public/assets/guides/guide4.pdf",
-  },
-];
-
-const pptResources = [
-  {
-    id: 1,
-    title: "Neonatal Hypothermia — Grand Rounds Presentation",
-    description: "Full 45-slide presentation for medical grand rounds covering epidemiology, pathophysiology, prevention, and management.",
-    slides: 45,
-    size: "8.7 MB",
-    category: "Grand Rounds",
-    color: "#F9A8D4",
-    year: 2023,
-    url: "/assets/presentations/ppt1.pptx",
-  },
-  {
-    id: 2,
-    title: "Kangaroo Care Workshop Slides",
-    description: "Interactive workshop presentation with exercises, case discussions, and demonstration instructions for nursing staff.",
-    slides: 32,
-    size: "6.2 MB",
-    category: "Workshop",
-    color: "#C4B5FD",
-    year: 2022,
-    url: "/assets/presentations/ppt2.pptx",
-  },
-  {
-    id: 3,
-    title: "Parent Education Session: Keeping Your Newborn Safe",
-    description: "Friendly, illustrated presentation designed for parent education sessions in maternity wards and community health centers.",
-    slides: 20,
-    size: "4.3 MB",
-    category: "Family Education",
-    color: "#FDBA74",
-    year: 2023,
-    url: "/assets/presentations/ppt3.pptx",
-  },
-  {
-    id: 4,
-    title: "Warm Chain Protocol — Staff Training",
-    description: "Comprehensive staff training presentation on WHO Warm Chain protocols with quiz slides and competency checkoffs.",
-    slides: 55,
-    size: "10.1 MB",
-    category: "Staff Training",
-    color: "#86EFAC",
-    year: 2022,
-    url: "/assets/presentations/ppt4.pptx",
-  },
-];
-
 function ArticleAccordion({ article }: { article: GuideArticle }) {
   const [open, setOpen] = useState(false);
   const [isZoomed, setIsZoomed] = useState(false);
@@ -354,6 +167,193 @@ export function Guide() {
   const { t } = useTranslation();
   const [activeTab, setActiveTab] = useState<Tab>("text");
   const [searchQuery, setSearchQuery] = useState("");
+
+  const articles: GuideArticle[] = [
+    {
+      id: 0,
+      title: "Protocole OMS",
+      category: t("fundamentals"),
+      color: "#F9A8D4",
+      readTime: `10 ${t("minRead")}`,
+      image: "/assets/text/affiche-protcole.jpg",
+      content: [
+        "1- Salle d'accouchement chaude", 
+        "2- Séchage immédiat",
+        "3- Contact peau à peau",
+        "4- Allaitement maternel",
+        "5- Retarder le bain",
+        "6- Vêtements et literie appropriés",
+        "7- Mère et bébé ensemble",
+        "8- Transport chaud",
+        "9- Réanimation chaude",
+        "10- Éducation et sensibilisation",
+      ],
+    },
+    {
+      id: 1,
+      title: "Introduction à la thermorégulation néonatale",
+      category: t("fundamentals"),
+      color: "#F9A8D4",
+      readTime: `5 ${t("minRead")}`,
+      image: "/assets/text/affiche-introduction.jpg",
+      content: [
+        "La thermorégulation est le processus physiologique par lequel un organisme maintient sa température corporelle centrale dans une plage compatible avec la vie. Chez l'adulte, ce système est robuste ; chez le nouveau-né — particulièrement les nourrissons prématurés — il est gravement sous-développé.",
+        "Les nouveau-nés ont un rapport surface corporelle/masse corporelle élevé, une graisse sous-cutanée limitée et un contrôle du système nerveux central immature sur la production et la conservation de chaleur. Ils sont particulièrement dépendants de leur environnement et des soignants pour maintenir l'homéostasie thermique.",
+        "La perte de chaleur chez les nouveau-nés se produit par quatre mécanismes principaux : (1) Évaporation — l'humidité de la peau et des poumons s'évapore ; (2) Conduction — le transfert de chaleur aux surfaces froides en contact avec le bébé ; (3) Convection — la chaleur emportée par les courants d'air froid ; (4) Rayonnement — la chaleur émise vers des objets plus froids à proximité sans contact direct.",
+        "L'OMS définit l'hypothermie néonatale comme une température corporelle inférieure à 36,5°C. L'hypothermie légère (36–36,4°C) peut progresser rapidement vers des stades modérés (32–35,9°C) et sévères (<32°C) si elle n'est pas corrigée. La 'chaîne chaude' — un ensemble de dix procédures interconnectées — a été développée pour prévenir la perte de chaleur de l'accouchement à la période postnatale.",
+      ],
+    },
+    {
+      id: 2,
+      title: "La Chaîne Chaude : 10 étapes pour prévenir le stress thermique néonatal",
+      category: t("prevention"),
+      color: "#C4B5FD",
+      readTime: `7 ${t("minRead")}`,
+      image: "/assets/text/affiche-warmchaine.jpg",
+      content: [
+        "La Chaîne Chaude, introduite par l'OMS et l'UNICEF, est une séquence de dix étapes liées conçues pour minimiser la perte de chaleur chez le nouveau-né de l'accouchement à la période postnatale précoce.",
+        "Étape 1 : Salle d'accouchement chaude — la température de la pièce doit être d'au moins 25°C (77°F) et exempte de courants d'air. Étape 2 : Séchage immédiat — sécher le bébé complètement avec une serviette chaude immédiatement après la naissance, en éliminant le linge mouillé. Étape 3 : Contact peau à peau — placer le bébé nu sur la poitrine nue de la mère et couvrir les deux d'une couverture.",
+        "Étape 4 : Allaitement maternel — initiation précoce dans la première heure fournit de la chaleur et de la nutrition. Étape 5 : Retarder le bain — retarder le premier bain d'au moins 24 heures, ou 48–72 heures pour les nourrissons prématurés ou de faible poids à la naissance. Étape 6 : Vêtements et literie appropriés — utiliser un bonnet, des vêtements chauds et des couvertures adaptés à l'environnement.",
+        "Étape 7 : Mère et bébé ensemble — le cohabitation favorise la chaleur par la proximité. Étape 8 : Transport chaud — si un transfert est nécessaire, utiliser un incubateur chaud ou envelopper solidement. Étape 9 : Réanimation chaude — la zone de réanimation doit être préchauffée, avec un radiant chaud et des sacs en polyéthylène pour les prématurés très prématurés. Étape 10 : Formation et sensibilisation — tout le personnel et les familles doivent comprendre les principes de la chaîne chaude.",
+      ],
+    },
+    {
+      id: 3,
+      title: "Soins Mère Kangourou : Preuves et Pratique",
+      category: t("puericulture"),
+      color: "#86EFAC",
+      readTime: `8 ${t("minRead")}`,
+      image: "/assets/text/affiche-Kangaroo-mother.jpg",
+      content: [
+        "Les Soins Mère Kangourou (SMC) sont une méthode de soins pour les nourrissons prématurés et de faible poids à la naissance qui implique un contact peau à peau, l'allaitement maternel exclusif ou l'alimentation au lait maternel, et une sortie précoce avec un suivi approprié. Développée à l'origine à Bogotá, Colombie en 1978, elle a depuis été validée par des recherches mondiales approfondies.",
+        "Physiologiquement, les SMC stabilisent la température de l'enfant grâce à la capacité thermorégulatrice de la mère, qui s'ajuste activement pour réchauffer ou refroidir le bébé selon les besoins. Cet 'incubateur biologique' est remarquablement précis et a été démontré dans de multiples études comme équivalent aux soins en incubateur conventionnel pour les prématurés stables.",
+        "La base de preuves pour les SMC est solide : une revue Cochrane de 21 essais a trouvé que les SMC réduisent la mortalité de 40% chez les nourrissons de faible poids à la naissance stables, réduisent le risque d'hypothermie de 78%, réduisent les infections sévères de 53%, et augmentent les taux d'allaitement maternel exclusif à la sortie de 50%. Les SMC favorisent également le développement neuro et le lien parent-enfant.",
+        "Pour la mise en œuvre, les sessions de SMC doivent être initiées dès que l'enfant est cliniquement stable. Les SMC continues (>20 heures/jour) sont préférées aux intermittentes. Les pères et d'autres membres de la famille peuvent participer lorsque la mère se repose.",
+      ],
+    },
+    {
+      id: 4,
+      title: "Reconnaître et gérer l'hypothermie néonatale",
+      category: t("guideClinical"),
+      color: "#93C5FD",
+      readTime: `6 ${t("minRead")}`,
+      image: "/assets/text/affiche-recognizing-managing.jpg",
+      content: [
+        "La reconnaissance précoce de l'hypothermie néonatale nécessite une évaluation clinique vigilante. Les signes incluent une peau froide au toucher (surtout sur le tronc), une faible ou absente alimentation, un cri faible, une léthargie et une activité réduite, une pâleur ou une marbrure, une bradycardie, et dans les cas sévères, une apnée et une hypoglycémie.",
+        "La mesure de la température doit être axillaire en utilisant un thermomètre à faible lecture. La température axillaire normale chez les nouveau-nés est de 36,5–37,5°C. Toute lecture inférieure à 36,5°C nécessite une intervention immédiate.",
+        "Gestion de l'hypothermie légère à modérée : Retirer les vêtements mouillés. Initier un contact peau à peau immédiat. Couvrir de couvertures chaudes et d'un bonnet. Commencer ou encourager l'allaitement maternel. Mesurer la glycémie sanguine (l'hypoglycémie coexiste souvent). Réévaluer la température toutes les 30 minutes jusqu'à ce qu'elle soit normotherme.",
+        "Gestion de l'hypothermie sévère : Placer dans un incubateur préchauffé à 35–36°C. Éviter le réchauffement rapide (cible d'augmentation de 0,5°C/heure). Surveiller l'hypoglycémie, l'acidose métabolique et l'apnée. Le glucose IV peut être nécessaire. Obtenir une consultation spécialisée néonatale d'urgence. Documenter les tendances de température et les interventions.",
+      ],
+    },
+    {
+      id: 5,
+      title: "Éducation parentale : Soins du nouveau-né à domicile",
+      category: t("family"),
+      color: "#FDBA74",
+      readTime: `6 ${t("minRead")}`,
+      image: "/assets/text/affiche-education-parental.jpg",
+      content: [
+        "La transition de l'hôpital au domicile est une période à haut risque pour l'hypothermie néonatale, surtout dans les climats froids ou pendant les mois d'hiver. Les parents doivent être équipés des connaissances et des compétences pour maintenir la température de leur bébé en toute sécurité.",
+        "Messages clés pour les parents : Maintenir la température de la pièce entre 20–22°C (68–72°F). Habiller votre bébé d'une couche de plus que vous portez. Toujours utiliser un bonnet — les nouveau-nés perdent une proportion importante de chaleur par la tête. Vérifier la température du bébé en touchant le dos du cou ou la poitrine, pas les mains ou les pieds (qui sont normalement plus froids).",
+        "Signes d'avertissement nécessitant une attention médicale immédiate : Température inférieure à 36°C ou supérieure à 38°C. Bébé inhabituellement mou, non réactif ou très difficile à réveiller. Refus d'allaiter pendant deux tétées consécutives. Peau apparaissant bleue ou marbrée et ne s'améliorant pas avec le réchauffement.",
+        "Créer un environnement de sommeil sécurisé : Éviter la surchauffe (aussi un facteur de risque pour la MSN). Ne jamais mettre les bébés à dormir sur une bouillotte chaude ou un coussin chauffant électrique. Utiliser un matelas ferme et plat avec un drap housse. Garder le visage et la tête découverts pendant le sommeil. Le partage de chambre (pas de lit) est recommandé pour les 6 premiers mois.",
+      ],
+    },
+  ];
+
+  const pdfResources = [
+    {
+      id: 1,
+      title: "Paniers des soins essentiels en santé maternelle et néonatale",
+      description: "Ligne directrice complète de l'OMS sur les soins thermiques néonatals, couvrant la chaîne chaude, les SMC et la gestion des incubateurs.",
+      pages: 114,
+      size: "1.526 MB",
+      category: t("whoGuidelines"),
+      color: "#F9A8D4",
+      year: 2018,
+      url: "public/assets/guides/guide1.pdf",
+    },
+    {
+      id: 2,
+      title: "Determinants of neonatal mortality in a tunisian population",
+      description: "Protocoles cliniques étape par étape pour les soins thermiques en salle d'accouchement, la gestion de la température en USIN et la planification de sortie.",
+      pages: 41,
+      size: "0.228 MB",
+      category: t("clinicalProtocol"),
+      color: "#A5B4FC",
+      year: 2010,
+      url: "public/assets/guides/guide2.pdf",
+    },
+    {
+      id: 3,
+      title: "La Protection thermique du nouveau-né: Guide pratique",
+      description: "Manuel pratique pour les établissements de santé mettant en œuvre ou étendant les programmes SMC, avec des études de cas et des outils de formation.",
+      pages: 74,
+      size: "4.672 MB",
+      category: t("implementation"),
+      color: "#86EFAC",
+      year: 2000,
+      url: "public/assets/guides/guide3.pdf",
+    },
+    {
+      id: 4,
+      title: "Newborn resuscitation and postnatal care guidelines",
+      description: "Guide adapté aux parents en langage simple couvrant les soins à domicile, les signes d'avertissement et quand demander une aide médicale pour les nouveau-nés.",
+      pages: 64,
+      size: "2.584 MB",
+      category: t("guideFamilyEducation"),
+      color: "#FDBA74",
+      year: 2014,
+      url: "public/assets/guides/guide4.pdf",
+    },
+  ];
+
+  const pptResources = [
+    {
+      id: 1,
+      title: "Accueil des parents en néonatologie",
+      description: "Présentation complète de 45 diapositives pour les grand rounds médicaux couvrant l'épidémiologie, la physiopathologie, la prévention et la gestion.",
+      slides: 20,
+      size: "8.7 MB",
+      category: t("grandRounds"),
+      color: "#F9A8D4",
+      year: 2023,
+      url: "/assets/presentations/ppt1.pptx",
+    },
+    {
+      id: 2,
+      title: "Adaptation à la vie extra-utérine",
+      description: "Présentation conviviale et illustrée conçue pour les sessions d'éducation parentale dans les maternités et les centres de santé communautaires.",
+      slides: 34,
+      size: "7.367 MB",
+      category: t("guideFamilyEducation"),
+      color: "#FDBA74",
+      year: 2023,
+      url: "/assets/presentations/ppt2.pptx",
+    },
+    {
+      id: 3,
+      title: "Soins Mère Kangourou : Formation du personnel",
+      description: "Présentation complète de formation du personnel sur les protocoles Chaîne Chaude de l'OMS avec diapositives de quiz et vérifications de compétences.",
+      slides: 55,
+      size: "10.1 MB",
+      category: t("staffTraining"),
+      color: "#86EFAC",
+      year: 2022,
+      url: "/assets/presentations/ppt3.pptx",
+    },
+    {
+      id: 4,
+      title: "Atelier Soins Mère Kangourou",
+      description: "Présentation interactive d'atelier avec exercices, discussions de cas et instructions de démonstration pour le personnel infirmier.",
+      slides: 32,
+      size: "6.2 MB",
+      category: t("workshop"),
+      color: "#C4B5FD",
+      year: 2022,
+      url: "/assets/presentations/ppt4.pptx",
+    },
+  ];
 
   const tabs: { id: Tab; label: string; icon: typeof FileText }[] = [
     { id: "text", label: t("textArticles"), icon: FileText },
@@ -504,7 +504,7 @@ export function Guide() {
                         </p>
                         <div className="flex items-center justify-between">
                           <div className="flex gap-3 text-xs text-gray-400">
-                            <span>{resource.pages} pages</span>
+                            <span>{resource.pages} {t("guide.pages")}</span>
                             <span>{resource.size}</span>
                             <span>{resource.year}</span>
                           </div>
@@ -516,7 +516,7 @@ export function Guide() {
                             className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs text-white font-medium transition-all hover:opacity-90 hover:shadow-md"
                             style={{ background: "linear-gradient(135deg, #EC4899, #A855F7)" }}
                           >
-                            <Download className="w-3 h-3" /> Download
+                            <Download className="w-3 h-3" /> {t("guide.download")}
                           </a>
                         </div>
                       </div>
@@ -575,7 +575,7 @@ export function Guide() {
                         </p>
                         <div className="flex items-center justify-between">
                           <div className="flex gap-3 text-xs text-gray-400">
-                            <span>{resource.slides} slides</span>
+                            <span>{resource.slides} {t("guide.slides")}</span>
                             <span>{resource.size}</span>
                             <span>{resource.year}</span>
                           </div>
@@ -583,7 +583,7 @@ export function Guide() {
                             <button
                               className="flex items-center gap-1 px-2.5 py-1.5 rounded-full text-xs border border-gray-200 text-gray-500 hover:border-pink-200 hover:text-pink-500 transition-colors"
                             >
-                              <ExternalLink className="w-3 h-3" /> Preview
+                              <ExternalLink className="w-3 h-3" /> {t("guide.preview")}
                             </button>
                             <a
                               href={resource.url}
@@ -593,7 +593,7 @@ export function Guide() {
                               className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs text-white font-medium transition-all hover:opacity-90 hover:shadow-md"
                               style={{ background: "linear-gradient(135deg, #EC4899, #A855F7)" }}
                             >
-                              <Download className="w-3 h-3" /> Download
+                              <Download className="w-3 h-3" /> {t("guide.download")}
                             </a>
                           </div>
                         </div>

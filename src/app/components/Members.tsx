@@ -12,69 +12,69 @@ const fadeUp: Variants = {
   },
 };
 
-const members = [
-  {
-    name: "Sirine Louhichi",
-    role: "Pediatric & Neonatology nurse",
-    specialty: "Puericulture",
-    bio: "Over 2 years of experience in neonatal medicine, specializing in premature infant thermoregulation and evidence-based thermal care protocols.",
-    image: "/assets/images/sirine-bio.jpg",
-    tags: ["NICU", "Thermoregulation", "pretherm infants"],
-    socials: {
-      linkedin: "https://www.linkedin.com/in/sirine-louhichi-372270384/",
-      instagram: "https://www.instagram.com/sirine_louhichii/",
-      facebook: "https://www.facebook.com/sirine.202512",
-      mail: "mailto:louhichisirine50@gmail.com",
-    },
-  },
-  {
-    name: "Dr. Oussema Mghribi",
-    role: "Neonatologist",
-    specialty: "Neonatalogy",
-    bio: "Qualified Professor & neonatologist doctor , Over 7 years of experience in neonatal services.",
-    image: "",
-    color: "#A5B4FC",
-    tags: ["Central catheter", "FMSO", "ESSTSSo", "Ecography"],
-    socials: {
-      // linkedin: "https://www.linkedin.com/in/dr-sirine-louhichi",
-      // instagram: "https://www.instagram.com/dr.sirine",
-      facebook: "https://www.facebook.com/oussama.mgh",
-      mail: "mailto:mghoussama@gmail.com",
-    },
-  },
-  {
-    name: "Mme. Syrine Soui",
-    role: "Paramedical Professor & Previous Pediatric Nurse ",
-    specialty: "Pediatric Nurse",
-    bio: "Over 18 years of experience in neonatal medicine, specializing in Central catheter & premature infant care.",
-    image: "/assets/images/sirine-soui-bio.jpg",
-    color: "#86EFAC",
-    tags: ["NICU", "Intership-Supervisor", "Parental Education" , "Phototherapy"],
-    socials: {
-      // linkedin: "https://www.linkedin.com/in/dr-sirine-louhichi",
-      // instagram: "https://www.instagram.com/dr.sirine",
-      facebook: "https://www.facebook.com/syrine.souai.5",
-      mail: "mailto:syrinesouai@gmail.com",
-    },
-  },
-  {
-    name: "Amal Fteiti",
-    role: "Pediatric & Neonatology nurse",
-    specialty: "Puericulture",
-    bio: "Over 2 years of experience in neonatal medicine, specializing in premature infant thermoregulation and evidence-based thermal care protocols.",
-    image: "/assets/images/amal-bio.jpg",
-    tags: ["NICU", "Thermoregulation", "pretherm infants"],
-    socials: {
-      // linkedin: "https://www.linkedin.com/in/dr-sirine-louhichi",
-      instagram: "https://www.instagram.com/amal.fteiti.39/",
-      facebook: "https://www.facebook.com/amal.fteiti.39",
-      mail: "mailto:Amalfteiti1@gmail.com",
-    },
-  },
-];
-
 export function Members() {
   const { t } = useTranslation();
+
+  const members = [
+    {
+      name: "Sirine Louhichi",
+      role: t("pediatricNeonatologyNurse"),
+      specialty: t("puericulture"),
+      bio: "Plus de 2 ans d'expérience en médecine néonatale, spécialisée dans la thermorégulation des nourrissons prématurés et les protocoles de soins thermiques basés sur des preuves.",
+      image: "/assets/images/sirine-bio.jpg",
+      tags: ["USIN", "Thermorégulation", "nourrissons prématurés"],
+      socials: {
+        linkedin: "https://www.linkedin.com/in/sirine-louhichi-372270384/",
+        instagram: "https://www.instagram.com/sirine_louhichii/",
+        facebook: "https://www.facebook.com/sirine.202512",
+        mail: "mailto:louhichisirine50@gmail.com",
+      },
+    },
+    {
+      name: "Dr. Oussema Mghribi",
+      role: t("neonatologist"),
+      specialty: t("neonatology"),
+      bio: "Professeur qualifié et médecin néonatologiste, plus de 7 ans d'expérience dans les services néonatals.",
+      image: "",
+      color: "#A5B4FC",
+      tags: ["Cathéter central", "FMSO", "ESSTSSo", "Échographie"],
+      socials: {
+        // linkedin: "https://www.linkedin.com/in/dr-sirine-louhichi",
+        // instagram: "https://www.instagram.com/dr.sirine",
+        facebook: "https://www.facebook.com/oussama.mgh",
+        mail: "mailto:mghoussama@gmail.com",
+      },
+    },
+    {
+      name: "Mme. Syrine Soui",
+      role: t("paramedicalProfessor"),
+      specialty: t("pediatricNurse"),
+      bio: "Plus de 18 ans d'expérience en médecine néonatale, spécialisée dans le cathéter central et les soins aux nourrissons prématurés.",
+      image: "/assets/images/sirine-soui-bio.jpg",
+      color: "#86EFAC",
+      tags: ["USIN", "Superviseur de stage", "Éducation parentale", "Photothérapie"],
+      socials: {
+        // linkedin: "https://www.linkedin.com/in/dr-sirine-louhichi",
+        // instagram: "https://www.instagram.com/dr.sirine",
+        facebook: "https://www.facebook.com/syrine.souai.5",
+        mail: "mailto:syrinesouai@gmail.com",
+      },
+    },
+    {
+      name: "Amal Fteiti",
+      role: t("pediatricNeonatologyNurse"),
+      specialty: t("puericulture"),
+      bio: "Plus de 2 ans d'expérience en médecine néonatale, spécialisée dans la thermorégulation des nourrissons prématurés et les protocoles de soins thermiques basés sur des preuves.",
+      image: "/assets/images/amal-bio.jpg",
+      tags: ["USIN", "Thermorégulation", "nourrissons prématurés"],
+      socials: {
+        // linkedin: "https://www.linkedin.com/in/dr-sirine-louhichi",
+        instagram: "https://www.instagram.com/amal.fteiti.39/",
+        facebook: "https://www.facebook.com/amal.fteiti.39",
+        mail: "mailto:Amalfteiti1@gmail.com",
+      },
+    },
+  ];
 
   return (
     <div className="min-h-screen py-16 px-4">
@@ -103,12 +103,11 @@ export function Members() {
                 WebkitTextFillColor: "transparent",
               }}
             >
-              Specialists
+              {t("specialists")}
             </span>
           </h1>
           <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm leading-relaxed">
-            Our multidisciplinary team of neonatologists, nurses, educators, and researchers are
-            dedicated to reducing neonatal hypothermia through education and evidence-based practice.
+            {t("teamDescription")}
           </p>
         </motion.div>
 

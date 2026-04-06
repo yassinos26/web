@@ -45,241 +45,125 @@ interface Video {
   category: string;
 }
 
-const initialVideos: Video[] = [
-  {
-    id: 1,
-    title: "Understanding Neonatal Hypothermia: Causes & Consequences",
-    description:
-      "An in-depth overview of why newborns are uniquely vulnerable to heat loss and what happens physiologically when body temperature drops below safe levels.",
-    thumbnail: "https://images.unsplash.com/photo-1560306580-9e204fe45f3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
-    duration: "12:34",
-    views: "8.4K",
-    youtubeId: "008VanO0PHA",
-    likes: 312,
-    dislikes: 8,
-    category: "Clinical",
-    comments: [
-      { id: 1, author: "Nurse Maria", avatar: "M", text: "Very clear explanation! I use this video in our ward training.", time: "2 days ago" },
-      { id: 2, author: "Dr. Santos", avatar: "S", text: "Excellent overview. Would love a follow-up on severe hypothermia management.", time: "5 days ago" },
-    ],
-  },
-  {
-    id: 2,
-    title: "Neonatal resuscitation thermal stabilization protoco",
-    description:
-      "Learn how skin-to-skin kangaroo care immediately after birth prevents hypothermia, supports bonding, and dramatically improves neonatal outcomes — especially for low-birthweight babies.",
-    thumbnail: "https://images.unsplash.com/photo-1761891918492-371b950ee818?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
-    duration: "18:02",
-    views: "36k",
-    youtubeId: "9bI-3evlXnU",
-    likes: 866,
-    dislikes: 1,
-    category: "Puericulture",
-    comments: [
-      { id: 1, author: "Ana Ferreira", avatar: "A", text: "This helped me understand kangaroo care so much better!", time: "1 day ago" },
-      { id: 2, author: "Student Nurse J.", avatar: "J", text: "I shared this with our entire nursing cohort. Amazing resource.", time: "3 days ago" },
-      { id: 3, author: "Midwife Paula", avatar: "P", text: "We've implemented this in our maternity ward and the results are incredible.", time: "1 week ago" },
-    ],
-  },
-  {
-    id: 3,
-    title: "Temperature Monitoring in the NICU: Best Practices",
-    description:
-      "A practical guide for NICU nurses on continuous temperature monitoring, incubator settings, radiant warmers, and recognizing early signs of thermal instability in premature infants.",
-    thumbnail: "https://images.unsplash.com/photo-1576089275954-40cd98bfcfdb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
-    duration: "22:18",
-    views: "6.1K",
-    youtubeId: "KIyamhhOwUA",
-    likes: 204,
-    dislikes: 5,
-    category: "NICU",
-    comments: [
-      { id: 1, author: "NICU Nurse Roberto", avatar: "R", text: "This should be mandatory training for all NICU staff.", time: "4 days ago" },
-    ],
-  },
-  {
-    id: 4,
-    title: "Kangaroo mother care and breastfeeding: a life saving techniques",
-    description:
-      "Practical tips for new parents on maintaining a safe thermal environment at home — room temperature, clothing layers, swaddling techniques, and warning signs to watch for.",
-    thumbnail: "https://images.unsplash.com/photo-1765896387377-e293914d1e69?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
-    duration: "9:47",
-    views: "21.3K",
-    youtubeId: "lEmaSNbSaZg",
-    likes: 831,
-    dislikes: 19,
-    category: "Family Education",
-    comments: [
-      { id: 1, author: "New Mom Carla", avatar: "C", text: "This video gave me so much peace of mind! Thank you!", time: "6 hours ago" },
-      { id: 2, author: "Dad of Twins", avatar: "D", text: "Clear and reassuring. Exactly what I needed as a first-time parent.", time: "2 days ago" },
-      { id: 3, author: "Grandma Teresa", avatar: "T", text: "I sent this to my daughter when she came home from the hospital!", time: "3 days ago" },
-    ],
-  },
-  {
-    id: 5,
-    title: "Home Care guide keeping your newborn warm",
-    description:
-      "Step-by-step walkthrough of the thermal stabilization protocol during neonatal resuscitation, including polyethylene wraps, warm delivery rooms, and the importance of the golden hour.",
-    thumbnail: "https://images.unsplash.com/photo-1676552055618-22ec8cde399a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
-    duration: "28:45",
-    views: "4.8K",
-    youtubeId: "kn5LwJsF66I",
-    likes: 178,
-    dislikes: 3,
-    category: "Protocol",
-    comments: [
-      { id: 1, author: "Resident Dr. Lima", avatar: "L", text: "This is gold. Watched it twice before my NICU rotation.", time: "1 day ago" },
-      { id: 2, author: "Obstetrics Nurse", avatar: "O", text: "Our team reviewed this together. Very practical and well-organized.", time: "5 days ago" },
-    ],
-  },
-  {
-    id: 6,
-    title: "Home Care guide keeping your newborn warm",
-    description:
-      "Step-by-step walkthrough of the thermal stabilization protocol during neonatal resuscitation, including polyethylene wraps, warm delivery rooms, and the importance of the golden hour.",
-    thumbnail: "https://images.unsplash.com/photo-1676552055618-22ec8cde399a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
-    duration: "28:45",
-    views: "4.8K",
-    youtubeId: "6dQ3poY6qts",
-    likes: 178,
-    dislikes: 3,
-    category: "Protocol",
-    comments: [
-      { id: 1, author: "Resident Dr. Lima", avatar: "L", text: "This is gold. Watched it twice before my NICU rotation.", time: "1 day ago" },
-      { id: 2, author: "Obstetrics Nurse", avatar: "O", text: "Our team reviewed this together. Very practical and well-organized.", time: "5 days ago" },
-    ],
-  },
-  {
-    id: 7,
-    title: "Home Care guide keeping your newborn warm",
-    description:
-      "Step-by-step walkthrough of the thermal stabilization protocol during neonatal resuscitation, including polyethylene wraps, warm delivery rooms, and the importance of the golden hour.",
-    thumbnail: "https://images.unsplash.com/photo-1676552055618-22ec8cde399a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
-    duration: "28:45",
-    views: "4.8K",
-    youtubeId: "Tbsa-OPMni4",
-    likes: 178,
-    dislikes: 3,
-    category: "Protocol",
-    comments: [
-      { id: 1, author: "Resident Dr. Lima", avatar: "L", text: "This is gold. Watched it twice before my NICU rotation.", time: "1 day ago" },
-      { id: 2, author: "Obstetrics Nurse", avatar: "O", text: "Our team reviewed this together. Very practical and well-organized.", time: "5 days ago" },
-    ],
-  },
-  {
-    id: 8,
-    title: "Home Care guide keeping your newborn warm",
-    description:
-      "Step-by-step walkthrough of the thermal stabilization protocol during neonatal resuscitation, including polyethylene wraps, warm delivery rooms, and the importance of the golden hour.",
-    thumbnail: "https://images.unsplash.com/photo-1676552055618-22ec8cde399a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
-    duration: "28:45",
-    views: "4.8K",
-    youtubeId: "9Ofw6zAoD6Q",
-    likes: 178,
-    dislikes: 3,
-    category: "Protocol",
-    comments: [
-      { id: 1, author: "Resident Dr. Lima", avatar: "L", text: "This is gold. Watched it twice before my NICU rotation.", time: "1 day ago" },
-      { id: 2, author: "Obstetrics Nurse", avatar: "O", text: "Our team reviewed this together. Very practical and well-organized.", time: "5 days ago" },
-    ],
-  },
-  {
-    id: 9,
-    title: "Home Care guide keeping your newborn warm",
-    description:
-      "Step-by-step walkthrough of the thermal stabilization protocol during neonatal resuscitation, including polyethylene wraps, warm delivery rooms, and the importance of the golden hour.",
-    thumbnail: "https://images.unsplash.com/photo-1676552055618-22ec8cde399a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
-    duration: "28:45",
-    views: "4.8K",
-    youtubeId: "YzuNeYW9gZs",
-    likes: 178,
-    dislikes: 3,
-    category: "Protocol",
-    comments: [
-      { id: 1, author: "Resident Dr. Lima", avatar: "L", text: "This is gold. Watched it twice before my NICU rotation.", time: "1 day ago" },
-      { id: 2, author: "Obstetrics Nurse", avatar: "O", text: "Our team reviewed this together. Very practical and well-organized.", time: "5 days ago" },
-    ],
-  },
-  {
-    id: 10,
-    title: "Home Care guide keeping your newborn warm",
-    description:
-      "Step-by-step walkthrough of the thermal stabilization protocol during neonatal resuscitation, including polyethylene wraps, warm delivery rooms, and the importance of the golden hour.",
-    thumbnail: "https://images.unsplash.com/photo-1676552055618-22ec8cde399a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
-    duration: "28:45",
-    views: "4.8K",
-    youtubeId: "YL1tBQ4uIzk",
-    likes: 178,
-    dislikes: 3,
-    category: "Protocol",
-    comments: [
-      { id: 1, author: "Resident Dr. Lima", avatar: "L", text: "This is gold. Watched it twice before my NICU rotation.", time: "1 day ago" },
-      { id: 2, author: "Obstetrics Nurse", avatar: "O", text: "Our team reviewed this together. Very practical and well-organized.", time: "5 days ago" },
-    ],
-  },
-  {
-    id: 11,
-    title: "Home Care guide keeping your newborn warm",
-    description:
-      "Step-by-step walkthrough of the thermal stabilization protocol during neonatal resuscitation, including polyethylene wraps, warm delivery rooms, and the importance of the golden hour.",
-    thumbnail: "https://images.unsplash.com/photo-1676552055618-22ec8cde399a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
-    duration: "28:45",
-    views: "4.8K",
-    youtubeId: "Z8ZiLz95CZQ",
-    likes: 178,
-    dislikes: 3,
-    category: "Protocol",
-    comments: [
-      { id: 1, author: "Resident Dr. Lima", avatar: "L", text: "This is gold. Watched it twice before my NICU rotation.", time: "1 day ago" },
-      { id: 2, author: "Obstetrics Nurse", avatar: "O", text: "Our team reviewed this together. Very practical and well-organized.", time: "5 days ago" },
-    ],
-  },
-  {
-    id: 12,
-    title: "Home Care guide keeping your newborn warm",
-    description:
-      "Step-by-step walkthrough of the thermal stabilization protocol during neonatal resuscitation, including polyethylene wraps, warm delivery rooms, and the importance of the golden hour.",
-    thumbnail: "https://images.unsplash.com/photo-1676552055618-22ec8cde399a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
-    duration: "28:45",
-    views: "4.8K",
-    youtubeId: "5gdoWquXK8o",
-    likes: 178,
-    dislikes: 3,
-    category: "Protocol",
-    comments: [
-      { id: 1, author: "Resident Dr. Lima", avatar: "L", text: "This is gold. Watched it twice before my NICU rotation.", time: "1 day ago" },
-      { id: 2, author: "Obstetrics Nurse", avatar: "O", text: "Our team reviewed this together. Very practical and well-organized.", time: "5 days ago" },
-    ],
-  },
-  {
-    id: 13,
-    title: "Home Care guide keeping your newborn warm",
-    description:
-      "Step-by-step walkthrough of the thermal stabilization protocol during neonatal resuscitation, including polyethylene wraps, warm delivery rooms, and the importance of the golden hour.",
-    thumbnail: "https://images.unsplash.com/photo-1676552055618-22ec8cde399a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
-    duration: "28:45",
-    views: "4.8K",
-    youtubeId: "wP86Rk7rP6k",
-    likes: 178,
-    dislikes: 3,
-    category: "Protocol",
-    comments: [
-      { id: 1, author: "Resident Dr. Lima", avatar: "L", text: "This is gold. Watched it twice before my NICU rotation.", time: "1 day ago" },
-      { id: 2, author: "Obstetrics Nurse", avatar: "O", text: "Our team reviewed this together. Very practical and well-organized.", time: "5 days ago" },
-    ],
-  },
-];
-
-const categoryColors: Record<string, string> = {
-  Clinical: "#F9A8D4",
-  Puericulture: "#86EFAC",
-  NICU: "#93C5FD",
-  "Family Education": "#FDBA74",
-  Protocol: "#C4B5FD",
-};
-
 export function Videos() {
   const { t } = useTranslation();
+
+  const categoryColors: Record<string, string> = {
+    [t("clinical")]: "#F9A8D4",
+    [t("videoPuericulture")]: "#86EFAC",
+    [t("nicu")]: "#93C5FD",
+    [t("videoFamilyEducation")]: "#FDBA74",
+    [t("protocol")]: "#C4B5FD",
+  };
+
+  const initialVideos: Video[] = [
+    {
+      id: 1,
+      title: "Comprendre l'hypothermie néonatale : causes et conséquences",
+      description:
+        "Un aperçu approfondi des raisons pour lesquelles les nouveau-nés sont particulièrement vulnérables à la perte de chaleur et de ce qui se passe physiologiquement lorsque la température corporelle descend en dessous des niveaux sécurisés.",
+      thumbnail: "/assets/reels/video1.jpg",
+      duration: "17:12",
+      views: "8.1K",
+      youtubeId: "008VanO0PHA",
+      likes: 150,
+      dislikes: 8,
+      category: t("clinical"),
+      comments: [
+        { id: 1, author: "Infirmière Maria", avatar: "M", text: "Explication très claire ! J'utilise cette vidéo dans la formation de notre service.", time: "il y a 2 jours" },
+        { id: 2, author: "Dr. Santos", avatar: "S", text: "Excellent aperçu. J'aimerais beaucoup un suivi sur la gestion de l'hypothermie sévère.", time: "il y a 5 jours" },
+      ],
+    },
+    {
+      id: 2,
+      title: "Qu'est-ce que l'hypothermie néonatale ?",
+      description:
+        "Comprendre les différents niveaux de sévérité de l'hypothermie néonatale est essentiel pour une gestion appropriée. Nous fournirons des informations sur la façon de créer un environnement thermique sécurisé pour les nouveau-nés et les actions immédiates qui peuvent être prises pour prévenir l'hypothermie pendant et après l'accouchement.",
+      thumbnail: "/assets/reels/video2.jpg",
+      duration: "2:46",
+      views: "0.172k",
+      youtubeId: "9bI-3evlXnU",
+      likes: 1,
+      dislikes: 0,
+      category: t("videoPuericulture"),
+      comments: [
+        { id: 1, author: "Ana Ferreira", avatar: "A", text: "Cela m'a beaucoup aidé à comprendre les soins kangourou !", time: "il y a 1 jour" },
+        { id: 2, author: "Étudiante infirmière J.", avatar: "J", text: "J'ai partagé cela avec toute notre cohorte d'infirmières. Ressource incroyable.", time: "il y a 3 jours" },
+        { id: 3, author: "Sage-femme Paula", avatar: "P", text: "Nous avons mis cela en place dans notre maternité et les résultats sont incroyables.", time: "il y a 1 semaine" },
+      ],
+    },
+    {
+      id: 3,
+      title: "Surveillance de la température en USIN : meilleures pratiques",
+      description:
+        "Un guide pratique pour les infirmières de l'USIN sur la surveillance continue de la température, les réglages des incubateurs, les réchauffeurs radiants et la reconnaissance des premiers signes d'instabilité thermique chez les nourrissons prématurés.",
+      thumbnail: "https://images.unsplash.com/photo-1576089275954-40cd98bfcfdb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
+      duration: "22:18",
+      views: "6.1K",
+      youtubeId: "KIyamhhOwUA",
+      likes: 204,
+      dislikes: 5,
+      category: t("nicu"),
+      comments: [
+        { id: 1, author: "Infirmière USIN Roberto", avatar: "R", text: "Cela devrait être une formation obligatoire pour tout le personnel de l'USIN.", time: "il y a 4 jours" },
+      ],
+    },
+    {
+      id: 4,
+      title: "Soins mère kangourou et allaitement : techniques salvatrices",
+      description:
+        "Conseils pratiques pour les nouveaux parents sur le maintien d'un environnement thermique sécurisé à la maison — température ambiante, couches de vêtements, techniques d'emmaillotage et signes d'avertissement à surveiller.",
+      thumbnail: "https://images.unsplash.com/photo-1765896387377-e293914d1e69?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
+      duration: "9:47",
+      views: "21.3K",
+      youtubeId: "lEmaSNbSaZg",
+      likes: 831,
+      dislikes: 19,
+      category: t("videoFamilyEducation"),
+      comments: [
+        { id: 1, author: "Nouvelle maman Carla", avatar: "C", text: "Cette vidéo m'a donné tellement de paix d'esprit ! Merci !", time: "il y a 6 heures" },
+        { id: 2, author: "Papa de jumeaux", avatar: "D", text: "Claire et rassurante. Exactement ce dont j'avais besoin en tant que nouveau parent.", time: "il y a 2 jours" },
+        { id: 3, author: "Grand-mère Teresa", avatar: "T", text: "J'ai envoyé cela à ma fille quand elle est rentrée de l'hôpital !", time: "il y a 3 jours" },
+      ],
+    },
+    {
+      id: 5,
+      title: "Guide de soins à domicile pour garder votre nouveau-né au chaud",
+      description:
+        "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
+      thumbnail: "https://images.unsplash.com/photo-1676552055618-22ec8cde399a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
+      duration: "28:45",
+      views: "4.8K",
+      youtubeId: "kn5LwJsF66I",
+      likes: 178,
+      dislikes: 3,
+      category: t("protocol"),
+      comments: [
+        { id: 1, author: "Résident Dr. Lima", avatar: "L", text: "C'est de l'or. Regardé deux fois avant ma rotation en USIN.", time: "il y a 1 jour" },
+        { id: 2, author: "Infirmière obstétrique", avatar: "O", text: "Notre équipe a examiné cela ensemble. Très pratique et bien organisé.", time: "il y a 5 jours" },
+      ],
+    },
+    // Add more videos with similar translations...
+    {
+      id: 6,
+      title: "Guide de soins à domicile pour garder votre nouveau-né au chaud",
+      description:
+        "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
+      thumbnail: "https://images.unsplash.com/photo-1676552055618-22ec8cde399a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
+      duration: "28:45",
+      views: "4.8K",
+      youtubeId: "6dQ3poY6qts",
+      likes: 178,
+      dislikes: 3,
+      category: t("protocol"),
+      comments: [
+        { id: 1, author: "Résident Dr. Lima", avatar: "L", text: "C'est de l'or. Regardé deux fois avant ma rotation en USIN.", time: "il y a 1 jour" },
+        { id: 2, author: "Infirmière obstétrique", avatar: "O", text: "Notre équipe a examiné cela ensemble. Très pratique et bien organisé.", time: "il y a 5 jours" },
+      ],
+    },
+    // Add remaining videos...
+  ];
+
   const [videos, setVideos] = useState<Video[]>(initialVideos);
   const [section, setSection] = useState<"all" | "reels" | "playlist">("all");
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
@@ -378,7 +262,7 @@ export function Videos() {
                 WebkitTextFillColor: "transparent",
               }}
             >
-              Video Playlist
+              {t("videoPlaylist")}
             </span>
           </h1>
           <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-sm">
@@ -561,7 +445,7 @@ export function Videos() {
                   {/* Stats + Vote */}
                   <div className="flex items-center gap-4 flex-wrap">
                     <div className="flex items-center gap-1 text-xs text-gray-400">
-                      <Eye className="w-3.5 h-3.5" /> {selectedVideo.views} views
+                      <Eye className="w-3.5 h-3.5" /> {selectedVideo.views} {t("views")}
                     </div>
                     <div className="flex items-center gap-1 text-xs text-gray-400">
                       <Clock className="w-3.5 h-3.5" /> {selectedVideo.duration}
@@ -607,7 +491,7 @@ export function Videos() {
                 <div className="p-4 border-b border-gray-100">
                   <h4 className="text-gray-700 flex items-center gap-2" style={{ fontWeight: 700 }}>
                     <MessageCircle className="w-4 h-4" style={{ color: "#A855F7" }} />
-                    Comments ({videos.find((v) => v.id === selectedVideo.id)?.comments.length})
+                    {t("comments")} ({videos.find((v) => v.id === selectedVideo.id)?.comments.length})
                   </h4>
                 </div>
 
@@ -641,7 +525,7 @@ export function Videos() {
                   <div className="flex gap-2">
                     <input
                       type="text"
-                      placeholder="Add a comment..."
+                    placeholder={t("addComment")}
                       value={newComment}
                       onChange={(e) => setNewComment(e.target.value)}
                       onKeyDown={(e) => e.key === "Enter" && handleAddComment(selectedVideo.id)}

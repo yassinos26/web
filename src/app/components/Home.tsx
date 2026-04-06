@@ -16,60 +16,61 @@ const fadeUp: Variants = {
   },
 };
 
-const stats = [
-  { value: "25%", label: "Of neonatal deaths linked to hypothermia", icon: Thermometer },
-  { value: "36.5°", label: "Minimum safe body temperature (°C)", icon: ShieldCheck },
-  { value: "2h", label: "Critical window after birth", icon: AlertTriangle },
-  { value: "90%", label: "Cases preventable with proper care", icon: Heart },
-];
-
-const puericultureTopics = [
-  {
-    icon: Thermometer,
-    title: "Temperature Regulation",
-    color: "#F9A8D4",
-    description:
-      "Newborns cannot regulate their own body temperature. Learn the physiological basis of thermoregulation in neonates and how to maintain a thermoneutral environment.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Prevention Strategies",
-    color: "#C084FC",
-    description:
-      "From kangaroo care to incubator management, discover evidence-based interventions that protect newborns from dangerous heat loss in the first hours of life.",
-  },
-  {
-    icon: Baby,
-    title: "Puericulture Essentials",
-    color: "#86EFAC",
-    description:
-      "Comprehensive guidance on newborn care: feeding, bathing, swaddling, and monitoring vital signs — everything families and healthcare workers need to know.",
-  },
-  {
-    icon: Stethoscope,
-    title: "Clinical Recognition",
-    color: "#93C5FD",
-    description:
-      "Identify the early warning signs of neonatal hypothermia — cold skin, poor feeding, lethargy, and bradycardia — and understand the appropriate clinical response.",
-  },
-  {
-    icon: BookOpen,
-    title: "Family Education",
-    color: "#FCA5A5",
-    description:
-      "Empower parents and caregivers with practical knowledge about keeping newborns warm at home, recognizing danger signs, and seeking timely medical attention.",
-  },
-  {
-    icon: Heart,
-    title: "Community Outreach",
-    color: "#FDBA74",
-    description:
-      "How community health programs can reduce neonatal mortality through targeted education campaigns, home visits, and culturally sensitive healthcare communication.",
-  },
-];
-
 export function Home() {
   const { t } = useTranslation();
+
+  const stats = [
+    { value: "25%", label: t("statHypothermiaDeaths"), icon: Thermometer },
+    { value: "36.5°", label: t("statMinSafeTemp"), icon: ShieldCheck },
+    { value: "2h", label: t("statCriticalWindow"), icon: AlertTriangle },
+    { value: "90%", label: t("statPreventableCases"), icon: Heart },
+  ];
+
+  const hypothermiaPreventionList = [
+    t("skinToSkinCare"),
+    t("delayedBathing"),
+    t("warmDeliveryRooms"),
+    t("exclusiveBreastfeeding"),
+  ];
+
+  const puericultureTopics = [
+    {
+      icon: Thermometer,
+      title: t("temperatureRegulation"),
+      color: "#F9A8D4",
+      description: t("temperatureRegulationDesc"),
+    },
+    {
+      icon: ShieldCheck,
+      title: t("preventionStrategies"),
+      color: "#C084FC",
+      description: t("preventionStrategiesDesc"),
+    },
+    {
+      icon: Baby,
+      title: t("puericultureEssentials"),
+      color: "#86EFAC",
+      description: t("puericultureEssentialsDesc"),
+    },
+    {
+      icon: Stethoscope,
+      title: t("clinicalRecognition"),
+      color: "#93C5FD",
+      description: t("clinicalRecognitionDesc"),
+    },
+    {
+      icon: BookOpen,
+      title: t("familyEducation"),
+      color: "#FCA5A5",
+      description: t("familyEducationDesc"),
+    },
+    {
+      icon: Heart,
+      title: t("communityOutreach"),
+      color: "#FDBA74",
+      description: t("communityOutreachDesc"),
+    },
+  ];
 
   return (
     <div className="overflow-hidden">
@@ -106,7 +107,7 @@ export function Home() {
               style={{ background: "rgba(249,168,212,0.2)", color: "#BE185D" }}
             >
               <Baby className="w-4 h-4" />
-              Neonatal Education Initiative
+              {t("neonatalEducationInitiative")}
             </motion.div>
 
             <motion.h1
@@ -196,8 +197,8 @@ export function Home() {
                 <Heart className="w-5 h-5 text-pink-500" />
               </div>
               <div>
-                <p className="text-xs text-gray-400">Preventable Deaths</p>
-                <p className="text-sm font-bold text-gray-700">90% with proper care</p>
+                <p className="text-xs text-gray-400">{t("preventableDeaths")}</p>
+                <p className="text-sm font-bold text-gray-700">{t("ninetyPercentWithCare")}</p>
               </div>
             </motion.div>
             <motion.div
@@ -213,8 +214,8 @@ export function Home() {
                 <Thermometer className="w-5 h-5 text-purple-500" />
               </div>
               <div>
-                <p className="text-xs text-gray-400">Safe Temperature</p>
-                <p className="text-sm font-bold text-gray-700">36.5–37.5 °C</p>
+                <p className="text-xs text-gray-400">{t("safeTemperature")}</p>
+                <p className="text-sm font-bold text-gray-700">{t("safeTempRange")}</p>
               </div>
             </motion.div>
           </motion.div>
@@ -285,32 +286,26 @@ export function Home() {
               className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-4"
               style={{ background: "rgba(249,168,212,0.2)", color: "#BE185D" }}
             >
-              Understanding the Risk
+              {t("understandingTheRisk")}
             </span>
             <h2
               className="mb-5"
               style={{ fontSize: "clamp(1.6rem, 3vw, 2.4rem)", fontWeight: 800, color: "#1e1b4b", lineHeight: 1.25 }}
             >
-              What is Neonatal Hypothermia?
+              {t("whatIsNeonatalHypothermia")}
             </h2>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              Neonatal hypothermia is defined as a core body temperature below{" "}
-              <strong>36.5°C (97.7°F)</strong> in a newborn. It is classified into mild
-              (36–36.4°C), moderate (32–35.9°C), and severe (&lt;32°C) categories.
+              {t("hypothermiaDefinition")}
             </p>
             <p className="text-gray-600 mb-4 leading-relaxed">
-              Newborns — especially premature or low-birthweight infants — are highly vulnerable
-              because their thermoregulatory systems are immature. They lose heat rapidly through
-              evaporation, conduction, convection, and radiation.
+              {t("newbornsVulnerable")}
             </p>
             <p className="text-gray-600 mb-6 leading-relaxed">
-              The World Health Organization estimates that hypothermia contributes to{" "}
-              <strong>25–30% of neonatal deaths</strong> globally, particularly in low-resource
-              settings where thermal care practices are limited.
+              {t("whoEstimates")}
             </p>
 
             <div className="flex flex-col gap-3">
-              {["Skin-to-skin (kangaroo) care immediately after birth", "Delayed bathing for at least 24 hours", "Warm delivery rooms and incubator management", "Exclusive breastfeeding for thermal regulation"].map(
+              {hypothermiaPreventionList.map(
                 (item) => (
                   <div key={item} className="flex items-start gap-3">
                     <div
@@ -342,16 +337,15 @@ export function Home() {
               className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-4"
               style={{ background: "rgba(192,132,252,0.15)", color: "#7C3AED" }}
             >
-              Educational Content
+              {t("educationalContent")}
             </span>
             <h2
               style={{ fontSize: "clamp(1.6rem, 3vw, 2.4rem)", fontWeight: 800, color: "#1e1b4b" }}
             >
-              Puericulture & Neonatal Care
+              {t("puericultureNeonatalCare")}
             </h2>
             <p className="text-gray-500 mt-3 max-w-2xl mx-auto">
-              Comprehensive educational topics covering all aspects of newborn care, from clinical
-              practice to family education.
+              {t("educationalTopicsDescription")}
             </p>
           </motion.div>
 
@@ -394,23 +388,24 @@ export function Home() {
       >
         <Baby className="w-14 h-14 mx-auto mb-4 opacity-90" />
         <h2 className="mb-3" style={{ fontSize: "clamp(1.4rem, 3vw, 2rem)", fontWeight: 800 }}>
-          Join Our Mission to Protect Every Newborn
+          {t("joinOurMission")}
         </h2>
         <p className="opacity-90 mb-8 max-w-lg mx-auto text-sm leading-relaxed">
-          Access our educational guides, video resources, and connect with our team of neonatal
-          healthcare specialists committed to reducing preventable infant deaths.
+          {t("ctaDescription")}
         </p>
         <a
           href="/guide"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white text-sm font-semibold transition-all hover:opacity-90 hover:shadow-xl"
           style={{ background: "linear-gradient(135deg, #EC4899, #A855F7)" }}
-        > Access Free Guides
+        >
+          {t("accessFreeGuides")}
         </a>
         <a
           href="/contact"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white text-sm font-semibold transition-all hover:opacity-90 hover:shadow-xl"
           style={{ background: "linear-gradient(135deg, #EC4899, #A855F7)" }}
-        > Contact Our Team
+        >
+          {t("contactOurTeam")}
         </a>
       </motion.div>
     </div>
