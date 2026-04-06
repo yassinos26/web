@@ -6,6 +6,8 @@ import { Videos } from "./components/Videos";
 import { Guide } from "./components/Guide";
 import { Contact } from "./components/Contact";
 import { SupportBaby } from "./components/SupportBaby";
+import { Terms } from "./components/Terms";
+import { Privacy } from "./components/Privacy";
 
 export const router = createBrowserRouter([
   {
@@ -18,6 +20,9 @@ export const router = createBrowserRouter([
       { path: "guide", Component: Guide },
       { path: "contact", Component: Contact },
       { path: "support", Component: SupportBaby },
+      { path: "privacy", Component: Privacy },
+      { path: "terms", Component: Terms },
+      { path: "*", Component: Home },
     ],
   },
 ]);

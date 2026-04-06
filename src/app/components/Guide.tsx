@@ -306,6 +306,28 @@ export function Guide() {
       year: 2014,
       url: "public/assets/guides/guide4.pdf",
     },
+    {
+      id: 5,
+      title: "ALLAITEMENT MATERNEL",
+      description: "Guide adapté aux parents en langage simple couvrant les soins à domicile, les signes d'avertissement et quand demander une aide médicale pour les nouveau-nés.",
+      pages: 46,
+      size: "1.870 MB",
+      category: t("guideFamilyEducation"),
+      color: "#FDBA74",
+      year: 2014,
+      url: "public/assets/guides/guide5.pdf",
+    },
+    {
+      id: 6,
+      title: "Le travail en équipe",
+      description: "Guide adapté aux parents en langage simple couvrant les soins à domicile, les signes d'avertissement et quand demander une aide médicale pour les nouveau-nés.",
+      pages: 57,
+      size: "1.872 MB",
+      category: t("guideFamilyEducation"),
+      color: "#FDBA74",
+      year: 2014,
+      url: "public/assets/guides/guide6.pdf",
+    },
   ];
 
   const pptResources = [
