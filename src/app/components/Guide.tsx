@@ -355,7 +355,7 @@ export function Guide() {
     },
     {
       id: 3,
-      title: "Soins Mère Kangourou : Formation du personnel",
+      title: "Surveillance du nouveau né en maternité",
       description: "Présentation complète de formation du personnel sur les protocoles Chaîne Chaude de l'OMS avec diapositives de quiz et vérifications de compétences.",
       slides: 55,
       size: "10.1 MB",
@@ -366,7 +366,7 @@ export function Guide() {
     },
     {
       id: 4,
-      title: "Atelier Soins Mère Kangourou",
+      title: "SURVEILLANCE DU NOUVEAU-NÉ EN SOINS INTENSIFS",
       description: "Présentation interactive d'atelier avec exercices, discussions de cas et instructions de démonstration pour le personnel infirmier.",
       slides: 32,
       size: "6.2 MB",

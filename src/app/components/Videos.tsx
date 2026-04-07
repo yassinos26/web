@@ -36,6 +36,8 @@ interface Episode {
   title: string;
   thumbnail: string;
   duration: string;
+  localVideoUrl?: string;
+  youtubeId?: string;
 }
 
 interface Video {
@@ -45,7 +47,7 @@ interface Video {
   thumbnail: string;
   duration: string;
   views: string;
-  youtubeId: string;
+  youtubeId?: string; // ✅ FIX ICI
   likes: number;
   dislikes: number;
   comments: Comment[];
@@ -53,6 +55,7 @@ interface Video {
   localVideoUrl?: string;
   episodes?: Episode[];
 }
+
 
 export function Videos() {
   const { t } = useTranslation();
@@ -169,25 +172,24 @@ export function Videos() {
         { id: 2, author: "Infirmière obstétrique", avatar: "O", text: "Notre équipe a examiné cela ensemble. Très pratique et bien organisé.", time: "il y a 5 jours" },
       ],
     },
-    // Add shorts videos...
+    // Add shorts videos (reels)
     {
       id: 7,
       title: "Guide de soins à domicile pour garder votre nouveau-né au chaud",
       description:
         "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
-      thumbnail: "/assets/reels/reel1.jpg",
+      thumbnail: "/assets/reels/playlist.jpg",
       duration: "28:45",
       views: "4.8K",
       likes: 178,
       dislikes: 3,
       category: t("protocol"),
-      localVideoUrl: "/assets/reels/reel1.mp4",
+      localVideoUrl: "/assets/reels/playlist.mp4",
       episodes: [
-        { id: 1, title: "Introduction aux soins thermiques", thumbnail: "/assets/reels/episode1.jpg", duration: "5:30" },
-        { id: 2, title: "Préparation de l'environnement", thumbnail: "/assets/reels/episode2.jpg", duration: "4:15" },
-        { id: 3, title: "Techniques de réchauffement", thumbnail: "/assets/reels/episode3.jpg", duration: "6:20" },
-        { id: 4, title: "Surveillance continue", thumbnail: "/assets/reels/episode4.jpg", duration: "5:45" },
-        { id: 5, title: "Prévention des complications", thumbnail: "/assets/reels/episode5.jpg", duration: "6:55" },
+        { id: 1, title: "Introduction aux soins thermiques", thumbnail: "/assets/images/episode1.png", localVideoUrl: "/assets/images/ep1-2.mp4", duration: "0:05" },
+        { id: 2, title: "Préparation de l'environnement", thumbnail: "/assets/images/episode2.png", localVideoUrl: "/assets/images/ep2-3.mp4", duration: "0:05" },
+        { id: 3, title: "Techniques de réchauffement", thumbnail: "/assets/images/episode3.png", localVideoUrl: "/assets/images/epi3-4.mp4", duration: "0:05" },
+        { id: 4, title: "Surveillance continue", thumbnail: "/assets/images/episode4.png", localVideoUrl: "/assets/images/ep4-5.mp4", duration: "0:05" },
       ],
       comments: [
         { id: 1, author: "Résident Dr. Lima", avatar: "L", text: "C'est de l'or. Regardé deux fois avant ma rotation en USIN.", time: "il y a 1 jour" },
@@ -196,6 +198,23 @@ export function Videos() {
     },
     {
       id: 8,
+      title: "Guide de soins à domicile pour garder votre nouveau-né au chaud",
+      description:
+        "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
+      thumbnail: "/assets/reels/reel1.jpg",
+      duration: "28:45",
+      views: "4.8K",
+      localVideoUrl: "/assets/reels/reel1.mp4",
+      likes: 178,
+      dislikes: 3,
+      category: t("protocol"),
+      comments: [
+        { id: 1, author: "Résident Dr. Lima", avatar: "L", text: "C'est de l'or. Regardé deux fois avant ma rotation en USIN.", time: "il y a 1 jour" },
+        { id: 2, author: "Infirmière obstétrique", avatar: "O", text: "Notre équipe a examiné cela ensemble. Très pratique et bien organisé.", time: "il y a 5 jours" },
+      ],
+    },
+    {
+      id: 9,
       title: "Guide de soins à domicile pour garder votre nouveau-né au chaud",
       description:
         "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
@@ -212,7 +231,7 @@ export function Videos() {
       ],
     },
     {
-      id: 9,
+      id: 10,
       title: "Guide de soins à domicile pour garder votre nouveau-né au chaud",
       description:
         "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
@@ -228,23 +247,6 @@ export function Videos() {
         { id: 2, author: "Infirmière obstétrique", avatar: "O", text: "Notre équipe a examiné cela ensemble. Très pratique et bien organisé.", time: "il y a 5 jours" },
       ],
     },
-    {
-      id: 9,
-      title: "Guide de soins à domicile pour garder votre nouveau-né au chaud",
-      description:
-        "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
-      thumbnail: "/assets/reels/playlist.jpg",
-      duration: "28:45",
-      views: "4.8K",
-      localVideoUrl: "/assets/reels/playlist.mp4",
-      likes: 178,
-      dislikes: 3,
-      category: t("protocol"),
-      comments: [
-        { id: 1, author: "Résident Dr. Lima", avatar: "L", text: "C'est de l'or. Regardé deux fois avant ma rotation en USIN.", time: "il y a 1 jour" },
-        { id: 2, author: "Infirmière obstétrique", avatar: "O", text: "Notre équipe a examiné cela ensemble. Très pratique et bien organisé.", time: "il y a 5 jours" },
-      ],
-    },
   ];
 
   const [videos, setVideos] = useState<Video[]>(initialVideos);
@@ -252,6 +254,14 @@ export function Videos() {
   const [selectedVideo, setSelectedVideo] = useState<Video | null>(null);
   const [userVotes, setUserVotes] = useState<Record<number, "like" | "dislike" | null>>({});
   const [newComment, setNewComment] = useState("");
+
+  const openEpisode = (episode: Episode) => {
+    if (episode.localVideoUrl) {
+      window.open(episode.localVideoUrl, "_blank");
+    } else if (episode.youtubeId) {
+      window.open(`https://www.youtube.com/watch?v=${episode.youtubeId}`, "_blank");
+    }
+  };
 
   const sectionVideos =
     section === "all"
@@ -456,6 +466,8 @@ export function Videos() {
                           custom={index}
                           variants={fadeUp}
                           className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors"
+                          onClick={() => openEpisode(episode)}
+                          title={episode.localVideoUrl ? "Ouvrir la vidéo de l'épisode" : "Ouvrir l'épisode"}
                         >
                           <div className="relative w-16 h-10 rounded overflow-hidden flex-shrink-0">
                             <img
@@ -482,11 +494,12 @@ export function Videos() {
             ))}
           </div>
         ) : sectionVideos.length === 0 ? (
-          <div className="col-span-full text-center text-gray-500 py-20">
+          <div className="text-center text-gray-500 py-20">
             {t("noVideos")}
           </div>
-          ) : (
-            sectionVideos.map((video, i) => (
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {sectionVideos.map((video, i) => (
               <motion.div
               key={video.id}
               initial="hidden"
@@ -559,7 +572,8 @@ export function Videos() {
                 </div>
               </div>
             </motion.div>
-          ))
+            ))}
+          </div>
         )}
       </div>
 
@@ -597,20 +611,17 @@ export function Videos() {
                       controls
                       autoPlay
                       src={selectedVideo.localVideoUrl}
-                      title={selectedVideo.title}
-                    >
-                      Votre navigateur ne supporte pas la lecture de vidéos.
-                    </video>
-                  ) : (
+                    />
+                  ) : selectedVideo.youtubeId ? (
                     <iframe
                       key={selectedVideo.id}
                       className="w-full h-full"
                       src={`https://www.youtube.com/embed/${selectedVideo.youtubeId}?autoplay=1`}
-                      title={selectedVideo.title}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     />
-                  )}
+                  ) : null}
+                  )
                 </div>
 
                 {/* Video info */}

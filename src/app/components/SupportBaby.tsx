@@ -121,14 +121,14 @@ export function SupportBaby() {
                 {t("donationSuccess")}
               </h3>
               <p className="text-gray-500 text-sm">
-                Merci pour votre généreux don !
+                {t("donationSuccessText")}
               </p>
               <button
                 onClick={() => setDonationSubmitted(false)}
                 className="mt-4 px-5 py-2.5 rounded-full text-sm text-white font-medium"
                 style={{ background: "linear-gradient(135deg, #EC4899, #A855F7)" }}
               >
-                Faire un autre don
+                {t("donateAnother")}
               </button>
             </motion.div>
           ) : (
@@ -149,7 +149,7 @@ export function SupportBaby() {
                     required
                     value={donationForm.fullName}
                     onChange={(e) => setDonationForm({ ...donationForm, fullName: e.target.value })}
-                    placeholder="Votre nom complet"
+                    placeholder={t("fullNamePlaceholder")}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-pink-300 focus:ring-2 focus:ring-pink-100 focus:bg-white transition-all"
                   />
                 </div>
@@ -163,12 +163,12 @@ export function SupportBaby() {
                     required
                     value={donationForm.ribNumber}
                     onChange={(e) => setDonationForm({ ...donationForm, ribNumber: e.target.value.replace(/\D/g, '') })}
-                    placeholder="123456789012345678901234"
+                    placeholder={t("ribPlaceholder")}
                     maxLength={24}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-pink-300 focus:ring-2 focus:ring-pink-100 focus:bg-white transition-all"
                   />
                   <p className="text-xs text-gray-500 mt-1">
-                    Entrez votre numéro RIB (20-24 chiffres)
+                    {t("ribHint")}
                   </p>
                 </div>
 
@@ -183,11 +183,11 @@ export function SupportBaby() {
                     step="0.01"
                     value={donationForm.amount}
                     onChange={(e) => setDonationForm({ ...donationForm, amount: e.target.value })}
-                    placeholder="100.00"
+                    placeholder={t("amountPlaceholder")}
                     className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm focus:outline-none focus:border-pink-300 focus:ring-2 focus:ring-pink-100 focus:bg-white transition-all"
                   />
                   <p className="text-xs text-gray-500 mt-1">
-                    Montant en TND (Dinars Tunisiens)
+                    {t("amountHint")}
                   </p>
                 </div>
 

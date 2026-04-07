@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ShieldCheck, FileText, ArrowLeft } from "lucide-react";
+import { ShieldCheck, ArrowLeft } from "lucide-react";
 import { NavLink } from "react-router";
 
 const fadeUp = {

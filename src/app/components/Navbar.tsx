@@ -29,10 +29,11 @@ export function Navbar() {
     setMenuOpen(false);
   }, [location]);
 
-  const toggleLanguage = () => {
-    const newLang = i18n.language === "fr" ? "en" : "fr";
-    i18n.changeLanguage(newLang);
-  };
+  const languageOptions = [
+    { code: "fr", label: "FR" },
+    { code: "en", label: "EN" },
+    { code: "de", label: "DE" },
+  ];
 
   const translatedNavLinks = [
     { to: "/", label: t("home") },
@@ -107,13 +108,18 @@ export function Navbar() {
 
           {/* CTA + Language + Hamburger */}
           <div className="flex items-center gap-3">
-            <button
-              onClick={toggleLanguage}
-              className="p-2 rounded-full text-gray-500 hover:text-pink-500 hover:bg-pink-50 transition-colors"
-              title={`Switch to ${i18n.language === "fr" ? "English" : "Français"}`}
+              <select
+              value={i18n.language}
+              onChange={(e) => i18n.changeLanguage(e.target.value)}
+              className="rounded-full border border-gray-200 bg-white px-3 py-2 text-xs font-semibold text-gray-600 transition-colors hover:border-pink-200 focus:outline-none"
+              title="Sprache wählen"
             >
-              <Languages className="w-5 h-5" />
-            </button>
+              {languageOptions.map((lang) => (
+                <option key={lang.code} value={lang.code}>
+                  {lang.label}
+                </option>
+              ))}
+            </select>
             <button
               className="md:hidden p-2 rounded-full text-gray-500 hover:text-pink-500 hover:bg-pink-50 transition-colors"
               onClick={() => setMenuOpen(!menuOpen)}
