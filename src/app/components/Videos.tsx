@@ -31,6 +31,13 @@ interface Comment {
   time: string;
 }
 
+interface Episode {
+  id: number;
+  title: string;
+  thumbnail: string;
+  duration: string;
+}
+
 interface Video {
   id: number;
   title: string;
@@ -43,6 +50,8 @@ interface Video {
   dislikes: number;
   comments: Comment[];
   category: string;
+  localVideoUrl?: string;
+  episodes?: Episode[];
 }
 
 export function Videos() {
@@ -97,7 +106,7 @@ export function Videos() {
       title: "Surveillance de la température en USIN : meilleures pratiques",
       description:
         "Un guide pratique pour les infirmières de l'USIN sur la surveillance continue de la température, les réglages des incubateurs, les réchauffeurs radiants et la reconnaissance des premiers signes d'instabilité thermique chez les nourrissons prématurés.",
-      thumbnail: "https://images.unsplash.com/photo-1576089275954-40cd98bfcfdb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
+      thumbnail: "/assets/reels/video3.jpg",
       duration: "22:18",
       views: "6.1K",
       youtubeId: "KIyamhhOwUA",
@@ -113,7 +122,7 @@ export function Videos() {
       title: "Soins mère kangourou et allaitement : techniques salvatrices",
       description:
         "Conseils pratiques pour les nouveaux parents sur le maintien d'un environnement thermique sécurisé à la maison — température ambiante, couches de vêtements, techniques d'emmaillotage et signes d'avertissement à surveiller.",
-      thumbnail: "https://images.unsplash.com/photo-1765896387377-e293914d1e69?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
+      thumbnail: "/assets/reels/video3.jpg",
       duration: "9:47",
       views: "21.3K",
       youtubeId: "lEmaSNbSaZg",
@@ -131,7 +140,7 @@ export function Videos() {
       title: "Guide de soins à domicile pour garder votre nouveau-né au chaud",
       description:
         "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
-      thumbnail: "https://images.unsplash.com/photo-1676552055618-22ec8cde399a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
+      thumbnail: "/assets/reels/video5.jpg",
       duration: "28:45",
       views: "4.8K",
       youtubeId: "kn5LwJsF66I",
@@ -143,13 +152,12 @@ export function Videos() {
         { id: 2, author: "Infirmière obstétrique", avatar: "O", text: "Notre équipe a examiné cela ensemble. Très pratique et bien organisé.", time: "il y a 5 jours" },
       ],
     },
-    // Add more videos with similar translations...
     {
       id: 6,
       title: "Guide de soins à domicile pour garder votre nouveau-né au chaud",
       description:
         "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
-      thumbnail: "https://images.unsplash.com/photo-1676552055618-22ec8cde399a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=640",
+      thumbnail: "/assets/reels/video6.jpg",
       duration: "28:45",
       views: "4.8K",
       youtubeId: "6dQ3poY6qts",
@@ -161,7 +169,82 @@ export function Videos() {
         { id: 2, author: "Infirmière obstétrique", avatar: "O", text: "Notre équipe a examiné cela ensemble. Très pratique et bien organisé.", time: "il y a 5 jours" },
       ],
     },
-    // Add remaining videos...
+    // Add shorts videos...
+    {
+      id: 7,
+      title: "Guide de soins à domicile pour garder votre nouveau-né au chaud",
+      description:
+        "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
+      thumbnail: "/assets/reels/reel1.jpg",
+      duration: "28:45",
+      views: "4.8K",
+      likes: 178,
+      dislikes: 3,
+      category: t("protocol"),
+      localVideoUrl: "/assets/reels/reel1.mp4",
+      episodes: [
+        { id: 1, title: "Introduction aux soins thermiques", thumbnail: "/assets/reels/episode1.jpg", duration: "5:30" },
+        { id: 2, title: "Préparation de l'environnement", thumbnail: "/assets/reels/episode2.jpg", duration: "4:15" },
+        { id: 3, title: "Techniques de réchauffement", thumbnail: "/assets/reels/episode3.jpg", duration: "6:20" },
+        { id: 4, title: "Surveillance continue", thumbnail: "/assets/reels/episode4.jpg", duration: "5:45" },
+        { id: 5, title: "Prévention des complications", thumbnail: "/assets/reels/episode5.jpg", duration: "6:55" },
+      ],
+      comments: [
+        { id: 1, author: "Résident Dr. Lima", avatar: "L", text: "C'est de l'or. Regardé deux fois avant ma rotation en USIN.", time: "il y a 1 jour" },
+        { id: 2, author: "Infirmière obstétrique", avatar: "O", text: "Notre équipe a examiné cela ensemble. Très pratique et bien organisé.", time: "il y a 5 jours" },
+      ],
+    },
+    {
+      id: 8,
+      title: "Guide de soins à domicile pour garder votre nouveau-né au chaud",
+      description:
+        "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
+      thumbnail: "/assets/reels/reel2.jpg",
+      duration: "28:45",
+      views: "4.8K",
+      localVideoUrl: "/assets/reels/reel2.mp4",
+      likes: 178,
+      dislikes: 3,
+      category: t("protocol"),
+      comments: [
+        { id: 1, author: "Résident Dr. Lima", avatar: "L", text: "C'est de l'or. Regardé deux fois avant ma rotation en USIN.", time: "il y a 1 jour" },
+        { id: 2, author: "Infirmière obstétrique", avatar: "O", text: "Notre équipe a examiné cela ensemble. Très pratique et bien organisé.", time: "il y a 5 jours" },
+      ],
+    },
+    {
+      id: 9,
+      title: "Guide de soins à domicile pour garder votre nouveau-né au chaud",
+      description:
+        "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
+      thumbnail: "/assets/reels/reel3.jpg",
+      duration: "28:45",
+      views: "4.8K",
+      localVideoUrl: "/assets/reels/reel3.mp4",
+      likes: 178,
+      dislikes: 3,
+      category: t("protocol"),
+      comments: [
+        { id: 1, author: "Résident Dr. Lima", avatar: "L", text: "C'est de l'or. Regardé deux fois avant ma rotation en USIN.", time: "il y a 1 jour" },
+        { id: 2, author: "Infirmière obstétrique", avatar: "O", text: "Notre équipe a examiné cela ensemble. Très pratique et bien organisé.", time: "il y a 5 jours" },
+      ],
+    },
+    {
+      id: 9,
+      title: "Guide de soins à domicile pour garder votre nouveau-né au chaud",
+      description:
+        "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
+      thumbnail: "/assets/reels/playlist.jpg",
+      duration: "28:45",
+      views: "4.8K",
+      localVideoUrl: "/assets/reels/playlist.mp4",
+      likes: 178,
+      dislikes: 3,
+      category: t("protocol"),
+      comments: [
+        { id: 1, author: "Résident Dr. Lima", avatar: "L", text: "C'est de l'or. Regardé deux fois avant ma rotation en USIN.", time: "il y a 1 jour" },
+        { id: 2, author: "Infirmière obstétrique", avatar: "O", text: "Notre équipe a examiné cela ensemble. Très pratique et bien organisé.", time: "il y a 5 jours" },
+      ],
+    },
   ];
 
   const [videos, setVideos] = useState<Video[]>(initialVideos);
@@ -174,8 +257,8 @@ export function Videos() {
     section === "all"
       ? videos
       : section === "reels"
-      ? videos.filter((v) => [2, 4].includes(v.id))
-      : videos.filter((v) => [1, 3, 5].includes(v.id));
+      ? videos.filter((v) => [7, 8 , 9].includes(v.id))
+      : videos.filter((v) => [7].includes(v.id));
 
   const handleVote = (videoId: number, type: "like" | "dislike") => {
     const current = userVotes[videoId];
@@ -291,12 +374,117 @@ export function Videos() {
           ))}
         </div>
 
-        {/* Video Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {sectionVideos.length === 0 ? (
-            <div className="col-span-full text-center text-gray-500 py-20">
-              {t("noVideos")}
-            </div>
+        {/* Video Grid or Playlist Layout */}
+        {section === "playlist" ? (
+          <div className="max-w-6xl mx-auto">
+            {sectionVideos.map((video) => (
+              <div key={video.id} className="bg-white rounded-2xl shadow-sm border border-white overflow-hidden">
+                <div className="flex flex-col lg:flex-row">
+                  {/* Main Video */}
+                  <div className="flex-1 p-6">
+                    <motion.div
+                      initial="hidden"
+                      animate="visible"
+                      variants={fadeUp}
+                      whileHover={{ y: -5, transition: { duration: 0.2 } }}
+                      className="bg-white rounded-2xl shadow-sm border border-white overflow-hidden cursor-pointer group hover:shadow-xl transition-all"
+                      onClick={() => openVideo(video)}
+                    >
+                      {/* Thumbnail */}
+                      <div className="relative overflow-hidden" style={{ aspectRatio: "16/9" }}>
+                        <img
+                          src={video.thumbnail}
+                          alt={video.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                        />
+                        <div className="absolute inset-0 bg-black/20 group-hover:bg-black/30 transition-colors" />
+                        {/* Play button */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <div
+                            className="w-14 h-14 rounded-full flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform"
+                            style={{ background: "rgba(255,255,255,0.9)" }}
+                          >
+                            <Play className="w-6 h-6 ml-1" style={{ color: "#EC4899" }} />
+                          </div>
+                        </div>
+                        {/* Duration */}
+                        <div
+                          className="absolute bottom-2 right-2 px-2 py-0.5 rounded text-xs text-white font-medium"
+                          style={{ background: "rgba(0,0,0,0.7)" }}
+                        >
+                          {video.duration}
+                        </div>
+                        {/* Category */}
+                        <div
+                          className="absolute top-2 left-2 px-2 py-0.5 rounded-full text-xs font-medium"
+                          style={{
+                            background: `${categoryColors[video.category]}ee`,
+                            color: "#1e1b4b",
+                          }}
+                        >
+                          {video.category}
+                        </div>
+                      </div>
+
+                      {/* Info */}
+                      <div className="p-4">
+                        <h3 className="font-semibold text-gray-900 mb-2 line-clamp-2">{video.title}</h3>
+                        <p className="text-sm text-gray-600 mb-3 line-clamp-3">{video.description}</p>
+                        <div className="flex items-center gap-4 text-xs text-gray-500">
+                          <div className="flex items-center gap-1">
+                            <Eye className="w-3 h-3" />
+                            {video.views}
+                          </div>
+                          <div className="flex items-center gap-1">
+                            <ThumbsUp className="w-3 h-3" />
+                            {video.likes}
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  </div>
+
+                  {/* Episodes */}
+                  <div className="lg:w-80 p-6 border-t lg:border-t-0 lg:border-l border-gray-100">
+                    <h3 className="font-semibold text-gray-900 mb-4">Épisodes</h3>
+                    <div className="space-y-3">
+                      {video.episodes?.map((episode, index) => (
+                        <motion.div
+                          key={episode.id}
+                          initial="hidden"
+                          animate="visible"
+                          custom={index}
+                          variants={fadeUp}
+                          className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors"
+                        >
+                          <div className="relative w-16 h-10 rounded overflow-hidden flex-shrink-0">
+                            <img
+                              src={episode.thumbnail}
+                              alt={episode.title}
+                              className="w-full h-full object-cover"
+                            />
+                            <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
+                              <Play className="w-3 h-3 text-white" />
+                            </div>
+                            <div className="absolute bottom-1 right-1 px-1 py-0.5 rounded text-xs text-white font-medium bg-black/70">
+                              {episode.duration}
+                            </div>
+                          </div>
+                          <div className="flex-1 min-w-0">
+                            <h4 className="text-sm font-medium text-gray-900 line-clamp-2">{episode.title}</h4>
+                          </div>
+                        </motion.div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : sectionVideos.length === 0 ? (
+          <div className="col-span-full text-center text-gray-500 py-20">
+            {t("noVideos")}
+          </div>
           ) : (
             sectionVideos.map((video, i) => (
               <motion.div
@@ -372,8 +560,7 @@ export function Videos() {
               </div>
             </motion.div>
           ))
-          )}
-        </div>
+        )}
       </div>
 
       {/* Video Modal */}
@@ -398,19 +585,32 @@ export function Videos() {
             >
               {/* Left: Video + Info */}
               <div className="flex flex-col flex-1 min-w-0">
-                {/* Video player (embed) */}
+                {/* Video player (embed or local) */}
                 <div
                   className="relative bg-black"
                   style={{ aspectRatio: "16/9" }}
                 >
-                  <iframe
-                    key={selectedVideo.id}
-                    className="w-full h-full"
-                    src={`https://www.youtube.com/embed/${selectedVideo.youtubeId}?autoplay=1`}
-                    title={selectedVideo.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
+                  {selectedVideo.localVideoUrl ? (
+                    <video
+                      key={selectedVideo.id}
+                      className="w-full h-full"
+                      controls
+                      autoPlay
+                      src={selectedVideo.localVideoUrl}
+                      title={selectedVideo.title}
+                    >
+                      Votre navigateur ne supporte pas la lecture de vidéos.
+                    </video>
+                  ) : (
+                    <iframe
+                      key={selectedVideo.id}
+                      className="w-full h-full"
+                      src={`https://www.youtube.com/embed/${selectedVideo.youtubeId}?autoplay=1`}
+                      title={selectedVideo.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  )}
                 </div>
 
                 {/* Video info */}
