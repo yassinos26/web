@@ -1,4 +1,5 @@
-import { useState } from "react";
+import emailjs from "@emailjs/browser";
+import React, { useRef, useState, FormEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "motion/react";
 import { Variants } from "framer-motion";
@@ -13,7 +14,9 @@ const fadeUp: Variants = {
   },
 };
 
-export function Contact() {
+const formRef = useRef<HTMLFormElement>(null);
+
+export const Contact = () => {
   const { t } = useTranslation();
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
@@ -59,36 +62,35 @@ export function Contact() {
       value: "www.babyhypothermia.org",
       sub: t("websiteSub"),
       color: "#93C5FD",
-      href: "https://www.babyhypothermia.org",
+      href: "https://baby-hypothermia.onrender.com/",
     },
   ];
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setError("");
     setLoading(true);
 
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
+    if (!formRef.current) return;
 
-      if (!response.ok) {
-        throw new Error("Erreur d'envoi du message");
-      }
+    try {
+      await emailjs.sendForm(
+        "service_71cefbz",   // 🔥 à remplacer
+        "template_uo4okck",  // 🔥 à remplacer
+        formRef.current,
+        "gtqOb2kSMJyLpThIg"    // 🔥 à remplacer
+      );
 
       setSubmitted(true);
       setForm({ name: "", email: "", subject: "", message: "" });
+
     } catch (err) {
       console.error(err);
-      setError(
-        "Impossible d'envoyer par l'API. Vérifiez le serveur, puis réessayez."
-      );
+      setError("Erreur lors de l'envoi du message");
     } finally {
       setLoading(false);
     }
+  };
   };
 
   return (
@@ -200,7 +202,7 @@ export function Contact() {
             ) : (
               <>
                 {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
-                <form onSubmit={handleSubmit} className="flex flex-col gap-4">
+                <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-xs font-semibold text-gray-600 mb-1.5">
@@ -229,7 +231,6 @@ export function Contact() {
                     />
                   </div>
                 </div>
-
                 <div>
                   <label className="block text-xs font-semibold text-gray-600 mb-1.5">
                     {t("subject")}
@@ -256,6 +257,7 @@ export function Contact() {
                     {t("message")}
                   </label>
                   <textarea
+                    name="message"
                     required
                     rows={5}
                     placeholder={t("tellUsHowWeCanHelp")}
