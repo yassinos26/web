@@ -79,7 +79,7 @@ export const Contact = () => {
         "template_uo4okck",  // 🔥 à remplacer
         formRef.current,
         "gtqOb2kSMJyLpThIg"    // 🔥 à remplacer
-      );
+  
 
       setSubmitted(true);
       setForm({ name: "", email: "", subject: "", message: "" });
@@ -93,7 +93,7 @@ export const Contact = () => {
   };
   };
 
-  return (
+  return
     <div className="min-h-screen py-16 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
