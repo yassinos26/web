@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router";
-import { Menu, X, Heart, Baby, Languages } from "lucide-react";
+import { Menu, X, Baby } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { useTranslation } from "react-i18next";
 
@@ -33,6 +33,7 @@ export function Navbar() {
     { code: "fr", label: "FR" },
     { code: "en", label: "EN" },
     { code: "de", label: "DE" },
+    { code: "ar", label: "AR" },
   ];
 
   const translatedNavLinks = [

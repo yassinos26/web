@@ -451,14 +451,216 @@ const resources = {
       },
     },
   },
+   // ✅ NOUVELLE LANGUE ARABE
+  ar: {
+    translation: {
+      home: "الرئيسية",
+      members: "الأعضاء",
+      videos: "الفيديوهات",
+      guide: "الدليل",
+      support: "دعم الطفل",
+      contact: "اتصل بنا",
+
+      // Home
+      heroTitle1: "حماية",
+      heroTitle2: "كل مولود جديد",
+      heroSubline: "من انخفاض الحرارة",
+      heroText: "يعد انخفاض حرارة حديثي الولادة سببًا رئيسيًا — ويمكن الوقاية منه إلى حد كبير — في وفيات الأطفال حديثي الولادة حول العالم.",
+      exploreResources: "استكشاف الموارد",
+      watchVideos: "مشاهدة الفيديوهات",
+      neonatalEducationInitiative: "مبادرة التثقيف حول حديثي الولادة",
+      preventableDeaths: "وفيات يمكن الوقاية منها",
+      ninetyPercentWithCare: "90٪ مع الرعاية المناسبة",
+      safeTemperature: "درجة الحرارة الآمنة",
+      safeTempRange: "36.5–37.5 °م",
+
+      statHypothermiaDeaths: "وفيات حديثي الولادة المرتبطة بانخفاض الحرارة",
+      statMinSafeTemp: "الحد الأدنى لدرجة حرارة الجسم الآمنة (°م)",
+      statCriticalWindow: "الفترة الحرجة بعد الولادة",
+      statPreventableCases: "حالات يمكن الوقاية منها بالرعاية المناسبة",
+
+      understandingTheRisk: "فهم المخاطر",
+      whatIsNeonatalHypothermia: "ما هو انخفاض حرارة حديثي الولادة؟",
+
+      hypothermiaDefinition: "يُعرّف انخفاض حرارة حديثي الولادة بأنه انخفاض درجة حرارة الجسم الأساسية إلى أقل من 36.5 درجة مئوية. ويُصنّف إلى خفيف (36–36.4°م)، متوسط (32–35.9°م)، وشديد (<32°م).",
+      newbornsVulnerable: "حديثو الولادة — خاصة الخدج أو منخفضي الوزن عند الولادة — معرضون بشدة لأن أنظمة تنظيم الحرارة لديهم غير مكتملة. يفقدون الحرارة بسرعة عبر التبخر والتوصيل والحمل الحراري والإشعاع.",
+      whoEstimates: "تقدّر منظمة الصحة العالمية أن انخفاض الحرارة يساهم في 25–30٪ من وفيات حديثي الولادة عالميًا، خاصة في البيئات ذات الموارد المحدودة.",
+
+      skinToSkinCare: "التلامس الجلدي المباشر (رعاية الكنغر) مباشرة بعد الولادة",
+      delayedBathing: "تأخير الاستحمام لمدة لا تقل عن 24 ساعة",
+      warmDeliveryRooms: "غرف ولادة دافئة وإدارة الحاضنات",
+      exclusiveBreastfeeding: "الرضاعة الطبيعية الحصرية لتنظيم الحرارة",
+
+      educationalContent: "محتوى تعليمي",
+      puericultureNeonatalCare: "رعاية حديثي الولادة",
+
+      educationalTopicsDescription: "مواضيع تعليمية شاملة تغطي جميع جوانب رعاية حديثي الولادة، من الممارسة السريرية إلى تثقيف الأسرة.",
+
+      temperatureRegulation: "تنظيم درجة الحرارة",
+      temperatureRegulationDesc: "لا يستطيع حديثو الولادة تنظيم درجة حرارة أجسامهم بأنفسهم. تعلّم الأساس الفسيولوجي لتنظيم الحرارة وكيفية الحفاظ على بيئة حرارية مناسبة.",
+
+      preventionStrategies: "استراتيجيات الوقاية",
+      preventionStrategiesDesc: "من رعاية الكنغر إلى إدارة الحاضنات، اكتشف التدخلات المبنية على الأدلة التي تحمي حديثي الولادة من فقدان الحرارة.",
+
+      puericultureEssentials: "أساسيات رعاية الطفل",
+      puericultureEssentialsDesc: "دليل شامل لرعاية حديثي الولادة: التغذية، الاستحمام، اللف، ومراقبة العلامات الحيوية.",
+
+      clinicalRecognition: "التشخيص السريري",
+      clinicalRecognitionDesc: "تعرّف على العلامات المبكرة لانخفاض الحرارة مثل برودة الجلد، ضعف الرضاعة، والخمول.",
+
+      familyEducation: "تثقيف الأسرة",
+      familyEducationDesc: "تمكين الأهل من معرفة كيفية الحفاظ على دفء الطفل والتعرف على علامات الخطر.",
+
+      communityOutreach: "التوعية المجتمعية",
+      communityOutreachDesc: "كيف يمكن للبرامج الصحية المجتمعية تقليل وفيات حديثي الولادة من خلال التوعية.",
+
+      joinOurMission: "انضم إلى مهمتنا لحماية كل مولود جديد",
+      ctaDescription: "احصل على الموارد التعليمية، وشاهد الفيديوهات، وتواصل مع فريقنا المختص.",
+
+      accessFreeGuides: "الوصول إلى الأدلة المجانية",
+      contactOurTeam: "اتصل بفريقنا",
+
+      privacyPolicy: "سياسة الخصوصية",
+      termsOfUse: "شروط الاستخدام",
+
+      // Members
+      specialists: "الأخصائيون",
+      teamDescription: "فريق متعدد التخصصات من الأطباء والممرضين والباحثين يعمل على تقليل انخفاض الحرارة لدى حديثي الولادة.",
+
+      pediatricNeonatologyNurse: "ممرضة أطفال وحديثي الولادة",
+      puericulture: "رعاية الطفل",
+      neonatologist: "طبيب حديثي الولادة",
+      neonatology: "طب حديثي الولادة",
+      paramedicalProfessor: "أستاذة شبه طبية وممرضة أطفال سابقة",
+      pediatricNurse: "ممرضة أطفال",
+
+      // Videos
+      videoPlaylist: "قائمة الفيديو",
+      clinical: "سريري",
+      videoPuericulture: "رعاية الطفل",
+      nicu: "العناية المركزة لحديثي الولادة",
+      videoFamilyEducation: "تثقيف الأسرة",
+      protocol: "بروتوكول",
+      addComment: "أضف تعليق...",
+      comments: "التعليقات",
+      views: "مشاهدات",
+
+      // Members
+      ourTeam: "فريقنا",
+      meetSpecialists: "تعرف على الأخصائيين",
+      memberDescription: "فريقنا مخصص للحد من انخفاض الحرارة عند حديثي الولادة.",
+      wantJoin: "هل تريد الانضمام إلى فريقنا؟",
+      joinDescription: "نرحب بالمهنيين المهتمين بصحة حديثي الولادة.",
+      getInTouch: "تواصل معنا",
+
+      // Guide
+      learningResources: "موارد التعلم",
+      educationalGuide: "دليل تعليمي",
+      resourcesDescription: "الوصول إلى مكتبة الموارد الخاصة بنا.",
+      textArticles: "مقالات",
+      pdfResources: "ملفات PDF",
+      presentations: "عروض تقديمية",
+      searchPlaceholder: "ابحث عن الموارد...",
+
+      fundamentals: "الأساسيات",
+      prevention: "الوقاية",
+      guideClinical: "سريري",
+      family: "العائلة",
+
+      whoGuidelines: "إرشادات منظمة الصحة العالمية",
+      clinicalProtocol: "بروتوكول سريري",
+      implementation: "التنفيذ",
+      guideFamilyEducation: "تثقيف الأسرة",
+
+      grandRounds: "محاضرات طبية",
+      workshop: "ورشة عمل",
+      staffTraining: "تدريب الطاقم",
+
+      minRead: "دقائق قراءة",
+      pages: "صفحات",
+      slides: "شرائح",
+      download: "تحميل",
+      preview: "معاينة",
+
+      // Contact
+      sendMessage: "أرسل لنا رسالة",
+      fullName: "الاسم الكامل *",
+      emailAddress: "البريد الإلكتروني *",
+      subject: "الموضوع *",
+      message: "الرسالة *",
+      send: "إرسال",
+      messageSent: "تم إرسال الرسالة!",
+      thankYou: "شكراً لتواصلك معنا، سنرد خلال 24 ساعة.",
+      sendAnother: "إرسال رسالة أخرى",
+
+      phone: "الهاتف",
+      email: "البريد الإلكتروني",
+      address: "العنوان",
+      hours: "ساعات العمل",
+      website: "الموقع",
+
+      phoneSub: "الأربعاء 6ص–20م",
+      emailSub: "نرد خلال 24 ساعة",
+      addressSub: "تونس، 4031",
+      hoursSub: "الإثنين – السبت",
+      websiteSub: "موارد تعليمية عبر الإنترنت",
+
+      selectTopic: "اختر موضوع...",
+      generalInquiry: "استفسار عام",
+      educationalResources: "موارد تعليمية",
+      collaborationPartnership: "شراكة / تعاون",
+      clinicalQuestion: "سؤال طبي",
+      mediaPress: "إعلام / صحافة",
+      joinTeam: "الانضمام للفريق",
+      other: "أخرى",
+
+      tellUsHowWeCanHelp: "أخبرنا كيف يمكننا مساعدتك...",
+      yourName: "اسمك",
+      yourEmail: "بريدك الإلكتروني",
+      sending: "جارٍ الإرسال...",
+
+      connectWithUs: "تواصل معنا",
+      ourLocation: "موقعنا",
+
+      // Support baby
+      helpPrevent: "ساعد في الوقاية من انخفاض حرارة حديثي الولادة",
+      supportDescription: "دعمك يجعل التوعية ممكنة.",
+      donate: "تبرع",
+      share: "مشاركة",
+      collaborate: "تعاون",
+      contactUs: "اتصل بنا",
+
+      // Donation
+      makeDonation: "تبرع الآن",
+      donationFormTitle: "نموذج التبرع",
+      donationDescription: "تبرعاتك تساعدنا في مواصلة مهمتنا.",
+      fullNameDonation: "الاسم الكامل *",
+      ribNumber: "رقم الحساب البنكي *",
+      donationAmount: "مبلغ التبرع (دينار) *",
+      submitDonation: "إرسال",
+      donationSuccess: "تم إرسال التبرع بنجاح!",
+      donationSuccessText: "شكراً لدعمك الكريم!",
+      donateAnother: "تبرع مرة أخرى",
+      donationError: "خطأ أثناء الإرسال",
+      minimumAmount: "الحد الأدنى 1 دينار",
+      invalidRib: "رقم الحساب غير صحيح",
+      processingDonation: "جارٍ المعالجة...",
+
+      fullNamePlaceholder: "اسمك الكامل",
+      ribPlaceholder: "123456789012345678901234",
+      ribHint: "أدخل رقم الحساب (20-24 رقم)",
+      amountPlaceholder: "100.00",
+      amountHint: "المبلغ بالدينار التونسي",
+    },
+  },
 };
-  
-  i18n
+
+i18n
   .use(initReactI18next)
   .init({
     resources,
-    lng: "fr", // default language
-    fallbackLng: "en",
+    lng: "en", // langue par défaut
+    fallbackLng: "fr",
     interpolation: {
       escapeValue: false,
     },

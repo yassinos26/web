@@ -31,15 +31,6 @@ interface Comment {
   time: string;
 }
 
-interface Episode {
-  id: number;
-  title: string;
-  thumbnail: string;
-  duration: string;
-  localVideoUrl?: string;
-  youtubeId?: string;
-}
-
 interface Video {
   id: number;
   title: string;
@@ -53,7 +44,6 @@ interface Video {
   comments: Comment[];
   category: string;
   localVideoUrl?: string;
-  episodes?: Episode[];
 }
 
 
@@ -71,7 +61,7 @@ export function Videos() {
   const initialVideos: Video[] = [
     {
       id: 1,
-      title: "Comprendre l'hypothermie néonatale : causes et conséquences",
+      title: "L'hypothermie néonatale",
       description:
         "Un aperçu approfondi des raisons pour lesquelles les nouveau-nés sont particulièrement vulnérables à la perte de chaleur et de ce qui se passe physiologiquement lorsque la température corporelle descend en dessous des niveaux sécurisés.",
       thumbnail: "/assets/reels/video1.jpg",
@@ -106,7 +96,7 @@ export function Videos() {
     },
     {
       id: 3,
-      title: "Surveillance de la température en USIN : meilleures pratiques",
+      title: "Prise en charge d'un hypotherme",
       description:
         "Un guide pratique pour les infirmières de l'USIN sur la surveillance continue de la température, les réglages des incubateurs, les réchauffeurs radiants et la reconnaissance des premiers signes d'instabilité thermique chez les nourrissons prématurés.",
       thumbnail: "/assets/reels/video3.jpg",
@@ -122,28 +112,10 @@ export function Videos() {
     },
     {
       id: 4,
-      title: "Soins mère kangourou et allaitement : techniques salvatrices",
-      description:
-        "Conseils pratiques pour les nouveaux parents sur le maintien d'un environnement thermique sécurisé à la maison — température ambiante, couches de vêtements, techniques d'emmaillotage et signes d'avertissement à surveiller.",
-      thumbnail: "/assets/reels/video3.jpg",
-      duration: "9:47",
-      views: "21.3K",
-      youtubeId: "lEmaSNbSaZg",
-      likes: 831,
-      dislikes: 19,
-      category: t("videoFamilyEducation"),
-      comments: [
-        { id: 1, author: "Nouvelle maman Carla", avatar: "C", text: "Cette vidéo m'a donné tellement de paix d'esprit ! Merci !", time: "il y a 6 heures" },
-        { id: 2, author: "Papa de jumeaux", avatar: "D", text: "Claire et rassurante. Exactement ce dont j'avais besoin en tant que nouveau parent.", time: "il y a 2 jours" },
-        { id: 3, author: "Grand-mère Teresa", avatar: "T", text: "J'ai envoyé cela à ma fille quand elle est rentrée de l'hôpital !", time: "il y a 3 jours" },
-      ],
-    },
-    {
-      id: 5,
-      title: "Guide de soins à domicile pour garder votre nouveau-né au chaud",
+      title: "Thermoregulation en néonatologie",
       description:
         "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
-      thumbnail: "/assets/reels/video5.jpg",
+      thumbnail: "/assets/reels/video4.jpg",
       duration: "28:45",
       views: "4.8K",
       youtubeId: "kn5LwJsF66I",
@@ -156,11 +128,11 @@ export function Videos() {
       ],
     },
     {
-      id: 6,
-      title: "Guide de soins à domicile pour garder votre nouveau-né au chaud",
+      id: 5,
+      title: "Newborn heat loss",
       description:
-        "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
-      thumbnail: "/assets/reels/video6.jpg",
+      "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
+      thumbnail: "/assets/reels/video5.jpg",
       duration: "28:45",
       views: "4.8K",
       youtubeId: "6dQ3poY6qts",
@@ -172,32 +144,80 @@ export function Videos() {
         { id: 2, author: "Infirmière obstétrique", avatar: "O", text: "Notre équipe a examiné cela ensemble. Très pratique et bien organisé.", time: "il y a 5 jours" },
       ],
     },
-    // Add shorts videos (reels)
+    {
+      id: 6,
+      title: "Body cooling intervention",
+      description:
+        "Conseils pratiques pour les nouveaux parents sur le maintien d'un environnement thermique sécurisé à la maison — température ambiante, couches de vêtements, techniques d'emmaillotage et signes d'avertissement à surveiller.",
+      thumbnail: "/assets/reels/video6.jpg",
+      duration: "9:47",
+      views: "21.3K",
+      youtubeId: "Tbsa-OPMni4",
+      likes: 831,
+      dislikes: 19,
+      category: t("videoFamilyEducation"),
+      comments: [
+        { id: 1, author: "Nouvelle maman Carla", avatar: "C", text: "Cette vidéo m'a donné tellement de paix d'esprit ! Merci !", time: "il y a 6 heures" },
+        { id: 2, author: "Papa de jumeaux", avatar: "D", text: "Claire et rassurante. Exactement ce dont j'avais besoin en tant que nouveau parent.", time: "il y a 2 jours" },
+        { id: 3, author: "Grand-mère Teresa", avatar: "T", text: "J'ai envoyé cela à ma fille quand elle est rentrée de l'hôpital !", time: "il y a 3 jours" },
+      ],
+    },
     {
       id: 7,
-      title: "Guide de soins à domicile pour garder votre nouveau-né au chaud",
+      title: "Severe hypothermia management",
+      description:
+        "Conseils pratiques pour les nouveaux parents sur le maintien d'un environnement thermique sécurisé à la maison — température ambiante, couches de vêtements, techniques d'emmaillotage et signes d'avertissement à surveiller.",
+      thumbnail: "/assets/reels/video7.jpg",
+      duration: "3:13",
+      views: "13K",
+      youtubeId: "Tbsa-OPMni4",
+      likes: 196,
+      dislikes: 19,
+      category: t("videoFamilyEducation"),
+      comments: [
+        { id: 1, author: "Nouvelle maman Carla", avatar: "C", text: "Cette vidéo m'a donné tellement de paix d'esprit ! Merci !", time: "il y a 6 heures" },
+        { id: 2, author: "Papa de jumeaux", avatar: "D", text: "Claire et rassurante. Exactement ce dont j'avais besoin en tant que nouveau parent.", time: "il y a 2 jours" },
+        { id: 3, author: "Grand-mère Teresa", avatar: "T", text: "J'ai envoyé cela à ma fille quand elle est rentrée de l'hôpital !", time: "il y a 3 jours" },
+      ],
+    },
+    // Add shorts videos (reels)
+    {
+      id: 8,
+      title: "Classification of hypothermia",
+      description:
+        "Conseils pratiques pour les nouveaux parents sur le maintien d'un environnement thermique sécurisé à la maison — température ambiante, couches de vêtements, techniques d'emmaillotage et signes d'avertissement à surveiller.",
+      thumbnail: "/assets/reels/reel0.jpg",
+      duration: "9:47",
+      views: "21.3K",
+      youtubeId: "Z8ZiLz95CZQ",
+      likes: 831,
+      dislikes: 19,
+      category: t("videoFamilyEducation"),
+      comments: [
+        { id: 1, author: "Nouvelle maman Carla", avatar: "C", text: "Cette vidéo m'a donné tellement de paix d'esprit ! Merci !", time: "il y a 6 heures" },
+        { id: 2, author: "Papa de jumeaux", avatar: "D", text: "Claire et rassurante. Exactement ce dont j'avais besoin en tant que nouveau parent.", time: "il y a 2 jours" },
+        { id: 3, author: "Grand-mère Teresa", avatar: "T", text: "J'ai envoyé cela à ma fille quand elle est rentrée de l'hôpital !", time: "il y a 3 jours" },
+      ],
+    },
+    {
+      id: 9,
+      title: "Neonatal Hypothermia Definition",
       description:
         "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
-      thumbnail: "/assets/reels/playlist.jpg",
+      thumbnail: "/assets/reels/reel5.jpg",
       duration: "28:45",
       views: "4.8K",
-      likes: 178,
-      dislikes: 3,
+      youtubeId: "wP86Rk7rP6k",
+      likes: 1,
+      dislikes: 0,
       category: t("protocol"),
-      localVideoUrl: "/assets/reels/playlist.mp4",
-      episodes: [
-        { id: 1, title: "Introduction aux soins thermiques", thumbnail: "/assets/images/episode1.png", localVideoUrl: "/assets/images/ep1-2.mp4", duration: "0:05" },
-        { id: 2, title: "Préparation de l'environnement", thumbnail: "/assets/images/episode2.png", localVideoUrl: "/assets/images/ep2-3.mp4", duration: "0:05" },
-        { id: 3, title: "Techniques de réchauffement", thumbnail: "/assets/images/episode3.png", localVideoUrl: "/assets/images/epi3-4.mp4", duration: "0:05" },
-        { id: 4, title: "Surveillance continue", thumbnail: "/assets/images/episode4.png", localVideoUrl: "/assets/images/ep4-5.mp4", duration: "0:05" },
-      ],
       comments: [
         { id: 1, author: "Résident Dr. Lima", avatar: "L", text: "C'est de l'or. Regardé deux fois avant ma rotation en USIN.", time: "il y a 1 jour" },
         { id: 2, author: "Infirmière obstétrique", avatar: "O", text: "Notre équipe a examiné cela ensemble. Très pratique et bien organisé.", time: "il y a 5 jours" },
       ],
     },
     {
-      id: 8,
+      id: 10,
       title: "Guide de soins à domicile pour garder votre nouveau-né au chaud",
       description:
         "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
@@ -214,8 +234,8 @@ export function Videos() {
       ],
     },
     {
-      id: 9,
-      title: "Guide de soins à domicile pour garder votre nouveau-né au chaud",
+      id: 11,
+      title: "Cooling intervention",
       description:
         "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
       thumbnail: "/assets/reels/reel2.jpg",
@@ -231,7 +251,7 @@ export function Videos() {
       ],
     },
     {
-      id: 10,
+      id: 12,
       title: "Guide de soins à domicile pour garder votre nouveau-né au chaud",
       description:
         "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
@@ -247,6 +267,57 @@ export function Videos() {
         { id: 2, author: "Infirmière obstétrique", avatar: "O", text: "Notre équipe a examiné cela ensemble. Très pratique et bien organisé.", time: "il y a 5 jours" },
       ],
     },
+    {
+      id: 13,
+      title: "management of hypothermia",
+      description:
+        "hypothermia in neonates, neonatal hypothermia management, hypothermia in neonates causes, hypothermia in neonates ppt, causes for hypothermia in neonates, hypothermia in neonates symptoms, hypothermia in neonates complications, risk factors of hypothermia in neonates, types of neonatal hypothermia, hypothermia in newborns signs and symptoms, hypothermia in newborn, hypothermia in newborn calves, neonatal hypothermia explain, neonatal hypothermia, hypothermia neonatal care, hypothermia neonatal death",
+      thumbnail: "/assets/reels/reel4.jpg",
+      duration: "0:42",
+      views: "0.575k",
+      youtubeId: "5gdoWquXK8o",
+      likes: 178,
+      dislikes: 3,
+      category: t("protocol"),
+      comments: [
+        { id: 1, author: "Résident Dr. Lima", avatar: "L", text: "C'est de l'or. Regardé deux fois avant ma rotation en USIN.", time: "il y a 1 jour" },
+        { id: 2, author: "Infirmière obstétrique", avatar: "O", text: "Notre équipe a examiné cela ensemble. Très pratique et bien organisé.", time: "il y a 5 jours" },
+      ],
+    },
+    {
+      id: 14,
+      title: "Guide de soins à domicile pour garder votre nouveau-né au chaud",
+      description:
+        "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
+      thumbnail: "/assets/reels/playlistIA1.jpg",
+      duration: "28:45",
+      views: "4.8K",
+      likes: 178,
+      dislikes: 3,
+      category: t("protocol"),
+      youtubeId: "NKtkcCoumdc&list=PL_WQvSxIBHmoeinSXX3J_fkDZCWagvkqM",
+      comments: [
+        { id: 1, author: "Résident Dr. Lima", avatar: "L", text: "C'est de l'or. Regardé deux fois avant ma rotation en USIN.", time: "il y a 1 jour" },
+        { id: 2, author: "Infirmière obstétrique", avatar: "O", text: "Notre équipe a examiné cela ensemble. Très pratique et bien organisé.", time: "il y a 5 jours" },
+      ],
+    },
+    {
+      id: 15,
+      title: "Guide de soins à domicile pour garder votre nouveau-né au chaud",
+      description:
+        "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
+      thumbnail: "/assets/reels/playlistIA2.jpg",
+      duration: "28:45",
+      views: "4.8K",
+      likes: 178,
+      dislikes: 3,
+      category: t("protocol"),
+      localVideoUrl: "/assets/reels/playlistIA2.mp4",
+      comments: [
+        { id: 1, author: "Résident Dr. Lima", avatar: "L", text: "C'est de l'or. Regardé deux fois avant ma rotation en USIN.", time: "il y a 1 jour" },
+        { id: 2, author: "Infirmière obstétrique", avatar: "O", text: "Notre équipe a examiné cela ensemble. Très pratique et bien organisé.", time: "il y a 5 jours" },
+      ],
+    },
   ];
 
   const [videos, setVideos] = useState<Video[]>(initialVideos);
@@ -255,14 +326,7 @@ export function Videos() {
   const [userVotes, setUserVotes] = useState<Record<number, "like" | "dislike" | null>>({});
   const [newComment, setNewComment] = useState("");
 
-  const openEpisode = (episode: Episode) => {
-    if (episode.localVideoUrl) {
-      window.open(episode.localVideoUrl, "_blank");
-    } else if (episode.youtubeId) {
-      window.open(`https://www.youtube.com/watch?v=${episode.youtubeId}`, "_blank");
-    }
-  };
-
+  
   const sectionVideos =
     section === "all"
       ? videos
@@ -452,43 +516,7 @@ export function Videos() {
                         </div>
                       </div>
                     </motion.div>
-                  </div>
-
-                  {/* Episodes */}
-                  <div className="lg:w-80 p-6 border-t lg:border-t-0 lg:border-l border-gray-100">
-                    <h3 className="font-semibold text-gray-900 mb-4">Épisodes</h3>
-                    <div className="space-y-3">
-                      {video.episodes?.map((episode, index) => (
-                        <motion.div
-                          key={episode.id}
-                          initial="hidden"
-                          animate="visible"
-                          custom={index}
-                          variants={fadeUp}
-                          className="flex items-center gap-3 p-2 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors"
-                          onClick={() => openEpisode(episode)}
-                          title={episode.localVideoUrl ? "Ouvrir la vidéo de l'épisode" : "Ouvrir l'épisode"}
-                        >
-                          <div className="relative w-16 h-10 rounded overflow-hidden flex-shrink-0">
-                            <img
-                              src={episode.thumbnail}
-                              alt={episode.title}
-                              className="w-full h-full object-cover"
-                            />
-                            <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
-                              <Play className="w-3 h-3 text-white" />
-                            </div>
-                            <div className="absolute bottom-1 right-1 px-1 py-0.5 rounded text-xs text-white font-medium bg-black/70">
-                              {episode.duration}
-                            </div>
-                          </div>
-                          <div className="flex-1 min-w-0">
-                            <h4 className="text-sm font-medium text-gray-900 line-clamp-2">{episode.title}</h4>
-                          </div>
-                        </motion.div>
-                      ))}
-                    </div>
-                  </div>
+                  </div>          
                 </div>
               </div>
             ))}

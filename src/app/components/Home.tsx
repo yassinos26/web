@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { motion } from "motion/react";
-import { NavLink } from "react-router";
+import { NavLink , Link } from "react-router";
 import { Variants } from "framer-motion";
 import { Heart, Thermometer, Baby, BookOpen, ShieldCheck, AlertTriangle, ArrowRight, Stethoscope } from "lucide-react";
 
@@ -393,20 +393,21 @@ export function Home() {
         <p className="opacity-90 mb-8 max-w-lg mx-auto text-sm leading-relaxed">
           {t("ctaDescription")}
         </p>
-        <a
-          href="/guide"
+        <Link
+          to="/guide"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white text-sm font-semibold transition-all hover:opacity-90 hover:shadow-xl"
           style={{ background: "linear-gradient(135deg, #EC4899, #A855F7)" }}
         >
           {t("accessFreeGuides")}
-        </a>
-        <a
-          href="/contact"
+        </Link>
+
+        <Link
+          to="/contact"
           className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white text-sm font-semibold transition-all hover:opacity-90 hover:shadow-xl"
           style={{ background: "linear-gradient(135deg, #EC4899, #A855F7)" }}
         >
           {t("contactOurTeam")}
-        </a>
+        </Link>
       </motion.div>
     </div>
   );

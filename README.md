@@ -1,8 +1,57 @@
+# 👶 Baby Hypothermia Awareness Platform
 
-  # Landing Page for Baby Hypothermia
-  ## Running the code
+## 🧠 Overview
+**Baby Hypothermia Awareness Platform** est une plateforme web éducative dédiée à la sensibilisation, la prévention et la compréhension de l’hypothermie chez les nouveau-nés.
 
-  Run `npm i` to install the dependencies.
+Elle aide :
+- 👶 Les parents
+- 🏥 Les professionnels de santé
+- 🎓 Les étudiants
 
-  Run `npm run dev` to start the development server.
-  
+à apprendre les bonnes pratiques pour protéger les nourrissons.
+
+---
+
+## 🚀 Live Demo
+🔗 https://baby-hypothermia.onrender.com/
+
+---
+
+## 🎯 Features
+
+- 🔐 Authentification (Login / Register)
+- 🎥 Contenu éducatif (vidéos + explications)
+- 📚 Guides sur :
+  - Définition de l’hypothermie
+  - Symptômes
+  - Causes
+  - Prévention
+- 📱 Design responsive (mobile + desktop)
+- ⚡ Interface moderne et fluide
+
+---
+
+## 📸 Screenshots
+*(Ajouter ici des captures d’écran du site)*
+
+---
+
+## 🧩 Tech Stack
+
+### Frontend
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Framer Motion
+
+### Backend *(si applicable)*
+- Node.js
+- Express
+
+### Deployment
+- Render
+
+---
+
+## 🏗️ Project Structure

@@ -14,9 +14,8 @@ const fadeUp: Variants = {
   },
 };
 
-const formRef = useRef<HTMLFormElement>(null);
-
 export const Contact = () => {
+  const formRef = useRef<HTMLFormElement>(null);
   const { t } = useTranslation();
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
@@ -59,7 +58,7 @@ export const Contact = () => {
     {
       icon: Globe,
       label: t("website"),
-      value: "www.babyhypothermia.org",
+      value: "https://baby-hypothermia.onrender.com/",
       sub: t("websiteSub"),
       color: "#93C5FD",
       href: "https://baby-hypothermia.onrender.com/",
@@ -79,7 +78,7 @@ export const Contact = () => {
         "template_uo4okck",  // 🔥 à remplacer
         formRef.current,
         "gtqOb2kSMJyLpThIg"    // 🔥 à remplacer
-  
+      );
 
       setSubmitted(true);
       setForm({ name: "", email: "", subject: "", message: "" });
@@ -91,9 +90,8 @@ export const Contact = () => {
       setLoading(false);
     }
   };
-  };
 
-  return
+  return (
     <div className="min-h-screen py-16 px-4">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
