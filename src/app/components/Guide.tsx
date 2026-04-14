@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "motion/react";
+import { Variants } from "framer-motion";
 import {
   FileText,
   FileDown,
@@ -15,12 +16,16 @@ import {
   Filter,
 } from "lucide-react";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 30 },
-  visible: (i = 0) => ({
+  visible: (i: number = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { delay: i * 0.1, duration: 0.55, ease: "easeOut" },
+    transition: {
+      delay: i * 0.1,
+      duration: 0.5,
+      ease: [0.25, 0.1, 0.25, 1],
+    },
   }),
 };
 
@@ -40,14 +45,14 @@ function ArticleAccordion({ article }: { article: GuideArticle }) {
   const [open, setOpen] = useState(false);
   const [isZoomed, setIsZoomed] = useState(false);
 
-  const handleDownload = (url: string, filename: string) => {
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = filename;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  // const handleDownload = (url: string, filename: string) => {
+  //   const link = document.createElement('a');
+  //   link.href = url;
+  //   link.download = filename;
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // };
 
   const toggleZoom = () => {
     setIsZoomed(!isZoomed);
@@ -169,6 +174,26 @@ export function Guide() {
   const [activeTab, setActiveTab] = useState<Tab>("text");
   const [searchQuery, setSearchQuery] = useState("");
 
+  const handleDownloadFile = async (url: string, filename: string) => {
+  try {
+    const response = await fetch(url);
+    const blob = await response.blob();
+
+    const blobUrl = window.URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = blobUrl;
+    link.download = filename;
+
+    document.body.appendChild(link);
+    link.click();
+
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(blobUrl);
+  } catch (error) {
+    console.error("Download error:", error);
+  }
+};
+
   const articles: GuideArticle[] = [
     {
       id: 0,
@@ -272,7 +297,7 @@ export function Guide() {
       category: t("whoGuidelines"),
       color: "#F9A8D4",
       year: 2018,
-      url: "public/assets/guides/guide1.pdf",
+      url: "/assets/guides/guide1.pdf",
     },
     {
       id: 2,
@@ -283,7 +308,7 @@ export function Guide() {
       category: t("clinicalProtocol"),
       color: "#A5B4FC",
       year: 2010,
-      url: "public/assets/guides/guide2.pdf",
+      url: "/assets/guides/guide2.pdf",
     },
     {
       id: 3,
@@ -294,7 +319,7 @@ export function Guide() {
       category: t("implementation"),
       color: "#86EFAC",
       year: 2000,
-      url: "public/assets/guides/guide3.pdf",
+      url: "/assets/guides/guide3.pdf",
     },
     {
       id: 4,
@@ -305,7 +330,7 @@ export function Guide() {
       category: t("guideFamilyEducation"),
       color: "#FDBA74",
       year: 2014,
-      url: "public/assets/guides/guide4.pdf",
+      url: "/assets/guides/guide4.pdf",
     },
     {
       id: 5,
@@ -316,7 +341,7 @@ export function Guide() {
       category: t("guideFamilyEducation"),
       color: "#FDBA74",
       year: 2014,
-      url: "public/assets/guides/guide5.pdf",
+      url: "/assets/guides/guide5.pdf",
     },
     {
       id: 6,
@@ -327,7 +352,7 @@ export function Guide() {
       category: t("guideFamilyEducation"),
       color: "#FDBA74",
       year: 2014,
-      url: "public/assets/guides/guide6.pdf",
+      url: "/assets/guides/guide6.pdf",
     },
   ];
 
@@ -531,16 +556,13 @@ export function Guide() {
                             <span>{resource.size}</span>
                             <span>{resource.year}</span>
                           </div>
-                          <a
-                            href={resource.url}
-                            download
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs text-white font-medium transition-all hover:opacity-90 hover:shadow-md"
+                          <button
+                            onClick={() => handleDownloadFile(resource.url, resource.title + ".pdf")}
+                            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs text-white font-medium"
                             style={{ background: "linear-gradient(135deg, #EC4899, #A855F7)" }}
                           >
-                            <Download className="w-3 h-3" /> {t("guide.download")}
-                          </a>
+                            <Download className="w-3 h-3" /> {t("download")}
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -604,20 +626,12 @@ export function Guide() {
                           </div>
                           <div className="flex gap-2">
                             <button
-                              className="flex items-center gap-1 px-2.5 py-1.5 rounded-full text-xs border border-gray-200 text-gray-500 hover:border-pink-200 hover:text-pink-500 transition-colors"
-                            >
-                              <ExternalLink className="w-3 h-3" /> {t("guide.preview")}
-                            </button>
-                            <a
-                              href={resource.url}
-                              download
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs text-white font-medium transition-all hover:opacity-90 hover:shadow-md"
+                              onClick={() => handleDownloadFile(resource.url, resource.title + ".pptx")}
+                              className="flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs text-white font-medium"
                               style={{ background: "linear-gradient(135deg, #EC4899, #A855F7)" }}
                             >
-                              <Download className="w-3 h-3" /> {t("guide.download")}
-                            </a>
+                              <Download className="w-3 h-3" /> {t("download")}
+                            </button>
                           </div>
                         </div>
                       </div>

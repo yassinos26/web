@@ -201,15 +201,15 @@ export function Videos() {
     },
     {
       id: 9,
-      title: "Neonatal Hypothermia Definition",
+      title: "management of hypothermia",
       description:
-        "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
-      thumbnail: "/assets/reels/reel5.jpg",
-      duration: "28:45",
-      views: "4.8K",
-      youtubeId: "wP86Rk7rP6k",
-      likes: 1,
-      dislikes: 0,
+        "hypothermia in neonates, neonatal hypothermia management, hypothermia in neonates causes, hypothermia in neonates ppt, causes for hypothermia in neonates, hypothermia in neonates symptoms, hypothermia in neonates complications, risk factors of hypothermia in neonates, types of neonatal hypothermia, hypothermia in newborns signs and symptoms, hypothermia in newborn, hypothermia in newborn calves, neonatal hypothermia explain, neonatal hypothermia, hypothermia neonatal care, hypothermia neonatal death",
+      thumbnail: "/assets/reels/reel4.jpg",
+      duration: "0:42",
+      views: "0.575k",
+      youtubeId: "5gdoWquXK8o",
+      likes: 178,
+      dislikes: 3,
       category: t("protocol"),
       comments: [
         { id: 1, author: "Résident Dr. Lima", avatar: "L", text: "C'est de l'or. Regardé deux fois avant ma rotation en USIN.", time: "il y a 1 jour" },
@@ -269,33 +269,34 @@ export function Videos() {
     },
     {
       id: 13,
-      title: "management of hypothermia",
+      title: "Neonatal Hypothermia Definition",
       description:
-        "hypothermia in neonates, neonatal hypothermia management, hypothermia in neonates causes, hypothermia in neonates ppt, causes for hypothermia in neonates, hypothermia in neonates symptoms, hypothermia in neonates complications, risk factors of hypothermia in neonates, types of neonatal hypothermia, hypothermia in newborns signs and symptoms, hypothermia in newborn, hypothermia in newborn calves, neonatal hypothermia explain, neonatal hypothermia, hypothermia neonatal care, hypothermia neonatal death",
-      thumbnail: "/assets/reels/reel4.jpg",
-      duration: "0:42",
-      views: "0.575k",
-      youtubeId: "5gdoWquXK8o",
-      likes: 178,
-      dislikes: 3,
+        "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
+      thumbnail: "/assets/reels/reel5.jpg",
+      duration: "28:45",
+      views: "4.8K",
+      youtubeId: "wP86Rk7rP6k",
+      likes: 1,
+      dislikes: 0,
       category: t("protocol"),
       comments: [
         { id: 1, author: "Résident Dr. Lima", avatar: "L", text: "C'est de l'or. Regardé deux fois avant ma rotation en USIN.", time: "il y a 1 jour" },
         { id: 2, author: "Infirmière obstétrique", avatar: "O", text: "Notre équipe a examiné cela ensemble. Très pratique et bien organisé.", time: "il y a 5 jours" },
       ],
     },
+    // Playlist videos
     {
       id: 14,
       title: "Guide de soins à domicile pour garder votre nouveau-né au chaud",
       description:
         "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
       thumbnail: "/assets/reels/playlistIA1.jpg",
-      duration: "28:45",
+      duration: "2:36",
       views: "4.8K",
+      youtubeId: "NKtkcCoumdc",
       likes: 178,
       dislikes: 3,
       category: t("protocol"),
-      youtubeId: "NKtkcCoumdc&list=PL_WQvSxIBHmoeinSXX3J_fkDZCWagvkqM",
       comments: [
         { id: 1, author: "Résident Dr. Lima", avatar: "L", text: "C'est de l'or. Regardé deux fois avant ma rotation en USIN.", time: "il y a 1 jour" },
         { id: 2, author: "Infirmière obstétrique", avatar: "O", text: "Notre équipe a examiné cela ensemble. Très pratique et bien organisé.", time: "il y a 5 jours" },
@@ -331,8 +332,8 @@ export function Videos() {
     section === "all"
       ? videos
       : section === "reels"
-      ? videos.filter((v) => [7, 8 , 9].includes(v.id))
-      : videos.filter((v) => [7].includes(v.id));
+      ? videos.filter((v) => [8 , 9, 10 , 11, 12,13].includes(v.id))
+      : videos.filter((v) => [14, 15].includes(v.id));
 
   const handleVote = (videoId: number, type: "like" | "dislike") => {
     const current = userVotes[videoId];

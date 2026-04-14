@@ -1,5 +1,5 @@
 import emailjs from "@emailjs/browser";
-import React, { useRef, useState, FormEvent } from "react";
+import { useRef, useState, FormEvent } from "react";
 import { useTranslation } from "react-i18next";
 import { motion } from "motion/react";
 import { Variants } from "framer-motion";
@@ -208,6 +208,7 @@ export const Contact = () => {
                     </label>
                     <input
                       type="text"
+                      name="user_name"
                       required
                       placeholder={t("yourName")}
                       value={form.name}
@@ -221,6 +222,7 @@ export const Contact = () => {
                     </label>
                     <input
                       type="email"
+                      name="user_email"
                       required
                       placeholder={t("yourEmail")}
                       value={form.email}
@@ -235,6 +237,7 @@ export const Contact = () => {
                   </label>
                   <select
                     required
+                    name="subject"
                     value={form.subject}
                     onChange={(e) => setForm({ ...form, subject: e.target.value })}
                     className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm bg-gray-50 focus:outline-none focus:border-pink-300 focus:ring-2 focus:ring-pink-100 focus:bg-white transition-all"
