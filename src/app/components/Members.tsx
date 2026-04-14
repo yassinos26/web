@@ -1,5 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { motion } from "motion/react";
+import { Link } from "react-router";
 import { Variants } from "framer-motion";
 import { Linkedin, Mail, Award,  GraduationCap, Instagram, Facebook} from "lucide-react";
 
@@ -226,14 +227,13 @@ export function Members() {
           <p className="text-gray-500 text-sm max-w-lg mx-auto mb-6">
             {t("joinDescription")}
           </p>
-          <a
-            // href="/contact"
-            href="https://baby-hypothermia.onrender.com/contact"
+          <Link
+            to="/contact"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white text-sm font-semibold transition-all hover:opacity-90 hover:shadow-xl"
             style={{ background: "linear-gradient(135deg, #EC4899, #A855F7)" }}
           >
             <Mail className="w-4 h-4" /> {t("getInTouch")}
-          </a>
+          </Link>
         </motion.div>
       </div>
     </div>

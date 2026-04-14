@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from "motion/react";
 import {
@@ -642,13 +643,13 @@ export function Guide() {
           <p className="text-gray-500 text-sm max-w-md mx-auto mb-4">
             {t("customResourceDescription")}
           </p>
-          <a
-            href="/contact"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-white text-sm font-semibold transition-all hover:opacity-90"
+          <Link
+            to="/contact"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full text-white text-sm font-semibold transition-all hover:opacity-90 hover:shadow-xl"
             style={{ background: "linear-gradient(135deg, #EC4899, #A855F7)" }}
           >
             {t("contact")}
-          </a>
+          </Link>
         </motion.div>
       </div>
     </div>
