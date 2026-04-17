@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Variants } from "framer-motion";
 import { motion, AnimatePresence } from "motion/react";
@@ -327,7 +327,19 @@ export function Videos() {
   const [userVotes, setUserVotes] = useState<Record<number, "like" | "dislike" | null>>({});
   const [newComment, setNewComment] = useState("");
 
-  
+  useEffect(() => {
+    if (selectedVideo) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    // cleanup (important)
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [selectedVideo]);
+
   const sectionVideos =
     section === "all"
       ? videos
@@ -387,12 +399,10 @@ export function Videos() {
     // Get latest state
     const latest = videos.find((v) => v.id === video.id) || video;
     setSelectedVideo(latest);
-    document.body.style.overflow = "hidden";
   };
 
   const closeVideo = () => {
     setSelectedVideo(null);
-    document.body.style.overflow = "";
   };
 
   return (
@@ -527,7 +537,7 @@ export function Videos() {
             {t("noVideos")}
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {sectionVideos.map((video, i) => (
               <motion.div
               key={video.id}
@@ -624,33 +634,27 @@ export function Videos() {
               exit={{ scale: 0.9, opacity: 0, y: 20 }}
               transition={{ duration: 0.3, ease: "easeOut" }}
               className="bg-white rounded-3xl shadow-2xl w-full overflow-hidden flex flex-col lg:flex-row"
-              style={{ maxWidth: "1100px", maxHeight: "90vh" }}
+              style={{ maxHeight: "90vh" }}
             >
               {/* Left: Video + Info */}
-              <div className="flex flex-col flex-1 min-w-0">
+              <div className="p-5 overflow-y-auto flex-1">
                 {/* Video player (embed or local) */}
-                <div
-                  className="relative bg-black"
-                  style={{ aspectRatio: "16/9" }}
-                >
+                <div className="relative w-full pt-[56.25%] bg-black">
                   {selectedVideo.localVideoUrl ? (
                     <video
-                      key={selectedVideo.id}
-                      className="w-full h-full"
+                      className="absolute top-0 left-0 w-full h-full"
                       controls
                       autoPlay
                       src={selectedVideo.localVideoUrl}
                     />
                   ) : selectedVideo.youtubeId ? (
                     <iframe
-                      key={selectedVideo.id}
-                      className="w-full h-full"
+                      className="absolute top-0 left-0 w-full h-full"
                       src={`https://www.youtube.com/embed/${selectedVideo.youtubeId}?autoplay=1`}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
                     />
                   ) : null}
-                  )
                 </div>
 
                 {/* Video info */}
@@ -725,8 +729,8 @@ export function Videos() {
 
               {/* Right: Comments */}
               <div
-                className="w-full lg:w-80 flex flex-col border-t lg:border-t-0 lg:border-l border-gray-100"
-                style={{ maxHeight: "90vh" }}
+                className="bg-white rounded-2xl shadow-2xl w-full h-full md:h-auto overflow-hidden flex flex-col lg:flex-row"
+                style={{ maxWidth: "1100px", maxHeight: "95vh" }}
               >
                 <div className="p-4 border-b border-gray-100">
                   <h4 className="text-gray-700 flex items-center gap-2" style={{ fontWeight: 700 }}>

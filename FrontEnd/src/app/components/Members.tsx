@@ -36,7 +36,7 @@ export function Members() {
       role: t("neonatologist"),
       specialty: t("neonatology"),
       bio: "Professeur qualifié et médecin néonatologiste, plus de 7 ans d'expérience dans les services néonatals.",
-      image: "",
+      image: "/assets/images/oussema-bio.jpg",
       color: "#A5B4FC",
       tags: ["Cathéter central", "FMSO", "ESSTSSo", "Échographie"],
       socials: {
