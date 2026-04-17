@@ -1,7 +1,11 @@
 # Dépendances (le plus important à exclure)
 node_modules/
 jspm_packages/
-
+dist/
+.env
+BackEnd/
+BackEnd/node_modules/
+BackEnd/dist/
 # Logs
 logs
 *.log
@@ -25,3 +29,4 @@ coverage/
 # Système
 .DS_Store
 Thumbs.db
+node_modules
