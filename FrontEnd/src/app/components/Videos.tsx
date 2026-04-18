@@ -56,6 +56,11 @@ export function Videos() {
     [t("nicu")]: "#93C5FD",
     [t("videoFamilyEducation")]: "#FDBA74",
     [t("protocol")]: "#C4B5FD",
+    [t("simulation")]: "#a8d824",
+    [t("C.A.T")]: "#db6ff7",
+    [t("P.E.C")]: "#f76f8c",
+    [t("Study")]: "#f5e501",
+    [t("Education.Personel.Soignant")]: "#f59300",
   };
 
   const initialVideos: Video[] = [
@@ -63,13 +68,13 @@ export function Videos() {
       id: 1,
       title: "L'hypothermie néonatale",
       description:
-        "Un aperçu approfondi des raisons pour lesquelles les nouveau-nés sont particulièrement vulnérables à la perte de chaleur et de ce qui se passe physiologiquement lorsque la température corporelle descend en dessous des niveaux sécurisés.",
+        "Mécanisme de perte thermique.",
       thumbnail: "/assets/reels/video1.jpg",
       duration: "17:12",
-      views: "8.1K",
+      views: "8.3K",
       youtubeId: "008VanO0PHA",
-      likes: 150,
-      dislikes: 8,
+      likes: 154,
+      dislikes: 0,
       category: t("clinical"),
       comments: [
         { id: 1, author: "Infirmière Maria", avatar: "M", text: "Explication très claire ! J'utilise cette vidéo dans la formation de notre service.", time: "il y a 2 jours" },
@@ -155,7 +160,7 @@ export function Videos() {
       youtubeId: "Tbsa-OPMni4",
       likes: 831,
       dislikes: 19,
-      category: t("videoFamilyEducation"),
+      category: t("clinical"),
       comments: [
         { id: 1, author: "Nouvelle maman Carla", avatar: "C", text: "Cette vidéo m'a donné tellement de paix d'esprit ! Merci !", time: "il y a 6 heures" },
         { id: 2, author: "Papa de jumeaux", avatar: "D", text: "Claire et rassurante. Exactement ce dont j'avais besoin en tant que nouveau parent.", time: "il y a 2 jours" },
@@ -173,7 +178,7 @@ export function Videos() {
       youtubeId: "Tbsa-OPMni4",
       likes: 196,
       dislikes: 19,
-      category: t("videoFamilyEducation"),
+      category: t("simulation"),
       comments: [
         { id: 1, author: "Nouvelle maman Carla", avatar: "C", text: "Cette vidéo m'a donné tellement de paix d'esprit ! Merci !", time: "il y a 6 heures" },
         { id: 2, author: "Papa de jumeaux", avatar: "D", text: "Claire et rassurante. Exactement ce dont j'avais besoin en tant que nouveau parent.", time: "il y a 2 jours" },
@@ -211,7 +216,7 @@ export function Videos() {
       localVideoUrl: "/assets/reels/reel4.mp4",
       likes: 178,
       dislikes: 3,
-      category: t("protocol"),
+      category: t("C.A.T"),
       comments: [
         { id: 1, author: "Résident Dr. Lima", avatar: "L", text: "C'est de l'or. Regardé deux fois avant ma rotation en USIN.", time: "il y a 1 jour" },
         { id: 2, author: "Infirmière obstétrique", avatar: "O", text: "Notre équipe a examiné cela ensemble. Très pratique et bien organisé.", time: "il y a 5 jours" },
@@ -228,7 +233,7 @@ export function Videos() {
       localVideoUrl: "/assets/reels/reel1.mp4",
       likes: 178,
       dislikes: 3,
-      category: t("protocol"),
+      category: t("videoFamilyEducation"),
       comments: [
         { id: 1, author: "Résident Dr. Lima", avatar: "L", text: "C'est de l'or. Regardé deux fois avant ma rotation en USIN.", time: "il y a 1 jour" },
         { id: 2, author: "Infirmière obstétrique", avatar: "O", text: "Notre équipe a examiné cela ensemble. Très pratique et bien organisé.", time: "il y a 5 jours" },
@@ -253,7 +258,7 @@ export function Videos() {
     },
     {
       id: 12,
-      title: "Guide de soins à domicile pour garder votre nouveau-né au chaud",
+      title: "Que faire devant les symptômes de l'hypothermia",
       description:
         "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
       thumbnail: "/assets/reels/reel3.jpg",
@@ -262,7 +267,7 @@ export function Videos() {
       localVideoUrl: "/assets/reels/reel3.mp4",
       likes: 178,
       dislikes: 3,
-      category: t("protocol"),
+      category: t("P.E.C"),
       comments: [
         { id: 1, author: "Résident Dr. Lima", avatar: "L", text: "C'est de l'or. Regardé deux fois avant ma rotation en USIN.", time: "il y a 1 jour" },
         { id: 2, author: "Infirmière obstétrique", avatar: "O", text: "Notre équipe a examiné cela ensemble. Très pratique et bien organisé.", time: "il y a 5 jours" },
@@ -270,7 +275,7 @@ export function Videos() {
     },
     {
       id: 13,
-      title: "Neonatal Hypothermia Definition",
+      title: "Neonatal Hypothermia ",
       description:
         "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
       thumbnail: "/assets/reels/reel5.jpg",
@@ -279,7 +284,7 @@ export function Videos() {
       localVideoUrl: "/assets/reels/reel5.mp4",
       likes: 1,
       dislikes: 0,
-      category: t("protocol"),
+      category: t("Study"),
       comments: [
         { id: 1, author: "Résident Dr. Lima", avatar: "L", text: "C'est de l'or. Regardé deux fois avant ma rotation en USIN.", time: "il y a 1 jour" },
         { id: 2, author: "Infirmière obstétrique", avatar: "O", text: "Notre équipe a examiné cela ensemble. Très pratique et bien organisé.", time: "il y a 5 jours" },
@@ -288,7 +293,7 @@ export function Videos() {
     // Playlist videos
     {
       id: 14,
-      title: "Guide de soins à domicile pour garder votre nouveau-né au chaud",
+      title: "Voyage neonatal",
       description:
         "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
       thumbnail: "/assets/reels/playlistIA1.jpg",
@@ -305,7 +310,7 @@ export function Videos() {
     },
     {
       id: 15,
-      title: "Guide de soins à domicile pour garder votre nouveau-né au chaud",
+      title: "Serie hypothermia 1-5",
       description:
         "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
       thumbnail: "/assets/reels/playlistIA2.jpg",
@@ -315,6 +320,23 @@ export function Videos() {
       dislikes: 3,
       localVideoUrl: "/assets/reels/playlistIA2.mp4",
       category: t("protocol"),
+      comments: [
+        { id: 1, author: "Résident Dr. Lima", avatar: "L", text: "C'est de l'or. Regardé deux fois avant ma rotation en USIN.", time: "il y a 1 jour" },
+        { id: 2, author: "Infirmière obstétrique", avatar: "O", text: "Notre équipe a examiné cela ensemble. Très pratique et bien organisé.", time: "il y a 5 jours" },
+      ],
+    },
+    {
+      id: 16,
+      title: "La thermoregulation du prématuré",
+      description:
+        "Guide étape par étape du protocole de stabilisation thermique pendant la réanimation néonatale, y compris les enveloppes en polyéthylène, les salles d'accouchement chaudes et l'importance de l'heure d'or.",
+      thumbnail: "/assets/reels/playlistIA3.jpg",
+      youtubeId : "umu6ADx2EUY",
+      duration: "5:05",
+      views: "4.8K",
+      likes: 178,
+      dislikes: 3,
+      category: t("Education.Personel.Soignant"),
       comments: [
         { id: 1, author: "Résident Dr. Lima", avatar: "L", text: "C'est de l'or. Regardé deux fois avant ma rotation en USIN.", time: "il y a 1 jour" },
         { id: 2, author: "Infirmière obstétrique", avatar: "O", text: "Notre équipe a examiné cela ensemble. Très pratique et bien organisé.", time: "il y a 5 jours" },
@@ -346,7 +368,7 @@ export function Videos() {
       ? videos
       : section === "reels"
       ? videos.filter((v) => [8 , 9, 10 , 11, 12,13].includes(v.id))
-      : videos.filter((v) => [14, 15].includes(v.id));
+      : videos.filter((v) => [14, 15, 16].includes(v.id));
 
   const handleVote = (videoId: number, type: "like" | "dislike") => {
     const current = userVotes[videoId];

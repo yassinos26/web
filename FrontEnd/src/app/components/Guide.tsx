@@ -201,7 +201,7 @@ export function Guide() {
       category: t("fundamentals"),
       color: "#F9A8D4",
       readTime: `10 ${t("minRead")}`,
-      image: "/assets/text/affiche-protcole.jpg",
+      image: "/assets/images/affiche-protcole.jpg",
       content: [
         "1- Salle d'accouchement chaude", 
         "2- Séchage immédiat",
