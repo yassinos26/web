@@ -221,7 +221,7 @@ export function Guide() {
       category: t("fundamentals"),
       color: "#F9A8D4",
       readTime: `5 ${t("minRead")}`,
-      image: "/assets/text/affiche-introduction.jpg",
+      image: "/assets/images/affiche-introduction.jpg",
       content: [
         "La thermorégulation est le processus physiologique par lequel un organisme maintient sa température corporelle centrale dans une plage compatible avec la vie. Chez l'adulte, ce système est robuste ; chez le nouveau-né — particulièrement les nourrissons prématurés — il est gravement sous-développé.",
         "Les nouveau-nés ont un rapport surface corporelle/masse corporelle élevé, une graisse sous-cutanée limitée et un contrôle du système nerveux central immature sur la production et la conservation de chaleur. Ils sont particulièrement dépendants de leur environnement et des soignants pour maintenir l'homéostasie thermique.",
@@ -235,7 +235,7 @@ export function Guide() {
       category: t("prevention"),
       color: "#C4B5FD",
       readTime: `7 ${t("minRead")}`,
-      image: "/assets/text/affiche-warmchaine.jpg",
+      image: "/assets/images/affiche-warmchaine.jpg",
       content: [
         "La Chaîne Chaude, introduite par l'OMS et l'UNICEF, est une séquence de dix étapes liées conçues pour minimiser la perte de chaleur chez le nouveau-né de l'accouchement à la période postnatale précoce.",
         "Étape 1 : Salle d'accouchement chaude — la température de la pièce doit être d'au moins 25°C (77°F) et exempte de courants d'air. Étape 2 : Séchage immédiat — sécher le bébé complètement avec une serviette chaude immédiatement après la naissance, en éliminant le linge mouillé. Étape 3 : Contact peau à peau — placer le bébé nu sur la poitrine nue de la mère et couvrir les deux d'une couverture.",
@@ -249,7 +249,7 @@ export function Guide() {
       category: t("puericulture"),
       color: "#86EFAC",
       readTime: `8 ${t("minRead")}`,
-      image: "/assets/text/affiche-Kangaroo-mother.jpg",
+      image: "/assets/images/affiche-Kangaroo-mother.jpg",
       content: [
         "Les Soins Mère Kangourou (SMC) sont une méthode de soins pour les nourrissons prématurés et de faible poids à la naissance qui implique un contact peau à peau, l'allaitement maternel exclusif ou l'alimentation au lait maternel, et une sortie précoce avec un suivi approprié. Développée à l'origine à Bogotá, Colombie en 1978, elle a depuis été validée par des recherches mondiales approfondies.",
         "Physiologiquement, les SMC stabilisent la température de l'enfant grâce à la capacité thermorégulatrice de la mère, qui s'ajuste activement pour réchauffer ou refroidir le bébé selon les besoins. Cet 'incubateur biologique' est remarquablement précis et a été démontré dans de multiples études comme équivalent aux soins en incubateur conventionnel pour les prématurés stables.",
@@ -263,7 +263,7 @@ export function Guide() {
       category: t("guideClinical"),
       color: "#93C5FD",
       readTime: `6 ${t("minRead")}`,
-      image: "/assets/text/affiche-recognizing-managing.jpg",
+      image: "/assets/images/affiche-recognizing-managing.jpg",
       content: [
         "La reconnaissance précoce de l'hypothermie néonatale nécessite une évaluation clinique vigilante. Les signes incluent une peau froide au toucher (surtout sur le tronc), une faible ou absente alimentation, un cri faible, une léthargie et une activité réduite, une pâleur ou une marbrure, une bradycardie, et dans les cas sévères, une apnée et une hypoglycémie.",
         "La mesure de la température doit être axillaire en utilisant un thermomètre à faible lecture. La température axillaire normale chez les nouveau-nés est de 36,5–37,5°C. Toute lecture inférieure à 36,5°C nécessite une intervention immédiate.",
@@ -277,7 +277,7 @@ export function Guide() {
       category: t("family"),
       color: "#FDBA74",
       readTime: `6 ${t("minRead")}`,
-      image: "/assets/text/affiche-education-parental.jpg",
+      image: "/assets/images/affiche-education-parental.jpg",
       content: [
         "La transition de l'hôpital au domicile est une période à haut risque pour l'hypothermie néonatale, surtout dans les climats froids ou pendant les mois d'hiver. Les parents doivent être équipés des connaissances et des compétences pour maintenir la température de leur bébé en toute sécurité.",
         "Messages clés pour les parents : Maintenir la température de la pièce entre 20–22°C (68–72°F). Habiller votre bébé d'une couche de plus que vous portez. Toujours utiliser un bonnet — les nouveau-nés perdent une proportion importante de chaleur par la tête. Vérifier la température du bébé en touchant le dos du cou ou la poitrine, pas les mains ou les pieds (qui sont normalement plus froids).",
@@ -297,7 +297,7 @@ export function Guide() {
       category: t("whoGuidelines"),
       color: "#F9A8D4",
       year: 2018,
-      url: "/assets/guides/guide1.pdf",
+      url: "/assets/pdf/guide1.pdf",
     },
     {
       id: 2,
@@ -308,7 +308,7 @@ export function Guide() {
       category: t("clinicalProtocol"),
       color: "#A5B4FC",
       year: 2010,
-      url: "/assets/guides/guide2.pdf",
+      url: "/assets/pdf/guide2.pdf",
     },
     {
       id: 3,
@@ -319,7 +319,7 @@ export function Guide() {
       category: t("implementation"),
       color: "#86EFAC",
       year: 2000,
-      url: "/assets/guides/guide3.pdf",
+      url: "/assets/pdf/guide3.pdf",
     },
     {
       id: 4,
@@ -330,7 +330,7 @@ export function Guide() {
       category: t("guideFamilyEducation"),
       color: "#FDBA74",
       year: 2014,
-      url: "/assets/guides/guide4.pdf",
+      url: "/assets/pdf/guide4.pdf",
     },
     {
       id: 5,
@@ -341,7 +341,7 @@ export function Guide() {
       category: t("guideFamilyEducation"),
       color: "#FDBA74",
       year: 2014,
-      url: "/assets/guides/guide5.pdf",
+      url: "/assets/pdf/guide5.pdf",
     },
     {
       id: 6,
@@ -352,7 +352,7 @@ export function Guide() {
       category: t("guideFamilyEducation"),
       color: "#FDBA74",
       year: 2014,
-      url: "/assets/guides/guide6.pdf",
+      url: "/assets/pdf/guide6.pdf",
     },
   ];
 
